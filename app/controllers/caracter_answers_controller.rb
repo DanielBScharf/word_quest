@@ -4,6 +4,7 @@ class CaracterAnswersController < ApplicationController
   end
 
   def show
+    @character_answer = CharacterAnswer.find(params[:id])
   end
 
   def new
