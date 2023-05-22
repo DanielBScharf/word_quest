@@ -35,63 +35,21 @@ end
 
 puts 'Finished!'
 
-
-puts "Cleaning database..."
-Answer.destroy_all
-
-puts 'Creating 10 fake answers...'
-question_ids = (1..10).to_a.shuffle
-10.times do |i|
-  answer = Answers.new(
-    correct or not ????
-    question_id: question_ids[i]
-  )
-  answer.save!
-end
-
-puts 'Finished!'
-
-
-
-
-
-
-
-
-
-
-
-
-puts "Cleaning database..."
-CharacterAnswer.destroy_all
-
-puts 'Creating 10 fake character answers...'
-10.times do
-  characteranswer = CharacterAnswers.new(
-    time: Faker::Number.between(from: 0, to: 1000),
-    answer_id: Faker::Number.between(from: 1, to: 10),
-    question_id: Faker::Number.between(from: 1, to: 10),
-    character_id: Faker::Number.between(from: 1, to: 10),
-  )
-  characteranswer.save!
-end
-
-puts 'Finished!'
-
-
-
+monster = Monster.new(
+  name: "rat",
+  category: "vocabulary",
+  map_id: 0
+)
 
 puts "Cleaning database..."
 Map.destroy_all
 
-puts 'Creating 10 fake maps...'
-10.times do
+puts 'Creating fake map...'
   map = Map.new(
     level: Faker::Number.between(from: 1, to: 10),
     completed: Faker::Boolean.boolean,
     character_id: Faker::Number.between(from: 1, to: 10)
   )
   map.save!
-end
 
 puts 'Finished!'
