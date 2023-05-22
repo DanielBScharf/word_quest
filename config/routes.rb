@@ -22,4 +22,8 @@ Rails.application.routes.draw do
     resources :answers, only: %i[index show new create]
     resources :character_answers, only: %i[index show new create]
   end
+
+  resources :answers, only: %i[index show new create] do
+    resources :character_answers, only: %i[index show new create]
+  end
 end
