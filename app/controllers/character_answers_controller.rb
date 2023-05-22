@@ -1,3 +1,4 @@
+character-answers
 class CharacterAnswersController < ApplicationController
   def index
     @character_answers = CharacterAnswer.where(character_id == current_user.id)
