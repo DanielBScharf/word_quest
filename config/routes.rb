@@ -2,7 +2,24 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :users do
+    resources :characters
+  end
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :characters do
+    resources :maps, only: %i[show new create]
+  end
+
+  resources :maps do
+    resources :monsters, only: :show
+  end
+
+  resources :monsters do
+    resources :questions, only: %i[show new create]
+  end
+
+  resources :questions do
+    resources :answers, only: %i[index show new create]
+    resources :character_answers, only: %i[index show new create]
+  end
 end
