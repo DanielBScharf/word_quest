@@ -40,6 +40,21 @@ monster = Monster.new(
   category: "vocabulary",
   map_id: 0
 )
+monster.save!
+
+question = Question.new(
+  type: "CEFR A1",
+  monster_id: monster_ids[0],
+  language: 'English',
+  text: "What is the airspeed velocity of an unlaiden swallow"
+)
+question.save!
+
+answer = Answer.new(
+  question_id: question_id[0],
+  boolean: true,
+  text: "An African sqallow?"
+)
 
 puts "Cleaning database..."
 Map.destroy_all
