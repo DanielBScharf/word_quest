@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_22_052705) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_23_022822) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,6 +19,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_22_052705) do
     t.bigint "question_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "text"
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
@@ -29,6 +30,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_22_052705) do
     t.bigint "character_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "text"
     t.index ["answer_id"], name: "index_character_answers_on_answer_id"
     t.index ["character_id"], name: "index_character_answers_on_character_id"
     t.index ["question_id"], name: "index_character_answers_on_question_id"
@@ -68,6 +70,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_22_052705) do
     t.bigint "monster_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "text"
     t.index ["monster_id"], name: "index_questions_on_monster_id"
   end
 

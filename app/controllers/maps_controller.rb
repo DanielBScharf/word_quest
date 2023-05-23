@@ -16,4 +16,6 @@ class MapsController < ApplicationController
     @monster_arr
   end
 
+  def show_village
+  end
 end
