@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_23_044942) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_23_082534) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -46,6 +46,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_23_044942) do
     t.datetime "updated_at", null: false
     t.string "language"
     t.integer "level"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_characters_on_user_id"
   end
 
   create_table "maps", force: :cascade do |t|
