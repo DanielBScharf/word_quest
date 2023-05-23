@@ -9,8 +9,12 @@ class QuestionsController < ApplicationController
     @type = Monster.find(params[:id]).category
     @level = current_user.character.level
     @ai_question = OpenaiService.new("give me a #{@level} #{@type} question with answers as an array").call
-
+    @question = @ai_question.match(/Question:\n(.+)(?=\na\))/)&.captures&.first
     @question = Question.new
     @question.save
+  end
+
+  def show
+    @question = Question.find(params[:id])
   end
 end
