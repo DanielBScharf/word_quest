@@ -6,5 +6,7 @@ class QuestionsController < ApplicationController
       @language = current_user.character.lanuage
       @type = Map.find(params.id).monster_id
     end
+    def create
 
+    end
 end
