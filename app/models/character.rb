@@ -5,4 +5,5 @@ class Character < ApplicationRecord
   validates :name, presence: true
   validates :max_health, presence: true
   validates :max_mana, presence: true
+  validates :language, presence: true
 end
