@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_23_022822) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_23_032054) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -71,6 +71,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_23_022822) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "text"
+    t.string "ai_question"
     t.index ["monster_id"], name: "index_questions_on_monster_id"
   end
 

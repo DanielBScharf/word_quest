@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, skip: :registrations
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
   resources :users do
     resources :characters
   end
@@ -12,6 +13,7 @@ Rails.application.routes.draw do
 
   resources :maps do
     resources :monsters, only: :show
+    get :show_village, on: :collection
   end
 
   resources :monsters do
