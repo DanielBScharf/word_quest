@@ -1,0 +1,14 @@
+.response {
+  position: absolute;
+  bottom: 0;
+  left: 5px;
+  background-color: #FFFFFF;
+  width: 50%;
+  height: 100px;
+  margin: 0;
+  padding: 0;
+  box-shadow:   -5px 0 0 0 black,
+                 5px 0 0 0 black,
+                 0 -5px 0 0 black,
+                 0 5px 0 0 black;
+}
