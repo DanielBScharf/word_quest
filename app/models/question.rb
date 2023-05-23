@@ -5,4 +5,6 @@ class Question < ApplicationRecord
 
   validates :type, presence: true
   validates :language, presence: true
+  validates :text, presence: true
+  validates :ai_question, presence: true
 end

@@ -42,6 +42,21 @@ monster = Monster.new(
 )
 monster.save!
 
+monster = Monster.new(
+  name: "wolf",
+  category: "reading",
+  map_id: 0
+)
+monster.save!
+
+monster = Monster.new(
+  name: "bat",
+  category: "grammar",
+  map_id: 0
+)
+monster.save!
+
+
 question = Question.new(
   type: "CEFR A1",
   monster_id: monster_ids[0],

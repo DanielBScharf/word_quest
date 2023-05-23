@@ -1,12 +1,16 @@
 class QuestionsController < ApplicationController
-  response = OpenaiService.new('whatever you want to ask it').call
 
-    def new
-      @question = Question.new
-      @language = current_user.character.lanuage
-      @type = Map.find(params.id).monster_id
-    end
-    def create
+  def new
+    @question = Question.new
+  end
 
-    end
+  def create
+    @language = current_user.character.language
+    @type = Monster.find(params[:id]).category
+    @level = current_user.character.level
+    @ai_question = OpenaiService.new("give me a #{@level} #{@type} question with answers as an array").call
+
+    @question = Question.new
+    @question.save
+  end
 end
