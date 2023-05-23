@@ -15,5 +15,4 @@ class MapsController < ApplicationController
     @map = Map.find(params[:id])
     @monster_arr
   end
-
 end
