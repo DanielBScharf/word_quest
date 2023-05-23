@@ -89,3 +89,27 @@ answer = Answer.new(
   text: "What? An African or a European sqallow?"
 )
 answer.save!
+
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.sample,
+  correct: true,
+  text: "34kph"
+)
+answer.save!
+
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.sample,
+  correct: true,
+  text: "I don't know that!"
+)
+answer.save!
+
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.sample,
+  correct: true,
+  text: "Green!"
+)
+answer.save!

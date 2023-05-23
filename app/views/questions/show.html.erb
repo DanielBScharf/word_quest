@@ -1,18 +1,22 @@
 <h1>Question</h1>
-<h1><%= @question %></h1>
+<h1><%= @question.text %></h1>
 <h2>Choices</h2>
-<h2><%= @answer_a %></h2>
-<h2><%= @answer_b %></h2>
-<h2><%= @answer_c %></h2>
-<h2><%= @answer_d %></h2>
+<h2><%= Answer.find(@question.id).text %></h2>
+<h2><%= Answer.find(@question.id + 1).text %></h2>
+<h2><%= Answer.find(@question.id + 2).text %></h2>
+<h2><%= Answer.find(@question.id + 3).text %></h2>
 <h2>Type your answer</h2>
-<%= simple_form_for @character_answer do |f| %>
+<%= simple_form_for [@character_answer, @question] do |f| %>
   <%= f.input :text %>
+  <%= f.button :submit %>
 <% end %>
 <h2>Answer</h2>
-<h2><%= @correct_answer %></h2>
-<% if @character_answer == @correct_answer %>
-  <%= "You are correct! 😀" %>
-<% else  %>
-  <%= "You are wrong... 😥" %>
-<% end  %>
+
+
+<%# Need to do the correct or false with JS %>
+<h2><%#= @correct_answer %></h2>
+<%# if @character_answer == @correct_answer %>
+  <%#= "You are correct! 😀" %>
+<%# else  %>
+  <%#= "You are wrong... 😥" %>
+<%# end  %>
