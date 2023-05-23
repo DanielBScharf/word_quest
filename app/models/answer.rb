@@ -3,4 +3,5 @@ class Answer < ApplicationRecord
   has_many :character_answers
 
   validates :correct, presence: true
+  validates :text, presence: true
 end
