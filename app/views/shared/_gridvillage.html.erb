@@ -1,8 +1,12 @@
 <div id="box" style="border: 2px solid black; width: 1500px; height: 650px; margin-top:15px; margin-left:15px;">
   <div id="sprite" style="left: 50px; bottom: 0px; top: 300px; position:absolute;"></div>
   <div id="sprite2" style="left: 300px; bottom: 0px; top: 300px; position:absolute"></div>
+
 </div>
+
 <style>
+
+
   #box {
      background-image: url(<%= asset_path('descarga.png') %>);
      width: 100%;
@@ -10,8 +14,8 @@
 
   }
   #sprite2 {
-      width: 70px;
-      height: 65px;
+      width: 170px;
+      height: 130px;
       background-image: url(<%= asset_path('house.png') %>);
       position: relative;
       transition: 0.1s linear;
@@ -24,10 +28,11 @@
       transition: 0.1s linear;
   }
 </style>
+
 <script>
   const box = document.querySelector('#box');
   const sprite = document.querySelector('#sprite');
-   const sprite2 = document.querySelector('#sprite2');
+  const sprite2 = document.querySelector('#sprite2');
   const button = document.querySelector('button');
   let speed = 5;
 
