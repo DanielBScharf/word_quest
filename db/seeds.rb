@@ -24,11 +24,14 @@ puts 'Creating 10 fake characters...'
 user_ids = (1..10).to_a.shuffle
 10.times do |i|
   character = Character.new(
+    name: Faker::Name.name,
     max_health: 100,
     current_health: Faker::Number.between(from: 0, to: 100),
     max_mana: 100,
     current_mana: Faker::Number.between(from: 0, to: 100),
     user_id: user_ids[i]
+    level: Faker::Number.between(from: 1, to: 10),
+    language: 'English',
   )
   character.save!
 end
@@ -60,7 +63,6 @@ monster.save!
 question = Question.new(
   type: "CEFR A1",
   monster_id: monster_ids[0],
-  language: 'English',
   text: "What is the airspeed velocity of an unlaiden swallow"
 )
 question.save!
@@ -76,7 +78,6 @@ Map.destroy_all
 
 puts 'Creating fake map...'
   map = Map.new(
-    level: Faker::Number.between(from: 1, to: 10),
     completed: Faker::Boolean.boolean,
     character_id: Faker::Number.between(from: 1, to: 10)
   )

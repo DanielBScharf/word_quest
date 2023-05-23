@@ -1,0 +1,18 @@
+<h1>Question</h1>
+<h1><%= @question %></h1>
+<h2>Choices</h2>
+<h2><%= @answer_a %></h2>
+<h2><%= @answer_b %></h2>
+<h2><%= @answer_c %></h2>
+<h2><%= @answer_d %></h2>
+<h2>Type your answer</h2>
+<%= simple_form_for @character_answer do |f| %>
+  <%= f.input :text %>
+<% end %>
+<h2>Answer</h2>
+<h2><%= @correct_answer %></h2>
+<% if @character_answer == @correct_answer %>
+  <%= "You are correct! 😀" %>
+<% else  %>
+  <%= "You are wrong... 😥" %>
+<% end  %>
