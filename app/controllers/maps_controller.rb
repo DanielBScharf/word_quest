@@ -1,5 +1,6 @@
 class MapsController < ApplicationController
-
+  def index
+  end
   def new
     num_monster = rand(3..5)
     @monster_arr = []

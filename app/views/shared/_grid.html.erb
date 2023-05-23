@@ -1,0 +1,55 @@
+<div id="box" style="border: 2px solid black; width: 1500px; height: 650px; margin-top:15px; margin-left:15px;">
+  <div id="sprite" style="left: 0; bottom: 0"></div>
+</div>
+
+<style>
+  #sprite {
+     width: 45px;
+      height: 40px;
+      background-image: url(<%= asset_path('Doug.png') %>);
+      position: relative;
+      transition: 0.1s linear;
+  }
+</style>
+<script>
+  const box = document.querySelector('#box');
+  const sprite = document.querySelector('#sprite');
+  const button = document.querySelector('button');
+  let speed = 5;
+
+  const toNum = (pxVal) => {
+      return parseInt(pxVal, 10);
+  };
+
+  const handleMovement = (e) => {
+      let left = toNum(sprite.style.left);
+      const bottom = toNum(sprite.style.bottom);
+
+      switch (e.key) {
+          case 'ArrowLeft':
+          case 'a':
+              if (left <= 0) return (sprite.style.left = 0);
+              sprite.style.left = left - speed + 'px';
+              break;
+          case 'ArrowRight':
+          case 'd':
+              if (left >= 1440) return (sprite.style.left = 1440);
+              sprite.style.left = left + speed + 'px';
+              break;
+          case 'ArrowUp':
+          case 'w':
+              if (bottom >= 0) return (sprite.style.bottom = 0);
+              sprite.style.bottom = bottom + speed + 'px';
+              break;
+          case 'ArrowDown':
+          case 's':
+              if (bottom <= -600) return (sprite.style.bottom = -600);
+              sprite.style.bottom = bottom - speed + 'px';
+              break;
+      }
+  };
+
+  window.addEventListener('keydown', handleMovement);
+
+  button.addEventListener('click', () => (speed += 5));
+</script>
