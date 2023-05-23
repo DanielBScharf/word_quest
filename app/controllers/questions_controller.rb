@@ -13,4 +13,8 @@ class QuestionsController < ApplicationController
     @question = Question.new
     @question.save
   end
+
+  def show
+    @question = Question.find(params[:id])
+  end
 end
