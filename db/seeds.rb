@@ -10,6 +10,7 @@ puts 'Creating 10 fake users...'
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     username: Faker::Internet.username,
+    password: 'secret',
   )
   user.save!
 end
