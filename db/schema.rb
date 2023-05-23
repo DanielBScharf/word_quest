@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_23_032054) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_23_044942) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -44,10 +44,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_23_032054) do
     t.integer "current_mana"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "language"
+    t.integer "level"
   end
 
   create_table "maps", force: :cascade do |t|
-    t.string "level"
     t.boolean "completed"
     t.bigint "character_id", null: false
     t.datetime "created_at", null: false
@@ -65,7 +66,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_23_032054) do
   end
 
   create_table "questions", force: :cascade do |t|
-    t.string "language"
     t.string "type"
     t.bigint "monster_id", null: false
     t.datetime "created_at", null: false

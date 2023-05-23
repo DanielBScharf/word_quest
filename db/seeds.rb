@@ -70,6 +70,7 @@ answer = Answer.new(
   boolean: true,
   text: "An African sqallow?"
 )
+answer.save!
 
 puts "Cleaning database..."
 Map.destroy_all
