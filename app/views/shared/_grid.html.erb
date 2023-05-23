@@ -1,10 +1,20 @@
 <div id="box" style="border: 2px solid black; width: 1500px; height: 650px; margin-top:15px; margin-left:15px;">
-  <div id="sprite" style="left: 0; bottom: 0"></div>
+  <div id="sprite" style="left: 50px; bottom: 0px; top: 300px; position:absolute;"></div>
+  <div id="sprite2" style="left: 300px; bottom: 0px; top: 300px; position:absolute"></div>
 </div>
-
 <style>
+  #box {
+
+  }
+  #sprite2 {
+      width: 70px;
+      height: 65px;
+      background-image: url(<%= asset_path('house.png') %>);
+      position: relative;
+      transition: 0.1s linear;
+  }
   #sprite {
-     width: 45px;
+      width: 45px;
       height: 40px;
       background-image: url(<%= asset_path('Doug.png') %>);
       position: relative;
@@ -14,6 +24,7 @@
 <script>
   const box = document.querySelector('#box');
   const sprite = document.querySelector('#sprite');
+   const sprite2 = document.querySelector('#sprite2');
   const button = document.querySelector('button');
   let speed = 5;
 
@@ -23,7 +34,20 @@
 
   const handleMovement = (e) => {
       let left = toNum(sprite.style.left);
-      const bottom = toNum(sprite.style.bottom);
+      const top = toNum(sprite.style.top);
+
+      let left2 = toNum(sprite2.style.left);
+      const top2 = toNum(sprite2.style.top);
+      if (
+      left >= left2 &&
+      left <= left2 + sprite2.offsetWidth &&
+      top >= top2 &&
+      top <= top2 + sprite2.offsetHeight
+  ) {
+    // Sprite1 has reached the location of sprite2
+    console.log('Sprite 1 reached the location of Sprite 2!');
+    // Trigger your custom event or perform any actions here
+  }
 
       switch (e.key) {
           case 'ArrowLeft':
@@ -38,13 +62,13 @@
               break;
           case 'ArrowUp':
           case 'w':
-              if (bottom >= 0) return (sprite.style.bottom = 0);
-              sprite.style.bottom = bottom + speed + 'px';
+              if (top <= 0) return (sprite.style.top = 0);
+              sprite.style.top = top - speed + 'px';
               break;
           case 'ArrowDown':
           case 's':
-              if (bottom <= -600) return (sprite.style.bottom = -600);
-              sprite.style.bottom = bottom - speed + 'px';
+              if (top >= 600) return (sprite.style.top = 600);
+              sprite.style.top = top + speed + 'px';
               break;
       }
   };
