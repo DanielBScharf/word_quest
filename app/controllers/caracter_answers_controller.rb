@@ -1,2 +1,0 @@
-class CaracterAnswersController < ApplicationController
-end
