@@ -15,4 +15,7 @@ class MapsController < ApplicationController
     @map = Map.find(params[:id])
     @monster_arr
   end
+
+  def show_village
+  end
 end
