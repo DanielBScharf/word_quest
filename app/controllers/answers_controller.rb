@@ -4,9 +4,9 @@ class AnswersController < ApplicationController
   end
 
   def create
-    @ai_answers = # need regex for answewrs OpenaiService.new("give me a #{@level} #{@type} question with answer").call
+    @ai_answers = @ai_question.scan(/([a-d]\))\s*(.+)/).map { |option| option.join("\n") }
     @question = Question.find(params[:id])
-    @correct_answer = #need regex for correct answer
+    @correct_answer = @ai_question.match(/Answer:\n(.+)/)&.captures&.first
 
     @answer_a = Answer.new(text: @ai_answers[0], correct: @answer_a == @correct_answer, question: @question)
     @answer_a.save
