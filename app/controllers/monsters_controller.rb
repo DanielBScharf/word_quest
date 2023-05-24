@@ -11,7 +11,7 @@ class MonstersController < ApplicationController
     p "A"
   #
 
-     @question.ai_question = openapi
+     [@question.ai_question, @question.text] = openapi
     # @question.text = @question.ai_question.match(/(\w*\s*)*\?/)
     p "D"
     # @question.save
