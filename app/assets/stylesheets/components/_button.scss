@@ -6,3 +6,20 @@
   height: 75px;
   width: 175px;
 }
+
+.log-in {
+  box-shadow:   -5px 0 0 0 black,
+                 5px 0 0 0 black,
+                 0 -5px 0 0 black,
+                 0 5px 0 0 black;
+}
+
+.log-in > h2 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
+}
+
+.decoration-btn {
+  text-decoration: none;
+  margin-top: 3vh;
+}
