@@ -5,12 +5,12 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @language = current_user.character.language
-    @type = Monster.find(params[:id]).category
-    @level = current_user.character.level
-    @ai_question = OpenaiService.new("give me a #{@level} #{@type} question with answers as an array").call
-    @question = @ai_question.match(/Question:\n(.+)(?=\na\))/)&.captures&.first
     @question = Question.new
+    @character = Character.find_by(user_id: current_user.id)
+    @monster = Monster.find(params[:monster_id])
+    # @question.level = @character.level
+    @question.ai_question = OpenaiService.new("give me an English CEFR A1 #{@monster.category} question with four choices and answers as an array").call
+    @question = @question.ai_question.match(/Question:\n(.+)(?=\na\))/)&.captures&.first
     @question.save
   end
 
