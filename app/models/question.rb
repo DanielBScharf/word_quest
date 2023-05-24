@@ -3,5 +3,4 @@ class Question < ApplicationRecord
   has_many :answers
 
   validates :category, presence: true
-  validates :text, presence: true
 end
