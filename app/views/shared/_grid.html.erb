@@ -1,69 +1,69 @@
 <div id="box" style="border: 2px solid black; width: 1500px; height: 650px; margin-top:15px; margin-left:15px;">
   <div id="sprite" style="left: 50px; bottom: 0px; top: 300px; position:absolute;"></div>
-  <div id="sprite2" style="left: 300px; bottom: 0px; top: 300px; position:absolute"></div>
-  <div id="monster1" class="monster" style="position:absolute"></div>
-  <div id="monster2" class="monster" style="position:absolute"></div>
-  <div id="monster3" class="monster" style="position:absolute"></div>
+  <div id="sprite2" style="left: 50px; bottom: 0px; top: 150px; position:absolute"></div>
+  <div id="rat" class="monster" data-id="1" style="position:absolute"></div>
+  <div id="wolf" class="monster" data-id="2" style="position:absolute"></div>
+  <div id="bat" class="monster" data-id="3" style="position:absolute"></div>
 </div>
 <style>
-
-   #monster1{
-      width: 80px;
-      height: 60px;
-      background-image: url(<%= asset_path('monster1.png') %>);
-      position: relative;
-      transition: 0.1s linear;
+  #rat{
+   width: 75px;
+   height: 60px;
+   background-image: url(<%= asset_path('monster1.png') %>);
+   position: relative;
+   transition: 0.1s linear;
   }
 
-  #monster2{
-    width: 120px;
-      height: 70px;
-      background-image: url(<%= asset_path('monster2.png') %>);
-      position: relative;
-      transition: 0.1s linear;
+  #wolf{
+     width: 120px;
+   height: 70px;
+   background-image: url(<%= asset_path('monster2.png') %>);
+   position: relative;
+   transition: 0.1s linear;
   }
 
-  #monster3{
-      width: 80px;
-      height: 60px;
-      background-image: url(<%= asset_path('monster3.png') %>);
-      position: relative;
-      transition: 0.1s linear;
+  #bat{
+   width: 80px;
+   height: 55px;
+   background-image: url(<%= asset_path('monster3.png') %>);
+   position: relative;
+   transition: 0.1s linear;
   }
 
   #box {
-     background-image: url(<%= asset_path('forest.jpg') %>);
-     width: 100%;
-     height: 100%;
+  background-image: url(<%= asset_path('forest.jpg') %>);
+  width: 100%;
+  height: 100%;
   }
   #sprite2 {
-      width: 170px;
-      height: 130px;
-      background-image: url(<%= asset_path('house.png') %>);
-      position: relative;
-      transition: 0.1s linear;
+   width: 80px;
+   height: 80px;
+   background-image: url(<%= asset_path('back.png') %>);
+   position: relative;
+   transition: 0.1s linear;
   }
   #sprite {
-      width: 45px;
-      height: 60px;
-      background-image: url(<%= asset_path('hero.png') %>);
-      position: relative;
-      transition: 0.1s linear;
+   width: 45px;
+   height: 60px;
+   background-image: url(<%= asset_path('hero.png') %>);
+   position: relative;
+   transition: 0.1s linear;
   }
 </style>
 <script>
-
   const box = document.querySelector('#box');
   const monsters = document.querySelectorAll('.monster');
+  let collidedMonster = null;
+
   const positions = [
-    { left: '50px', top: '100px' },
-    { left: '200px', top: '200px' },
     { left: '300px', top: '300px' },
+    { left: '200px', top: '200px' },
+    { left: '300px', top: '150px' },
     { left: '500px', top: '150px' },
     { left: '600px', top: '250px' },
   ];
 
-    const shuffleArray = (array) => {
+  const shuffleArray = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [array[i], array[j]] = [array[j], array[i]];
@@ -71,7 +71,7 @@
     return array;
   };
 
-     const assignRandomPositions = () => {
+  const assignRandomPositions = () => {
     const shuffledPositions = shuffleArray(positions.slice());
     for (let i = 0; i < monsters.length; i++) {
       const monster = monsters[i];
@@ -80,7 +80,8 @@
       monster.style.top = top;
     }
   };
-   assignRandomPositions();
+
+  assignRandomPositions();
 
   const sprite = document.querySelector('#sprite');
   const sprite2 = document.querySelector('#sprite2');
@@ -88,56 +89,90 @@
   let speed = 5;
 
   const toNum = (pxVal) => {
-      return parseInt(pxVal, 10);
+    return parseInt(pxVal, 10);
   };
 
-    const resetSpritePosition = () => {
+  const resetSpritePosition = () => {
     sprite.style.left = '50px';
     sprite.style.top = '300px';
-    }
+  };
 
   const handleMovement = (e) => {
-      let left = toNum(sprite.style.left);
-      const top = toNum(sprite.style.top);
+    let left = toNum(sprite.style.left);
+    const top = toNum(sprite.style.top);
 
-      let left2 = toNum(sprite2.style.left);
-      const top2 = toNum(sprite2.style.top);
+    let left2 = toNum(sprite2.style.left);
+    const top2 = toNum(sprite2.style.top);
+
+    collidedMonster = null;
+
+    for (let i = 0; i < monsters.length; i++) {
+      const monster = monsters[i];
+      const monsterRect = monster.getBoundingClientRect();
+
       if (
+        left >= monsterRect.left &&
+        left <= monsterRect.right &&
+        top >= monsterRect.top &&
+        top <= monsterRect.bottom
+      ) {
+        collidedMonster = monster;
+        break;
+      }
+    }
+
+  if (collidedMonster) {
+      const monsterId = collidedMonster.dataset.id;
+      fetch(`/monsters/${monsterId}.json`)
+        .then(response => response.json())
+        .then(data => {
+          const monsterIdFromServer = data.id;
+          console.log(`Sprite 1 collided with monster ID: ${monsterIdFromServer}`);
+          window.location.href = `/monsters/${monsterIdFromServer}`;
+          resetSpritePosition();
+          assignRandomPositions();
+        })
+        .catch(error => {
+          console.log('Error retrieving monster ID:', error);
+        });
+    }
+
+    if (
       left >= left2 &&
       left <= left2 + sprite2.offsetWidth &&
       top >= top2 &&
       top <= top2 + sprite2.offsetHeight
-  ) {
-       console.log('Sprite 1 reached the location of Sprite 2!');
-       window.location.href = '<%= show_village_maps_path %>';
-       resetSpritePosition();
-  }
+    ) {
+      console.log('Sprite 1 reached the location of sprite2!');
+      window.location.href = '<%= show_village_maps_path %>';
+      resetSpritePosition();
+      assignRandomPositions();
+    }
 
-      switch (e.key) {
-          case 'ArrowLeft':
-          case 'a':
-              if (left <= 0) return (sprite.style.left = 0);
-              sprite.style.left = left - speed + 'px';
-              break;
-          case 'ArrowRight':
-          case 'd':
-              if (left >= 1440) return (sprite.style.left = 1440);
-              sprite.style.left = left + speed + 'px';
-              break;
-          case 'ArrowUp':
-          case 'w':
-              if (top <= 0) return (sprite.style.top = 0);
-              sprite.style.top = top - speed + 'px';
-              break;
-          case 'ArrowDown':
-          case 's':
-              if (top >= 600) return (sprite.style.top = 600);
-              sprite.style.top = top + speed + 'px';
-              break;
-      }
-  };
+    switch (e.key) {
+      case 'ArrowLeft':
+      case 'a':
+        if (left <= 0) return (sprite.style.left = 0);
+        sprite.style.left = left - speed + 'px';
+        break;
+      case 'ArrowRight':
+      case 'd':
+        if (left >= 1440) return (sprite.style.left = 1440);
+        sprite.style.left = left + speed + 'px';
+        break;
+      case 'ArrowUp':
+      case 'w':
+        if (top <= 0) return (sprite.style.top = 0);
 
-  window.addEventListener('keydown', handleMovement);
+                sprite.style.top = top - speed + 'px';
+                break;
+            case 'ArrowDown':
+            case 's':
+                if (top >= 600) return (sprite.style.top = 600);
+                sprite.style.top = top + speed + 'px';
+                break;
+        }
+    };
 
-  button.addEventListener('click', () => (speed += 5));
+    window.addEventListener('keydown', handleMovement);
 </script>
