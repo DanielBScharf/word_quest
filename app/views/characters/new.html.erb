@@ -1,0 +1,23 @@
+<h1>Create new character</h1>
+<%= simple_form_for @character, url: users_path do |f| %>
+  <%= f.input :name, required: true %>
+  <%= f.input :language, collection: ['English', 'Japanese'], prompt: 'Which language do you want to study?（どの言語を勉強したいですか？）', required: true %>
+  <% options = { 'A1' => 1, 'A2' => 2 } %>
+  <%= f.input :level, prompt: 'Choose your language level（言語レベルを選択してください）', collection: options, required: true %>
+  <%= 'Choose your icon' %>
+  <%= f.label :icon_name, class: 'icon-label', required: true do %>
+    <%= label_tag do %>
+      <%= image_tag asset_path('Doug.png'), alt: 'Doug Icon' %>
+      <%= f.radio_button :icon_name, 'doug' %>
+    <% end %>
+  <% end %>
+  <%= f.label :icon_name, class: 'icon-label' do %>
+    <%= label_tag do %>
+      <%= image_tag asset_path('hero.png'), alt: 'Hero Icon'%>
+      <%= f.radio_button :icon_name, 'hero' %>
+    <% end %>
+  <% end %>
+  <% max_health = 100 %>
+  <% max_mana = 100 %>
+  <%= f.button :submit, value: 'submit' %>
+<% end %>
