@@ -5,14 +5,4 @@
 .choice-button {
   height: 75px;
   width: 175px;
-  background-color: rgba($color: #000000, $alpha: 0.4);
-  font-size: 36px;
-  font-weight: bold;
-  border: solid black;
-}
-
-.choice-button > p {
-  text-align: center;
-  color: whitesmoke;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
