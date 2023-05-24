@@ -16,7 +16,9 @@ class OpenaiService
           temperature: 0.7,
           stream: false
       })
+      p "call"
     # you might want to inspect the response and see what the api is giving you
-    return response["choices"][0]["message"]["content"]
+    return [response["choices"][0]["message"]["content"], response["choices"][0]["message"]["content"].match(/(\w*\s*)*\?/)
+    p "D"]
   end
 end

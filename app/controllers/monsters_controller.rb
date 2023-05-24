@@ -8,8 +8,15 @@ class MonstersController < ApplicationController
     @question.category = @monster.category
     # @monster = Monster.find(params[:monster_id])
     # @question.level = @character.level
-    @question.ai_question = OpenaiService.new("give me a multiple choice English CEFR A1 #{@question.category} question with answers as an array, do not use the answer in the question, do not ask questions including other languages other than English, have only one correct answer").call
-    @question.text = @question.ai_question.match(/(\w*\s*)*\?/)
+    p "A"
+  #
+
+     @question.ai_question = openapi
+    # @question.text = @question.ai_question.match(/(\w*\s*)*\?/)
+    p "D"
+    # @question.save
+
+    # @question.text =  @question.ai_question.match(/(\w*\s*)*\?/)
 
     # @question.save
 
@@ -30,4 +37,10 @@ class MonstersController < ApplicationController
     # @answer_d.save
     # pass the question to the next page (question/show) through the params
   end
+  private
+
+  def openapi()
+    OpenaiService.new("give me a multiple choice English CEFR A1 #{@question.category} question with answers as an array, do not use the answer in the question, do not ask questions including other languages other than English, have only one correct answer").call
+  end
+
 end
