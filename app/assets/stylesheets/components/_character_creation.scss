@@ -1,0 +1,32 @@
+// placeholder (need styling later...)
+// /* HIDE RADIO */
+// [type=radio] {
+//   position: absolute;
+//   opacity: 0;
+//   width: 0;
+//   height: 0;
+//   outline: 1px solid black;
+// }
+
+// /* IMAGE STYLES */
+// [type=radio] + img {
+//   cursor: pointer;
+// }
+
+// /* CHECKED STYLES */
+// [type=radio]:checked + img {
+//   outline: 2px solid #f00;
+// }
+
+/* HIDE RADIO */
+// [type=radio] {
+//   position: absolute;
+//   opacity: 0;
+//   width: 0;
+//   height: 0;
+//   outline: 1px solid black;
+// }
+
+// input[type="radio"]:checked {
+//   outline: 2px solid blue;
+// }
