@@ -11,10 +11,10 @@ User.destroy_all
 puts 'Creating 1 fake user...'
 
 user = User.new(
-  email: Faker::Internet.email,
-  first_name: Faker::Name.first_name,
-  last_name: Faker::Name.last_name,
-  username: Faker::Internet.username,
+  email: 'mail@mail.com',
+  first_name: 'Dumbkid1',
+  last_name: "d",
+  username: "d",
   password: 'secret'
 )
 user.save!
@@ -33,7 +33,7 @@ character = Character.new(
   current_health: Faker::Number.between(from: 0, to: 100),
   max_mana: 100,
   current_mana: Faker::Number.between(from: 0, to: 100),
-  user_id: User.all.sample.id,
+  user_id: User.all.first.id,
   level: 2,
   language: 'English'
 )
@@ -87,5 +87,29 @@ answer = Answer.new(
   question: Question.all.sample,
   correct: true,
   text: "What? An African or a European sqallow?"
+)
+answer.save!
+
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.sample,
+  correct: true,
+  text: "34kph"
+)
+answer.save!
+
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.sample,
+  correct: true,
+  text: "I don't know that!"
+)
+answer.save!
+
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.sample,
+  correct: true,
+  text: "Green!"
 )
 answer.save!
