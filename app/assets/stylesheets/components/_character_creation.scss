@@ -1,0 +1,75 @@
+// placeholder (need styling later...)
+// /* HIDE RADIO */
+// [type=radio] {
+//   position: absolute;
+//   opacity: 0;
+//   width: 0;
+//   height: 0;
+//   outline: 1px solid black;
+// }
+
+// /* IMAGE STYLES */
+// [type=radio] + img {
+//   cursor: pointer;
+// }
+
+// /* CHECKED STYLES */
+// [type=radio]:checked + img {
+//   outline: 2px solid #f00;
+// }
+
+/* HIDE RADIO */
+// [type=radio] {
+//   position: absolute;
+//   opacity: 0;
+//   width: 0;
+//   height: 0;
+//   outline: 1px solid black;
+// }
+
+// input[type="radio"]:checked {
+//   outline: 2px solid blue;
+// }
+
+.create-character {
+  background-color: whitesmoke;
+  box-shadow: 0px 0px 79px -1px rgba(16,141,224,0.52);
+  margin-top: 3%;
+  margin-inline: 1%;
+  font-family: 'Press Start 2P', cursive;
+  height: 40rem;
+  width: 80rem;
+  padding: 1rem;
+  position: relative;
+  font-size: 60%;
+  box-shadow:   -5px 0 0 0 whitesmoke,
+  5px 0 0 0 whitesmoke,
+  0 -5px 0 0 whitesmoke,
+  0 5px 0 0 whitesmoke;
+
+}
+
+.create-character > h1,h2 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
+}
+
+h1 {
+  padding-bottom: 30px;
+  font-size: 24px;
+}
+
+.size{
+  font-size: 60%;
+}
+
+.create {
+  box-shadow:   -5px 0 0 0 black,
+                 5px 0 0 0 black,
+                 0 -5px 0 0 black,
+                 0 5px 0 0 black;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
+  margin-left:10rem;
+
+}

@@ -1,18 +1,24 @@
 <h1>Question</h1>
-<h1><%= @question %></h1>
+<%= @current_character.name %>
+<h1><%= @question.text %></h1>
 <h2>Choices</h2>
-<h2><%= @answer_a %></h2>
-<h2><%= @answer_b %></h2>
-<h2><%= @answer_c %></h2>
-<h2><%= @answer_d %></h2>
-<h2>Type your answer</h2>
-<%= simple_form_for @character_answer do |f| %>
-  <%= f.input :text %>
+<ul>
+<% @answers.each do |answer| %>
+  <li class="answer"><%= answer.text %></li>
+  <%= answer.correct %>
 <% end %>
-<h2>Answer</h2>
-<h2><%= @correct_answer %></h2>
-<% if @character_answer == @correct_answer %>
-  <%= "You are correct! 😀" %>
-<% else  %>
-  <%= "You are wrong... 😥" %>
-<% end  %>
+</ul>
+
+<div>
+<h2>Type your answer</h2>
+<%= simple_form_for [@current_character, @question, @correct, @character_answer] do |f| %>
+  <%= f.input :text %>
+  <%= f.association :character, input_html: { value: @current_character, style: 'display:none' } %>
+  <%= f.association :question, input_html: { value: @question, style: 'display:none' } %>
+  <%= f.association :answer, input_html: { value: @correct, style: 'display:none' } %>
+  <%= f.button :submit %>
+<% end %>
+</div>
+
+
+ <%# Need to do the correct or false with JS  %>

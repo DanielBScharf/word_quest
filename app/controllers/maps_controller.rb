@@ -18,5 +18,6 @@ class MapsController < ApplicationController
   end
 
   def show_village
+
   end
 end
