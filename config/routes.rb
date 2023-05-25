@@ -18,11 +18,13 @@ Rails.application.routes.draw do
 
   resources :monsters do
     resources :questions, only: %i[show new create]
+
   end
 
   resources :questions do
     resources :answers, only: %i[index show new create]
     resources :character_answers, only: %i[index]
+    get :show_battle, on: :collection
   end
 
   resources :characters do
