@@ -18,6 +18,5 @@ class MapsController < ApplicationController
   end
 
   def show_village
-    raise
   end
 end

@@ -1,7 +1,7 @@
 class CharactersController < ApplicationController
 
   def index
-    @character = Character.where(user_id: current_user)
+    @character = Character.where(user: current_user)
   end
 
   def show
@@ -15,10 +15,10 @@ class CharactersController < ApplicationController
   def create
     @character = Character.new(character_params)
     @character.user = current_user
-    @character.level = 1
+    # @character.level = 1
 
     if @character.save
-      redirect_to show_village_maps_path(@character)
+      redirect_to user_characters_path(@character)
     else
       render :new, status: :unprocessable_entity
     end
