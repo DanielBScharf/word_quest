@@ -1,3 +1,20 @@
+<div>
 <h1><%= @question.text %></h1>
-<h2>Results</h2>
-<%= @win %>
+<h2>Battle Results</h2>
+<ul>
+<li>
+  <% if @win == true %>
+    <%= "You have won the battle!" %>
+  <% else %>
+    <%= "You were forced to flee!" %>
+  <% end %>
+</li>
+<li><%= @character.current_health %></li>
+<li class="no-margin-box">
+<% (@character.current_health / 10).times do %>
+  <button class="health-bar" ></button>
+<% end %>
+</li>
+</ul>
+</div>
+<%= link_to "Back to Adventure", root_path %>

@@ -19,6 +19,6 @@ class QuestionsController < ApplicationController
     @character_answer = CharacterAnswer.new
     @current_character = Character.find(current_user.current_character_id)
     @answers = Answer.where(question_id: @question.id)
-    @correct = @answers.find {|answer| answer.correct == true }
+    @correct = @answers.find { |answer| answer.correct == true }
   end
 end

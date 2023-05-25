@@ -13,9 +13,9 @@
 <h2>Type your answer</h2>
 <%= simple_form_for [@current_character, @question, @correct, @character_answer] do |f| %>
   <%= f.input :text %>
-  <%= f.association :character, input_html: { value: @current_character, style: 'display:none' } %>
-  <%= f.association :question, input_html: { value: @question, style: 'display:none' } %>
-  <%= f.association :answer, input_html: { value: @correct, style: 'display:none' } %>
+  <% f.association :character, input_html: { value: @current_character, style: 'display:none' } %>
+  <% f.association :question, input_html: { value: @question, style: 'display:none' } %>
+  <% f.association :answer, input_html: { value: @correct, style: 'display:none' } %>
   <%= f.button :submit %>
 <% end %>
 </div>
