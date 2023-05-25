@@ -51,12 +51,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_24_053513) do
     t.index ["user_id"], name: "index_characters_on_user_id"
   end
 
-  create_table "icons", force: :cascade do |t|
-    t.string "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "maps", force: :cascade do |t|
     t.boolean "completed"
     t.bigint "character_id", null: false
@@ -75,7 +69,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_24_053513) do
   end
 
   create_table "questions", force: :cascade do |t|
-    t.string "type"
+    t.string "category"
     t.bigint "monster_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
