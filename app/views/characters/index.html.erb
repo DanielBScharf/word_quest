@@ -1,0 +1,9 @@
+<% @character.each do |character| %>
+<ul>
+  <li>
+    <%= character.name %>
+    <%= link_to character.name, edit_user_path(current_user, character.id), :method => :put %>
+  </li>
+
+</ul>
+<% end %>

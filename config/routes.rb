@@ -22,11 +22,19 @@ Rails.application.routes.draw do
 
   resources :questions do
     resources :answers, only: %i[index show new create]
-    resources :character_answers, only: %i[index show new create]
+    resources :character_answers, only: %i[index]
+  end
+
+  resources :characters do
+    resources :questions do
+      resources :answers do
+        resources :character_answers, only: %i[create show]
+      end
+    end
   end
 
   resources :answers, only: %i[index show new create] do
-    resources :character_answers, only: %i[index show new create]
+    resources :character_answers, only: %i[index]
   end
 
 end
