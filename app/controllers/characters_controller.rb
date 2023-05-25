@@ -15,8 +15,6 @@ class CharactersController < ApplicationController
   def create
     @character = Character.new(character_params)
     @character.user = current_user
-    @character.max_mana = 100
-    @character.max_health = 100
     if @character.save
       redirect_to show_village_maps_path(@character)
     else
