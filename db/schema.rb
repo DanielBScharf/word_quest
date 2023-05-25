@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_25_053127) do
+
+ActiveRecord::Schema[7.0].define(version: 2023_05_25_065601) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -38,9 +40,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_25_053127) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
-    t.integer "max_health"
+    t.integer "max_health", default: 100
     t.integer "current_health"
-    t.integer "max_mana"
+    t.integer "max_mana", default: 100
     t.integer "current_mana"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

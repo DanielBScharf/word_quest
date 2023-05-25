@@ -13,13 +13,12 @@ class CharactersController < ApplicationController
   end
 
   def create
-    @character = Character.new
+    @character = Character.new(character_params)
     @character.user = current_user
     @character.level = 1
-    @character.max_mana = 100
-    @character.max_health = 100
+
     if @character.save
-      redirect_to character_path(@character)
+      redirect_to show_village_maps_path(@character)
     else
       render :new, status: :unprocessable_entity
     end
@@ -34,7 +33,6 @@ class CharactersController < ApplicationController
   private
 
   def character_params
-    params.require(:character).permit(:name, :level, :language)
+    params.require(:character).permit(:name, :language, :level, :icon_name)
   end
-
 end
