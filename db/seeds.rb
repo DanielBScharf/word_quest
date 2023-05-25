@@ -33,8 +33,21 @@ character = Character.new(
   current_health: Faker::Number.between(from: 0, to: 100),
   max_mana: 100,
   current_mana: Faker::Number.between(from: 0, to: 100),
-  user_id: User.all.first.id,
+  user_id: user.id,
   level: 2,
+  language: 'English'
+)
+character.save!
+
+
+character = Character.new(
+  name: "Char2",
+  max_health: 100,
+  current_health: Faker::Number.between(from: 0, to: 100),
+  max_mana: 100,
+  current_mana: Faker::Number.between(from: 0, to: 100),
+  user_id: user.id,
+  level: 1,
   language: 'English'
 )
 character.save!
@@ -93,7 +106,7 @@ answer.save!
 puts 'creating answers'
 answer = Answer.new(
   question: Question.all.sample,
-  correct: true,
+  correct: false,
   text: "34kph"
 )
 answer.save!
@@ -101,7 +114,7 @@ answer.save!
 puts 'creating answers'
 answer = Answer.new(
   question: Question.all.sample,
-  correct: true,
+  correct: false,
   text: "I don't know that!"
 )
 answer.save!
@@ -109,7 +122,7 @@ answer.save!
 puts 'creating answers'
 answer = Answer.new(
   question: Question.all.sample,
-  correct: true,
+  correct: false,
   text: "Green!"
 )
 answer.save!

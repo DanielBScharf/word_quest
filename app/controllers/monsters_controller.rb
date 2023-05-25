@@ -3,24 +3,24 @@ class MonstersController < ApplicationController
     @monster = Monster.find(params[:id])
 
     # creates a question so we can generate the question when the monster is called
-    @character = Character.find_by(user_id: current_user.id)
-    @question = Question.new
-    @question.monster = @monster
+    # @character = Character.find_by(user_id: current_user.id)
+    # @question = Question.new
+    # @question.monster = @monster
 
-    @question.category = @monster.category
+    # @question.category = @monster.category
 
-    # @monster = Monster.find(params[:monster_id])
+    # # @monster = Monster.find(params[:monster_id])
     # @question.level = @character.level
   #   p "A"
   # #
-        response = openapi
+        # response = openapi
 
         # response = response.scan(/\A"(\w*\s*(\\*))*"(\w*\s*(\\*))*"\?/)
-        response = response[0..response.chars.find_index('?')]
+        # response = response[0..response.chars.find_index('?')]
 
         # response.match(/\A"(\w*\s*(\\*))*"(\w*\s*(\\*))*"\?/) { |m| p m}
 
-        @question.text = response
+        # @question.text = response
   #    [@question.ai_question, @question.text] = openapi
   #   # @question.text = @question.ai_question.match(/(\w*\s*)*\?/)
   #   p "D"
@@ -47,10 +47,11 @@ class MonstersController < ApplicationController
     # @answer_d.save
     # pass the question to the next page (question/show) through the params
   end
-  private
 
-  def openapi
-    OpenaiService.new("give me a multiple choice English CEFR A1 #{@question.category} question with answers as an array, do not use the answer in the question, do not ask questions including other languages other than English, have only one correct answer").call
-  end
+private
+
+  # def openapi
+  #   OpenaiService.new("give me a multiple choice English CEFR A1 #{@question.category} question with answers as an array, do not use the answer in the question, do not ask questions including other languages other than English, have only one correct answer").call
+  # end
 
 end

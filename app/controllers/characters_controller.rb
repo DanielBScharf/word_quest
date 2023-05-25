@@ -1,7 +1,7 @@
 class CharactersController < ApplicationController
 
   def index
-    @character = Character.where(character.user_id = current_user.id)
+    @character = Character.where(user_id: current_user)
   end
 
   def show
@@ -15,7 +15,9 @@ class CharactersController < ApplicationController
   def create
     @character = Character.new
     @character.user = current_user
-
+    @character.level = 1
+    @character.max_mana = 100
+    @character.max_health = 100
     if @character.save
       redirect_to character_path(@character)
     else
@@ -32,7 +34,7 @@ class CharactersController < ApplicationController
   private
 
   def character_params
-    params.require(:character).permit(:name)
+    params.require(:character).permit(:name, :level, :language)
   end
 
 end
