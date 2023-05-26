@@ -12,6 +12,7 @@ class MonstersController < ApplicationController
     @question.text = response[0].tr('"', '')
     @choices = response[2].tr('/([|]|")/', '').split(',')
     @answer = response[1].tr('"', '')
+
   end
 
   private
