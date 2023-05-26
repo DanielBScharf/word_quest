@@ -1,11 +1,9 @@
-<h1>Question</h1>
-<%= @current_character.name %>
+
 <h1><%= @question.text %></h1>
 <h2>Choices</h2>
 <ul>
 <% @answers.each do |answer| %>
   <li class="answer"><%= answer.text %></li>
-  <%= answer.correct %>
 <% end %>
 </ul>
 
