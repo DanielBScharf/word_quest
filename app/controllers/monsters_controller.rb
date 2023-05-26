@@ -2,6 +2,13 @@ class MonstersController < ApplicationController
   def show
    @monster = Monster.all.first
 
+
+    # creates a question so we can generate the question when the monster is called
+    
+  end
+
+    private
+
   # creates a question so we can generate the question when the monster is called
   @character = Character.find_by(user_id: current_user.id)
   @question = Question.new
