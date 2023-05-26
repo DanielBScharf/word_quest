@@ -10,7 +10,7 @@
 <%#= @choices[1] %>,
 <%#= @choices[2] %>,
 <%#= @choices[3].tr(']','') %>,
-<p>Correct Answer: <%= @answer %> </p>
+<%# <p>Correct Answer: <%= @answer %> </p> %>
 
 <style>
  #box {
@@ -56,3 +56,4 @@ position: relative;
 transition: 0.1s linear;
 }
 </style>
+<%= link_to "To Battle",  monster_question_path(@monster)%>

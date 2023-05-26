@@ -10,7 +10,7 @@ class CharacterAnswersController < ApplicationController
     @question = Question.find(params[:question_id])
     @win = false
 
-    if @character_answer == @correct_answer
+    if @character_answer.text == @correct_answer.text
       @win = true
     else
       @character.current_health = @character.max_health - 20
