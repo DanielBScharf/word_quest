@@ -1,17 +1,32 @@
 class QuestionsController < ApplicationController
 
+  def index
+    # TODO:
+  end
+
   def new
     @question = Question.new
   end
 
   def create
+    # TODO: shortened or fixed
+    @monster = Monster.all.first
+    # creates a question so we can generate the question when the monster is called
+    @character = Character.find_by(user_id: current_user)
     @question = Question.new
-    # @character = Character.find_by(user_id: current_user.id)
-    # @monster = Monster.find(params[:monster_id])
-    # # @question.level = @character.level
-    # @question.ai_question = OpenaiService.new("give me an English CEFR A1 #{@monster.category} question with four choices and answers as an array").call
-    # @question = @question.ai_question.match(/Question:\n(.+)(?=\na\))/)&.captures&.first
+    @question.monster = @monster
+    @question.category = @monster.category
+    @response = openapi.split(',', 3)
+    # the above can be called by the battle controller that will then break the response apart, etc
+    @question.text = @response[0].tr('"', '')
+    @choices = response[2].tr('/([|]|")/', '').split(',')
+    @answer = response[1].tr('"', '')
     @question.save
+    @choices = @choices.map.each do |answer|
+      answer = Answer.new(text: answer.strip, correct: @answer.match?(answer.strip), question_id: @question.id)
+      answer.save
+    end
+     @choices
   end
 
   def show
@@ -21,26 +36,6 @@ class QuestionsController < ApplicationController
     @current_character = Character.find(current_user.current_character_id)
     @answers = Answer.where(question_id: @question.id)
     @correct = @answers.find { |answer| answer.correct == true }
-  end
-
-  def show_battle
-    @monster = Monster.find(1)
-
-    # creates a question so we can generate the question when the monster is called
-    @character = Character.find_by(user_id: current_user)
-    @question = Question.new
-    @question.monster = @monster
-    @question.category = @monster.category
-    response = openapi.split(',', 3)
-    @question.text = response[0].tr('"', '')
-    @choices = response[2].tr('/([|]|")/', '').split(',')
-    @answer = response[1].tr('"', '')
-    @question.save
-    @choices = @choices.map.each do |answer|
-      answer = Answer.new(text: answer.strip, correct: @answer.match?(answer.strip), question_id: @question.id)
-      answer.save
-    end
-     @choices
   end
 
   private
