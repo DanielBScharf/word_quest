@@ -128,3 +128,85 @@ answer = Answer.new(
   text: "Green!"
 )
 answer.save!
+
+
+
+puts 'pondering questions'
+question = Question.new(
+  category: "CEFR A1",
+  monster: Monster.all.sample,
+  text: "How old are you?\n\nA I am fine\nB I have 27 years\nC I am 27 years old\nD I have 27 years old"
+)
+question.save!
+
+puts 'creating answers'
+answer = Answer.new(
+  question: question1,
+  correct: true,
+  text: "A I am fine"
+)
+answer.save!
+
+puts 'pondering questions'
+question = Question.new(
+  category: "CEFR A1",
+  monster: Monster.all.sample,
+  text: "He went to the Stadium _____\n\nA on taxi\nB by taxi\nC with taxi\nD in taxi"
+)
+question.save!
+
+puts 'creating answers'
+answer = Answer.new(
+  question: question2,
+  correct: true,
+  text: "B by taxi"
+)
+answer.save!
+
+puts 'pondering questions'
+question = Question.new(
+  category: "CEFR A1",
+  monster: Monster.all.sample,
+  text: "We haven't got _____ money.\n\nA no\nB a lot of\nC lots of\nD any"
+)
+question.save!
+
+puts 'creating answers'
+answer = Answer.new(
+  question: question3,
+  correct: true,
+  text: "D any"
+)
+answer.save!
+
+puts 'pondering questions'
+question = Question.new(
+  category: "CEFR A1",
+  monster: Monster.all.sample,
+  text: "He plays soccer _____.\n\nA on Wednesdays\nB at Wednesdays\nC by Wednesdays\nD in Wednesdays"
+)
+question.save!
+
+puts 'creating answers'
+answer = Answer.new(
+  question: question4,
+  correct: true,
+  text: "A on Wednesdays"
+)
+answer.save!
+
+puts 'pondering questions'
+question = Question.new(
+  category: "CEFR A1",
+  monster: Monster.all.sample,
+  text: "I _____ a teacher.\n\nA isn't\nB am'nt\nC aren't\nD am not"
+)
+question.save!
+
+puts 'creating answers'
+answer = Answer.new(
+  question: question5,
+  correct: true,
+  text: "D am not"
+)
+answer.save!
