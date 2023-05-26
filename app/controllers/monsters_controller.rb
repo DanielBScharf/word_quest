@@ -13,8 +13,10 @@ class MonstersController < ApplicationController
 
   @question.category = @monster.category
 
+  @monster = Monster.find(params[:id])
 
   end
+
 
     respond_to do |format|
       format.html

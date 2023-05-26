@@ -39,7 +39,6 @@ class QuestionsController < ApplicationController
     @choices = @choices.map.each do |answer|
       answer = Answer.new(text: answer.strip, correct: @answer.match?(answer.strip), question_id: @question.id)
       answer.save
-      answer
     end
      @choices
   end
