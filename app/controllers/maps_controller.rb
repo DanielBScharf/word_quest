@@ -1,5 +1,13 @@
 class MapsController < ApplicationController
   def index
+    @map = Map.find(params[:map_id])
+    @monster = Monster.find(params[:id])
+    @map = @monster.map
+
+    respond_to do |format|
+      format.html
+      format.json { render json: { id: @monster.id } }
+    end
   end
   def new
     num_monster = rand(3..5)
@@ -18,5 +26,6 @@ class MapsController < ApplicationController
   end
 
   def show_village
+
   end
 end
