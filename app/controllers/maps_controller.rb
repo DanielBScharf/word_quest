@@ -1,7 +1,7 @@
 class MapsController < ApplicationController
   def index
-    @map = Map.find(params[:map_id])
-    @monster = Monster.find(params[:id])
+    @map = Map.all.first
+    @monster = Monster.all.first
     @map = @monster.map
 
     respond_to do |format|

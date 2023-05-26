@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="./node_modules/nes.css/css/nes.min.css">
 <div id="box" style="border: 2px solid black; width: 1500px; height: 650px; margin-top:15px; margin-left:15px;">
+
   <div id="hero" style="left: 50px; bottom: 0px; top: 400px; position:absolute;"></div>
   <div id="wizard" style="left: 1100px; bottom: 0px; top: 400px; position:absolute;"></div>
   <div id="book" style="left: 410px; bottom: 0px; top: 100px; position:absolute;"></div>
@@ -15,6 +16,16 @@
   <div style="margin-left:100px; margin-top:210px">
     <p class ="word" style="width:300px;"> Press any button to the battle! </p>
   </div>
+
+
+<p> <%#= @question.text %>  </p>
+<%#= @choices[0]  %>,
+<%#= @choices[1] %>,
+<%#= @choices[2] %>,
+<%#= @choices[3].tr(']','') %>,
+<%# <p>Correct Answer: <%= @answer %> </p> %>
+
+
 <style>
   #box {
     position: relative;
@@ -65,6 +76,7 @@
      background-repeat: no-repeat;
     }
 </style>
+
 <script>
   function handleKeyPress() {
       window.location.href = '<%= show_village_maps_path %>';
@@ -72,3 +84,6 @@
     document.addEventListener("keydown", handleKeyPress);
 
 </script>
+
+<%= link_to "To Battle",  monster_question_path(@monster)%>
+

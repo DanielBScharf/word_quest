@@ -11,10 +11,10 @@
 </li>
 <li><%= @character.current_health %></li>
 <li class="no-margin-box">
-<% (@character.current_health / 10).times do %>
+<% 10.times do %>
   <button class="health-bar" ></button>
 <% end %>
 </li>
 </ul>
 </div>
-<%= link_to "Back to Adventure", root_path %>
+<%= link_to "Back to Adventure", maps_path %>
