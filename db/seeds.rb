@@ -1,6 +1,7 @@
 require 'faker'
 
 puts "Cleaning database..."
+CharacterAnswer.destroy_all
 Answer.destroy_all
 Question.destroy_all
 Monster.destroy_all
@@ -141,7 +142,7 @@ question.save!
 
 puts 'creating answers'
 answer = Answer.new(
-  question: question1,
+  question: question,
   correct: true,
   text: "A I am fine"
 )
@@ -157,7 +158,7 @@ question.save!
 
 puts 'creating answers'
 answer = Answer.new(
-  question: question2,
+  question: question,
   correct: true,
   text: "B by taxi"
 )
@@ -173,7 +174,7 @@ question.save!
 
 puts 'creating answers'
 answer = Answer.new(
-  question: question3,
+  question: question,
   correct: true,
   text: "D any"
 )
@@ -189,7 +190,7 @@ question.save!
 
 puts 'creating answers'
 answer = Answer.new(
-  question: question4,
+  question: question,
   correct: true,
   text: "A on Wednesdays"
 )
@@ -205,7 +206,7 @@ question.save!
 
 puts 'creating answers'
 answer = Answer.new(
-  question: question5,
+  question: question,
   correct: true,
   text: "D am not"
 )
