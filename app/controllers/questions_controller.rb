@@ -6,11 +6,7 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new
-    # @character = Character.find_by(user_id: current_user.id)
-    # @monster = Monster.find(params[:monster_id])
-    # # @question.level = @character.level
-    # @question.ai_question = OpenaiService.new("give me an English CEFR A1 #{@monster.category} question with four choices and answers as an array").call
-    # @question = @question.ai_question.match(/Question:\n(.+)(?=\na\))/)&.captures&.first
+
     @question.save
   end
 
@@ -23,7 +19,7 @@ class QuestionsController < ApplicationController
   end
 
   def show_battle
-    @monster = Monster.find(1)
+    @monster = Monster.first
 
     # creates a question so we can generate the question when the monster is called
     @character = Character.find_by(user_id: current_user)
@@ -38,7 +34,6 @@ class QuestionsController < ApplicationController
     @choices = @choices.map.each do |answer|
       answer = Answer.new(text: answer.strip, correct: @answer.match?(answer.strip), question_id: @question.id)
       answer.save
-      answer
     end
      @choices
   end

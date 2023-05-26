@@ -16,7 +16,7 @@ class CharactersController < ApplicationController
     @character = Character.new(character_params)
     @character.user = current_user
     # @character.level = 1
-
+    @character.current_health = 100
     if @character.save
       redirect_to user_characters_path(@character)
     else
