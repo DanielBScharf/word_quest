@@ -35,7 +35,8 @@ character = Character.new(
   current_mana: Faker::Number.between(from: 0, to: 100),
   user_id: user.id,
   level: 2,
-  language: 'English'
+  language: 'English',
+  icon_name: 'hero.png'
 )
 character.save!
 
@@ -48,7 +49,8 @@ character = Character.new(
   current_mana: Faker::Number.between(from: 0, to: 100),
   user_id: user.id,
   level: 1,
-  language: 'English'
+  language: 'English',
+  icon_name: 'Doug.png'
 )
 character.save!
 
