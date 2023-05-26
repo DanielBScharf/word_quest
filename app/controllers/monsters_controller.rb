@@ -20,6 +20,7 @@ class MonstersController < ApplicationController
 
   @question.category = @monster.category
 
+  @monster = Monster.find(params[:id])
 
   end
 
