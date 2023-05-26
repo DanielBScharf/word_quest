@@ -10,7 +10,7 @@ class CharacterAnswersController < ApplicationController
     @question = Question.find(params[:question_id])
     @win = false
 
-    if @character_answer == @correct_answer
+    if @character_answer.text == @correct_answer.text
       @win = true
     else
       @character.current_health = @character.max_health - 20
@@ -31,8 +31,7 @@ class CharacterAnswersController < ApplicationController
     @character_answer.question = @question
     @character_answer.answer = @answer
     if @character_answer.save
-      redirect_to character_question_answer_character_answers_path(@character, @question, @answer, @character_answer)
-      raise
+      redirect_to character_question_answer_character_answer_path(@character, @question, @answer, @character_answer)
     else
       render :show, status: :unprocessable_entity
     end
