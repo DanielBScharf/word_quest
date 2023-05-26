@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   resources :maps do
-    resources :monsters, only: :show
+    resources :monsters, only: %i[show index]
     get :show_village, on: :collection
   end
 

@@ -1,4 +1,4 @@
-<div id="box" style="border: 2px solid black; width: 1500px; height: 650px; margin-top:15px; margin-left:15px;">
+  <div id="box" style="border: 2px solid black; width: 1500px; height: 650px; margin-top:15px; margin-left:15px;">
   <div id="sprite" style="left: 50px; bottom: 0px; top: 300px; position:absolute;"></div>
   <div id="sprite2" style="left: 50px; bottom: 0px; top: 150px; position:absolute;"></div>
   <div id="rat" class="monster" data-id="1" style="position:absolute"></div>
@@ -51,7 +51,9 @@
   }
 </style>
 <script>
+
   const box = document.querySelector('#box');
+
   const monsters = document.querySelectorAll('.monster');
   let collidedMonster = null;
 
@@ -121,20 +123,11 @@
       }
     }
 
-  if (collidedMonster) {
+    if (collidedMonster) {
       const monsterId = collidedMonster.dataset.id;
-      fetch(`/monsters/${monsterId}.json`)
-        .then(response => response.json())
-        .then(data => {
-          const monsterIdFromServer = data.id;
-          console.log(`Sprite 1 collided with monster ID: ${monsterIdFromServer}`);
-          window.location.href = `/monsters/${monsterIdFromServer}`;
-          resetSpritePosition();
-          assignRandomPositions();
-        })
-        .catch(error => {
-          console.log('Error retrieving monster ID:', error);
-        });
+      window.location.href = `monsters/${monsterId}`;
+      resetSpritePosition();
+      assignRandomPositions();
     }
 
     if (
@@ -164,15 +157,15 @@
       case 'w':
         if (top <= 0) return (sprite.style.top = 0);
 
-                sprite.style.top = top - speed + 'px';
-                break;
-            case 'ArrowDown':
-            case 's':
-                if (top >= 600) return (sprite.style.top = 600);
-                sprite.style.top = top + speed + 'px';
-                break;
-        }
-    };
+        sprite.style.top = top - speed + 'px';
+        break;
+      case 'ArrowDown':
+      case 's':
+        if (top >= 600) return (sprite.style.top = 600);
+        sprite.style.top = top + speed + 'px';
+        break;
+    }
+  };
 
-    window.addEventListener('keydown', handleMovement);
+  window.addEventListener('keydown', handleMovement);
 </script>

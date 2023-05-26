@@ -15,7 +15,7 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @question = Question.find(params[:id])
+    @question = Question.select
     @character_answer = CharacterAnswer.new
     @current_character = Character.find(current_user.current_character_id)
     @answers = Answer.where(question_id: @question.id)
