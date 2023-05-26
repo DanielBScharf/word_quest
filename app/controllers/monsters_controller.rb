@@ -15,12 +15,10 @@ class MonstersController < ApplicationController
 
   end
 
-  private
     @monster = Monster.find(params[:id])
 
     respond_to do |format|
       format.html
       format.json { render json: { id: @monster.id } }
     end
-  end
 end
