@@ -1,6 +1,7 @@
 require 'faker'
 
 puts "Cleaning database..."
+CharacterAnswer.destroy_all
 Answer.destroy_all
 Question.destroy_all
 Monster.destroy_all
