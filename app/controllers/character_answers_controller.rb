@@ -4,6 +4,7 @@ class CharacterAnswersController < ApplicationController
   end
 
   def show
+    @character = Character.find(current_user.current_character_id)
     @character_answer = CharacterAnswer.find(params[:id])
     @correct_answer = Answer.find(params[:answer_id])
     @question = Question.find(params[:question_id])
@@ -11,6 +12,8 @@ class CharacterAnswersController < ApplicationController
 
     if @character_answer == @correct_answer
       @win = true
+    else
+      @character.current_health = @character.max_health - 20
     end
 
   end

@@ -1,23 +1,31 @@
-<div class="create-character">
-  <h1>Create new character</h1>
-  <%= simple_form_for @character do |f| %>
-    <%= f.input :name, required: true %>
-    <%= f.input :language, collection: ['English', 'Japanese'], prompt: 'Which language do you want to study?（どの言語を勉強したいですか？）', required: true %>
-    <% options = { 'A1' => 1, 'A2' => 2 } %>
-    <%= f.input :level, prompt: 'Choose your language level（言語レベルを選択してください）', collection: options, required: true %>
-    <div class="size">Choose your character</div>
-    <%= f.label :icon_name, class: 'icon-label', required: true do %>
-      <%= label_tag do %>
-        <%= image_tag asset_path('Doug.png'), alt: 'Doug Icon' %>
-        <%= f.radio_button :icon_name, 'doug' %>
+<div class="container-character-creation">
+  <div class="container">
+    <div class="character-creation">
+      <h2 class="nes-text is-primary">Create new character</h2>
+      <%= simple_form_for @character do |f| %>
+        <div class="inputs">
+          <%= f.input :name, required: true %>
+          <%= f.input :language, collection: ['English', 'Japanese'], prompt: 'Which language do you want to study?（どの言語を勉強したいですか？）', required: true %>
+          <% options = { 'A1' => 1, 'A2' => 2 } %>
+          <%= f.input :level, prompt: 'Choose your language level（言語レベルを選択してください）', collection: options, required: true %>
+          <div>Choose your character</div>
+          <%= f.label :icon_name, class: 'icon-label', required: true do %>
+            <%= label_tag do %>
+              <%= image_tag asset_path('Doug.png'), alt: 'Doug Icon' %>
+              <%= f.radio_button :icon_name, 'doug' %>
+            <% end %>
+          <% end %>
+          <%= f.label :icon_name, class: 'icon-label' do %>
+            <%= label_tag do %>
+              <%= image_tag asset_path('hero.png'), alt: 'Hero Icon' %>
+              <%= f.radio_button :icon_name, 'hero' %>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, "Submit", class: "create-btn nes-btn is-warning " %>
+        </div>
       <% end %>
-    <% end %>
-    <%= f.label :icon_name, class: 'icon-label' do %>
-      <%= label_tag do %>
-        <%= image_tag asset_path('hero.png'), alt: 'Hero Icon' %>
-        <%= f.radio_button :icon_name, 'hero' %>
-      <% end %>
-    <% end %>
-    <%= f.button :submit, class:'create', value: 'submit' %>
-  <% end %>
+    </div>
+  </div>
 </div>

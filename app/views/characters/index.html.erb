@@ -1,9 +1,26 @@
-<% @character.each do |character| %>
-<ul>
-  <li>
-    <%= character.name %>
-    <%= link_to character.name, edit_user_path(current_user, character.id), :method => :put %>
-  </li>
-
-</ul>
-<% end %>
+<div class="container">
+  <h2>Choose a character you want to play!</h2>
+  <div class="flex-container">
+    <div class="cards">
+      <% @character.each do |character| %>
+        <div class="card">
+          <% case character.icon_name%>
+          <% when 'hero'%>
+          <%= image_tag asset_path('hero.png')%>
+          <% when 'doug'%>
+          <%= image_tag asset_path('Doug.png')%>
+        <% end %>
+        <%= character.name %>
+        <%= character.language %>
+        <% case character.level%>
+        <% when 1%>
+        <%= 'A1'%>
+        <% when 2%>
+        <%= 'A2'%>
+      <% end %>
+      <%= link_to character.name, edit_user_path(current_user, character.id), :method => :put %>
+    </div>
+  <% end %>
+</div>
+</div>
+</div>
