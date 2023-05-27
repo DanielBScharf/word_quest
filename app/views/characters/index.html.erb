@@ -1,14 +1,17 @@
+<%= link_to new_user_character_path, value: 'back to the character creation form', class: 'text-decoration-none text-dark back-to-form' do %>
+  <h2 class='create-btn nes-btn is-warning mx-5'>Create new character</h2>
+<% end %>
 <div class="container">
   <h2>Choose a character you want to play!</h2>
   <div class="cards">
     <% @character.each do |character| %>
-      <%= link_to edit_user_path(current_user, character.id), class:'text-decoration-none text-dark' do %>
+      <%= link_to character_games_path(character), class:'text-decoration-none text-dark' do %>
         <div class="card ns-border">
           <% case character.icon_name%>
-          <% when 'hero'%>
+          <% when 'hero.png'%>
           <%= image_tag asset_path('hero.png')%>
-          <% when 'doug'%>
-          <%= image_tag asset_path('Doug.png')%>
+          <% when 'doug.png'%>
+          <%= image_tag asset_path('doug.png')%>
         <% end %>
         <ul>
           <li>

@@ -1,4 +1,13 @@
-
-<body><%= render "shared/grid" %>
-</body>
-  
+<%# need to add link to log in /sign in button. Insert the link after fixing the routes %>
+<div class="home">
+  <div class="center">
+    <%= image_tag(asset_path('Logo.png')) %>
+  </div>
+  <div class="add-font">
+    <% if user_signed_in? %>
+      <%= link_to 'Back to the Game', user_characters_path(current_user), class: "create-btn nes-btn is-warning mx-5", style: "text-decoration: none" %>
+    <% else %>
+      <%= link_to 'Log in / Sign in', new_user_session_path, class: "create-btn nes-btn is-warning mx-5", style: "text-decoration: none" %>
+    <% end %>
+  </div>
+</div>

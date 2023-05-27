@@ -1,24 +1,15 @@
 class MonstersController < ApplicationController
   def show
-   @monster = Monster.all.first
-
-  # creates a question so we can generate the question when the monster is called
-  @character = Character.find_by(user_id: current_user.id)
-  @question = Question.new
-  @question.monster = @monster
-  # response = openapi.split(',', 3)
-  # @question.text = response[0].tr('"', '')
-  # @choices = response[2].tr('/([|]|")/', '').split(',')
-  # @answer = response[1].tr('"', '')
-
-  @question.category = @monster.category
-
-
+    @monster = Monster.select(params[:id])
+    # TODO:everything below will be handled by the game controller
+    # @character = Character.find_by(current_user: current_character_id)
+    # @question.monster = @monster
+    # @question.category = @monster.category
   end
 
-    respond_to do |format|
-      format.html
-      format.json { render json: { id: @monster.id } }
-    end
+  respond_to do |format|
+    format.html
+    format.json { render json: { id: @monster.id } }
+  end
 
 end

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "characters#index"
+  root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   resources :users do
@@ -33,7 +33,11 @@ Rails.application.routes.draw do
         resources :character_answers, only: %i[create show]
       end
     end
+    resources :games
   end
+
+  resources :battles
+  resources :games
 
   resources :answers, only: %i[index show new create] do
     resources :character_answers, only: %i[index]

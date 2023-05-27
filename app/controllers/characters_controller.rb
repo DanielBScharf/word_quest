@@ -5,6 +5,7 @@ class CharactersController < ApplicationController
   end
 
   def show
+    # eventually to show the character stats
     @character = Character.find(params[:id])
   end
 
@@ -13,9 +14,11 @@ class CharactersController < ApplicationController
   end
 
   def create
+    # add health and mana to newly created characters and level
+    # add code to character level to CEFR level
+    # add code to set character EXP to set level
     @character = Character.new(character_params)
     @character.user = current_user
-    # @character.level = 1
 
     if @character.save
       redirect_to user_characters_path(@character)

@@ -1,15 +1,20 @@
-<div id="box" style="border: 2px solid black; width: 1500px; height: 650px; margin-top:15px; margin-left:15px;">
-  <div id="sprite" style="left: 50px; bottom: 0px; top: 300px; position:absolute;"></div>
-  <div id="sprite2" style="left: 50px; bottom: 0px; top: 150px; position:absolute;"></div>
+<div id="box" style="border: 2px solid black; width: 1260px; height: 720px; margin-top:15px; margin-left:110px;">
+  <div id="sprite" style="left: 460px; bottom: 0px; top: 340px; position: absolute;"></div>
+  <div id="sprite2" style="left: 600px; bottom: 0px; top: 320px; position:absolute;"></div>
+  <div id="sprite3" style="left: 300px; bottom: 0px; top: 150px; position:absolute;"></div>
+  <div id="sprite4" style="left: 600px; bottom: 0px; top: 100px; position:absolute;"></div>
+  <div id="sprite5" style="left: 900px; bottom: 0px; top: 100px; position:absolute;"></div>
+  <div id="sprite6" style="left: 1200px; bottom: 0px; top: 150px; position:absolute;"></div>
 </div>
 <style>
   #box {
-     background-image: url(<%= asset_path('descarga3.png') %>);
-     background-repeat: repeat;
-     width: 80px;
-      height: 80px;
+     background-image: url(<%= asset_path('village.png') %>);
+     background-repeat: no-repeat;
+     width: 100%;
+      height: 100%;
 
   }
+
   #sprite2 {
       width: 80px;
       height: 80px;
@@ -20,7 +25,7 @@
   #sprite {
       width: 45px;
       height: 60px;
-      background-image: url(<%= asset_path('hero.png') %>);
+      background-image: url(<%= asset_path( @character.icon_name ) %>);
       position: relative;
       transition: 0.1s linear;
   }

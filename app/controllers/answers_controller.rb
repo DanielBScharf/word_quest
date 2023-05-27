@@ -4,6 +4,7 @@ class AnswersController < ApplicationController
   end
 
   def create
+    # TODO: Put Xavier's code here.
     @ai_answers = @ai_question.scan(/([a-d]\))\s*(.+)/).map { |option| option.join("\n") }
     @question = Question.find(params[:id])
     @correct_answer = @ai_question.match(/Answer:\n(.+)/)&.captures&.first

@@ -5,4 +5,6 @@ class UsersController < ApplicationController
       redirect_to show_village_maps_path
     end
   end
+
+  # TODO: "destroy" sets user to invisible but saves info for analytical purposes
 end
