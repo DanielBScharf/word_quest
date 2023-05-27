@@ -4,6 +4,11 @@
     <%= image_tag(asset_path('Logo.png')) %>
   </div>
   <div class="add-font">
-    <h2 class='create-btn nes-btn is-warning mx-5'>Log in / Sign in</h2>
+     <% if user_signed_in? %>
+        <%= link_to 'Back to the Game', user_characters_path(current_user), class:'btn btn-warning' %>
+      <% else %>
+        <%= link_to 'Log in / Sign in', new_user_session_path, class:"btn btn-warning" %>
+      <% end %>
+
   </div>
 </div>
