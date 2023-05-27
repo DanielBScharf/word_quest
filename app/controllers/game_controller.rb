@@ -1,7 +1,8 @@
 class GameController < ApplicationController
-  # gets current user
-  # gets monsters
-  # sets map state
-  # saves map state
-  # monitors the player's state
+  
+  def initialize
+    @user = current_user
+    @character = Character.find(@character)
+    @map = Map.new
+  end
 end
