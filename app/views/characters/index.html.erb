@@ -8,9 +8,9 @@
       <%= link_to character_games_path(character), class:'text-decoration-none text-dark' do %>
         <div class="card ns-border">
           <% case character.icon_name%>
-          <% when 'hero'%>
+          <% when 'hero.png'%>
           <%= image_tag asset_path('hero.png')%>
-          <% when 'doug'%>
+          <% when 'Doug.png'%>
           <%= image_tag asset_path('Doug.png')%>
         <% end %>
         <ul>
