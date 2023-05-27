@@ -2,3 +2,33 @@
  background-color: #FFFFFF;
  height:21vh;
 }
+
+h1, h2 {
+  font-family: 'Press Start 2P', cursive;;
+  font-size: 24px;
+  margin-top: 50px;
+  text-align:left；
+}
+
+.answer  {
+  font-family: 'Press Start 2P', cursive;;
+  font-size: 16px;
+  margin-top: 24px;
+  text-align:left;
+}
+
+.font-change  {
+  font-family: 'Press Start 2P', cursive;;
+  font-size: 16px;
+  margin-top: 24px;
+  text-align:left;
+}
+
+.font-change input[type="text"] {
+  width: 500px;
+}
+
+
+.contain-all {
+  margin-left: 16px;
+}

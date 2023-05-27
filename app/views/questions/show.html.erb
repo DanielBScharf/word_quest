@@ -1,22 +1,22 @@
-
-<h1><%= @question.text %></h1>
-<h2>Choices</h2>
-<ul>
-<% @answers.each do |answer| %>
-  <li class="answer"><%= answer.text %></li>
-<% end %>
-</ul>
-
-<div>
-<h2>Type your answer</h2>
-<%= simple_form_for [@current_character, @question, @correct, @character_answer] do |f| %>
-  <%= f.input :text %>
-  <% f.association :character, input_html: { value: @current_character, style: 'display:none' } %>
-  <% f.association :question, input_html: { value: @question, style: 'display:none' } %>
-  <% f.association :answer, input_html: { value: @correct, style: 'display:none' } %>
-  <%= f.button :submit %>
-<% end %>
+<div class="contain-all">
+  <h1><%= @question.text %></h1>
+  <h2>Choices</h2>
+  <ul>
+    <% @answers.each do |answer| %>
+      <li class="answer"><%= answer.text %></li>
+    <% end %>
+  </ul>
+  <div class="font-change">
+    <h2>Type your answer</h2>
+    <%= simple_form_for [@current_character, @question, @correct, @character_answer] do |f| %>
+      <%= f.input :text %>
+      <% f.association :character, input_html: { value: @current_character, style: 'display:none' } %>
+      <% f.association :question, input_html: { value: @question, style: 'display:none' } %>
+      <% f.association :answer, input_html: { value: @correct, style: 'display:none' } %>
+      <div class="submit-answer">
+        <%= f.button :submit,"Submit", class: "create-btn nes-btn is-warning " %>
+      </div>
+    <% end %>
+  </div>
 </div>
-
-
- <%# Need to do the correct or false with JS  %>
+<%# Need to do the correct or false with JS  %>
