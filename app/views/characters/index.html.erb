@@ -5,7 +5,7 @@
   <h2>Choose a character you want to play!</h2>
   <div class="cards">
     <% @character.each do |character| %>
-      <%= link_to edit_user_path(current_user, character.id), class:'text-decoration-none text-dark' do %>
+      <%= link_to character_games_path(character), class:'text-decoration-none text-dark' do %>
         <div class="card ns-border">
           <% case character.icon_name%>
           <% when 'hero'%>

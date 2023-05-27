@@ -33,6 +33,7 @@ Rails.application.routes.draw do
         resources :character_answers, only: %i[create show]
       end
     end
+    resources :games
   end
 
   resources :answers, only: %i[index show new create] do
