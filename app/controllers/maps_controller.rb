@@ -18,9 +18,9 @@ class MapsController < ApplicationController
     # TODO: figure out why this doesn't work!
     num_monster.times do
       @monster_arr << Monster.show
+    @map = Map.new
     end
     # randomly select the monsters to show on the page, use JS to place them on the screen.
-    @map = Map.new
   end
 
   def show

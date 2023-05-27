@@ -6,6 +6,15 @@ class GamesController < ApplicationController
   # monitors the player's state
   before_action :set_character, only: :index
 
+  def new
+    @user = current_user
+    @character = current_user.character_id
+    @monster = Monster.all.sample
+    @battle = Battle.new
+  end
+
+  def edit
+  end
 
   def index
   end
