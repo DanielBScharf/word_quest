@@ -15,9 +15,12 @@ class QuestionsController < ApplicationController
 
   def new
     @question = Question.new
+
+
   end
 
   def create
+
   end
 
   def show_battle
@@ -30,6 +33,7 @@ class QuestionsController < ApplicationController
     @question.text = response["question"]
     @choices = response["choices"]
     @answer = response["answer"]
+
     @question.save
     @choices = answers(@choices)
   end

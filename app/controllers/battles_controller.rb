@@ -1,5 +1,15 @@
-class BattleController < ApplicationController
+class BattlesController < ApplicationController
 
+  def new
+    @battle = Battle.new
+  end
+
+  def index
+    @question = Question.create
+    raise
+
+
+  end
 # call the questions controller to generate the AI question + answers
 # breaks apart the Qs and As and puts them on the page.
 # if Monster health is above 0 call the controller to generate new questions.
