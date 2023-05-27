@@ -20,12 +20,12 @@
       <p class ="word" style="width:300px;"> Press any button to the battle! </p>
     </div>
     <p> <%#= @question.text %>  </p>
-    <%#= @choices[0]  %>,
-    <%#= @choices[1] %>,
-    <%#= @choices[2] %>,
-    <%#= @choices[3].tr(']','') %>,
+    <%#= @choices[0]  %>
+    <%#= @choices[1] %>
+    <%#= @choices[2] %>
+    <%#= @choices[3].tr(']','') %>
     <%# <p>Correct Answer: <%= @answer %> </p>
-   <%  %>
+  <%  %>
   <style>
     #box {
       position: relative;
@@ -78,8 +78,7 @@
   </style>
   <script>
     function handleKeyPress() {
-        window.location.href = '<%= show_village_maps_path %>';
-      }
-      document.addEventListener("keydown", handleKeyPress);
+      window.location.href = '<%= monster_question_path(@monster) %>';
+    }
+    document.addEventListener("keyup", handleKeyPress);
   </script>
-  <%= link_to "To Battle",  monster_question_path(@monster)%>
