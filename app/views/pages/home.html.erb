@@ -5,10 +5,9 @@
   </div>
   <div class="add-font">
      <% if user_signed_in? %>
-        <%= link_to 'Back to the Game', user_characters_path(current_user), class:'btn btn-warning' %>
+        <%= link_to 'Back to the Game', user_characters_path(current_user), class: "create-btn nes-btn is-warning mx-5", style: "text-decoration: none" %>
       <% else %>
-        <%= link_to 'Log in / Sign in', new_user_session_path, class:"btn btn-warning" %>
+        <%= link_to 'Log in / Sign in', new_user_session_path, class: "create-btn nes-btn is-warning mx-5", style: "text-decoration: none" %>
       <% end %>
-
   </div>
 </div>
