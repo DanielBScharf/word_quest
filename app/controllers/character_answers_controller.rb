@@ -4,6 +4,7 @@ class CharacterAnswersController < ApplicationController
   end
 
   def show
+    # TODO: put this into the battle controller
     @character = Character.find(current_user.current_character_id)
     @character_answer = CharacterAnswer.find(params[:id])
     @correct_answer = Answer.find(params[:answer_id])
@@ -23,6 +24,7 @@ class CharacterAnswersController < ApplicationController
   end
 
   def create
+    # TODO: refactor this spread out some to the battle controller
     @character = Character.find(current_user.current_character_id)
     @question = Question.find(params[:question_id])
     @answer = Answer.find(params[:answer_id])
