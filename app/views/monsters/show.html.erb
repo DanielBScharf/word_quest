@@ -25,7 +25,6 @@
     <%#= @choices[2] %>,
     <%#= @choices[3].tr(']','') %>,
     <%# <p>Correct Answer: <%= @answer %> </p>
-   <%  %>
   <style>
     #box {
       position: relative;
@@ -56,9 +55,10 @@
     #hero {
        width: 300px;
        height: 250px;
-       background-image: url(<%= asset_path('hero2.png') %>);
+       background-image: url(<%= asset_path( @character.icon_name )%>);
        position: relative;
        transition: 0.1s linear;
+       background-repeat: no-repeat;
       }
     #wizard {
        width: 300px;
