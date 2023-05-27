@@ -51,7 +51,7 @@ character = Character.new(
   user_id: user.id,
   level: 1,
   language: 'English',
-  icon_name: 'Doug.png'
+  icon_name: 'doug.png'
 )
 character.save!
 

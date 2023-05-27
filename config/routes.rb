@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :characters do
-    resources :maps, only: %i[show new create]
+    resources :maps, only: %i[show index]
   end
 
   resources :maps do

@@ -1,6 +1,6 @@
 class MapsController < ApplicationController
   def index
-    @character = Character.find(current_user.current_character_id)
+    @character = Character.find(params[:character_id])
     @map = Map.all.first
     num_monster = rand(3..5)
     @monster_arr = []

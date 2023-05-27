@@ -6,6 +6,7 @@
   <div id="sprite5" style="left: 900px; bottom: 0px; top: 100px; position:absolute;"></div>
   <div id="sprite6" style="left: 1200px; bottom: 0px; top: 150px; position:absolute;"></div>
 </div>
+
 <style>
   #box {
      background-image: url(<%= asset_path('village.png') %>);
@@ -60,7 +61,7 @@
   ) {
 
     console.log('Sprite 1 reached the location of Sprite 2!');
-    window.location.href = '<%= maps_path %>';
+    window.location.href = '<%= character_maps_path %>';
     resetSpritePosition();
   }
 

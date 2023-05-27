@@ -1,0 +1,23 @@
+#box {
+  background-image: url('village.png');
+  background-repeat: no-repeat;
+  width: 100%;
+   height: 100%;
+
+}
+
+#sprite2 {
+   width: 80px;
+   height: 80px;
+   background-image: url('go.png');
+   position: relative;
+   transition: 0.1s linear;
+}
+
+#sprite {
+   width: 45px;
+   height: 60px;
+   background-image: url("#{@character.icon_name}");
+   position: relative;
+   transition: 0.1s linear;
+}

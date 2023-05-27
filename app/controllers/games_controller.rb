@@ -9,7 +9,7 @@ class GamesController < ApplicationController
 
   def new
     @user = current_user
-    @character = Character.find(current_user.current_character_id)
+    @character = Character.find(params[:id])
     @monster = Monster.all.sample
     @battle = Battle.new
   end
@@ -18,6 +18,8 @@ class GamesController < ApplicationController
   end
 
   def index
+    @character = Character.find(params[:character_id])
+    current_user.current_character_id = params[:character_id]
   end
 
   private
