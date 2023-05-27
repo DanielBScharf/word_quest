@@ -6,19 +6,22 @@ class QuestionsController < ApplicationController
 
   def new
     @question = Question.new
+
+
   end
 
   def create
     # TODO: shortened or fixed
-    @monster = Monster.all.first
+    @monster = Monster.all.sample
     # creates a question so we can generate the question when the monster is called
     @character = Character.find_by(user_id: current_user)
     @question = Question.new
     @question.monster = @monster
     @question.category = @monster.category
-    @response = openapi.split(',', 3)
+    response = openapi.split(',', 3)
+    @question.ai_question = response
     # the above can be called by the battle controller that will then break the response apart, etc
-    @question.text = @response[0].tr('"', '')
+    @question.text = response[0].tr('"', '')
     @choices = response[2].tr('/([|]|")/', '').split(',')
     @answer = response[1].tr('"', '')
     @question.save
