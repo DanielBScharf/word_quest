@@ -30,7 +30,6 @@ class OpenaiService
         temperature: 0.7,
         top_p: 1
       })
-      response['choices'][0]['text']
-      response = JSON.parse(response['choices'][0]['text'])
+    JSON.parse(response['choices'][0]['text'])
   end
 end
