@@ -36,6 +36,9 @@ Rails.application.routes.draw do
     resources :games
   end
 
+  resources :battles
+  resources :games
+
   resources :answers, only: %i[index show new create] do
     resources :character_answers, only: %i[index]
   end
