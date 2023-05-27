@@ -1,6 +1,6 @@
 class MonstersController < ApplicationController
   def show
-    @monster = Monster.all.select
+    @monster = Monster.select(params[:id])
     # TODO:everything below will be handled by the game controller
     # @character = Character.find_by(current_user: current_character_id)
     # @question.monster = @monster

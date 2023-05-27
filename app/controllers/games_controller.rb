@@ -4,11 +4,12 @@ class GamesController < ApplicationController
   # sets map state
   # saves map state
   # monitors the player's state
-  before_action :set_character, only: :index
+  before_action :set_character, only: %i[index new]
+  # CHARACTER = Character.find(current_user.current_character_id)
 
   def new
     @user = current_user
-    @character = current_user.character_id
+    @character = Character.find(current_user.current_character_id)
     @monster = Monster.all.sample
     @battle = Battle.new
   end

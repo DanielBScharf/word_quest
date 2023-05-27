@@ -1,8 +1,13 @@
 class MapsController < ApplicationController
   def index
+    @character = Character.find(current_user.current_character_id)
     @map = Map.all.first
-    @monster = Monster.all.first
-    @map = @monster.map
+    num_monster = rand(3..5)
+    @monster_arr = []
+
+    num_monster.times do
+      @monster_arr << Monster.all.sample
+    end
 
     # TODO: why is there javascript here?
     respond_to do |format|
@@ -13,13 +18,7 @@ class MapsController < ApplicationController
 
   def new
     # TODO: refactor this or see how we use it
-    num_monster = rand(3..5)
-    @monster_arr = []
     # TODO: figure out why this doesn't work!
-    num_monster.times do
-      @monster_arr << Monster.show
-    @map = Map.new
-    end
     # randomly select the monsters to show on the page, use JS to place them on the screen.
   end
 
