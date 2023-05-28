@@ -32,6 +32,10 @@ class QuestionsController < ApplicationController
     @answer = response["answer"]
     @question.save
     @choices = answers(@choices)
+    @choice1 = @choices[0]
+    @choice2 = @choices[1]
+    @choice3 = @choices[2]
+    @choice4 = @choices[3]
   end
 
   private

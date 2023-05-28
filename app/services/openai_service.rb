@@ -10,6 +10,7 @@ class OpenaiService
   end
 
   def call
+    response = client.completions(
       parameters: {
         model: "text-davinci-003",
         prompt: prompt,
