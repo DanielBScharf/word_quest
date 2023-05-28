@@ -1,7 +1,7 @@
 class CharactersController < ApplicationController
 
   def index
-    @character = Character.where(user: current_user)
+    @characters = Character.where(user: current_user)
   end
 
   def show

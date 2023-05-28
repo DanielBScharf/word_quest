@@ -45,7 +45,7 @@
   #sprite {
    width: 45px;
    height: 60px;
-   background-image: url(<%= asset_path('hero.png') %>);
+   background-image: url(<%= asset_path(@character.icon_name) %>);
    position: relative;
    transition: 0.1s linear;
   }
@@ -136,7 +136,7 @@
       top <= top2 + sprite2.offsetHeight
     ) {
       console.log('Sprite 1 reached the location of sprite2!');
-      window.location.href = '<%= show_village_maps_path %>';
+      window.location.href = '<%= show_village_character_maps_path(@character) %>';
       resetSpritePosition();
       assignRandomPositions();
     }

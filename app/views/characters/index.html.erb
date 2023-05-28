@@ -1,33 +1,28 @@
 <div class="container">
   <h2>Choose a character you want to play!</h2>
   <div class="cards">
-    <% @character.each do |character| %>
-      <%= link_to edit_user_path(current_user, character.id), class:'text-decoration-none text-dark' do %>
+    <% @characters.each do |character| %>
+      <%= link_to show_village_character_maps_path(character), class:'text-decoration-none text-dark' do %>
         <div class="card ns-border">
-          <% case character.icon_name%>
-          <% when 'hero'%>
-          <%= image_tag asset_path('hero.png')%>
-          <% when 'doug'%>
-          <%= image_tag asset_path('Doug.png')%>
-        <% end %>
-        <ul>
-          <li>
-            <%= character.name %>
+          <%= image_tag asset_path( character.icon_name.downcase) %>
+          <ul>
+            <li>
+              <%= character.name %>
+            </li>
+            <li>
+              <%= character.language %>
+            </li>
+            <li>
+              <% case character.level%>
+              <% when 1%>
+              <%= 'A1'%>
+              <% when 2%>
+              <%= 'A2'%>
+            <% end %>
           </li>
-          <li>
-            <%= character.language %>
-          </li>
-          <li>
-            <% case character.level%>
-            <% when 1%>
-            <%= 'A1'%>
-            <% when 2%>
-            <%= 'A2'%>
-          </li>
-        <% end %>
-      </ul>
-    </div>
+        </ul>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
 </div>
 </div>
