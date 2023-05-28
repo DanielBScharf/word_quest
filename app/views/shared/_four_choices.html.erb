@@ -1,10 +1,10 @@
 <div class="choices">
   <div class="row">
-    <%= link_to "#{@choice1.text}", character_question_answer_character_answers_path(@character.id, @question.id, @choice1.id, @choice1), class: "nes-btn choice-button" %>
-    <%= link_to "#{@choice2.text}", character_question_answer_character_answers_path(@character.id, @question.id, @choice2.id, @choice2), class: "nes-btn choice-button" %>
+    <%= render 'shared/button', local: @choices[0] %>
+    <%= render 'shared/button', local: @choices[1] %>
   </div>
   <div class="row">
-    <%= link_to "#{@choice3.text}", character_question_answer_character_answers_path(@character.id, @question.id, @choice3.id, @choice3), class: "nes-btn choice-button" %>
-    <%= link_to "#{@choice4.text}", character_question_answer_character_answers_path(@character.id, @question.id, @choice4.id, @choice4), class: "nes-btn choice-button" %>
+    <%= render 'shared/button', local: @choices[2] %>
+    <%= render 'shared/button', local: @choices[3] %>
   </div>
 </div>
