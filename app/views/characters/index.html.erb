@@ -1,4 +1,14 @@
 <div class="container">
+  <div class="contain_btns">
+    <%= link_to new_user_character_path, class: 'text-decoration-none text-dark back-to-form flex' do %>
+      <h2 class='create-btn nes-btn is-warning'>Create new character</h2>
+    <% end %>
+    <% if user_signed_in? %>
+      <%= link_to destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: 'text-decoration-none text-dark back-to-form flex' do %>
+        <h2 class='create-btn nes-btn'>Log out</h2>
+      <% end %>
+    <% end %>
+  </div>
   <h2>Choose a character you want to play!</h2>
   <div class="cards">
     <% @characters.each do |character| %>
