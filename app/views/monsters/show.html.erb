@@ -79,11 +79,10 @@
 
 <script>
   function handleKeyPress() {
-      window.location.href = '<%= show_village_maps_path %>';
+      window.location.href = '<%= show_battle_questions_path %>';
     }
     document.addEventListener("keydown", handleKeyPress);
 
 </script>
 
-<%= link_to "To Battle",  monster_question_path(@monster)%>
-
+<%= link_to "To Battle",  show_battle_questions_path %>
