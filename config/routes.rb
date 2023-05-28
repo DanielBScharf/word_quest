@@ -8,12 +8,17 @@ Rails.application.routes.draw do
   end
 
   resources :characters do
-    resources :maps, only: %i[show new create]
+    resources :maps, only: %i[index show new create] do
+      get :show_village, on: :collection
+    end
+
   end
 
   resources :maps do
-    resources :monsters, only: %i[show index]
-    get :show_village, on: :collection
+    collection do
+      resources :monsters, only: %i[show index]
+    end
+
   end
 
   resources :monsters do

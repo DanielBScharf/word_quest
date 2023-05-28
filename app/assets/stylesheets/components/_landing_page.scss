@@ -1,0 +1,28 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-font {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.add-font > h2 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
+}
+
+.home > .center {
+  margin-bottom: 2rem;
+}
