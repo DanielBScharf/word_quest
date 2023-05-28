@@ -15,7 +15,9 @@ Rails.application.routes.draw do
   end
 
   resources :maps do
-    resources :monsters, only: %i[show index]
+    collection do
+      resources :monsters, only: %i[show index]
+    end
 
   end
 

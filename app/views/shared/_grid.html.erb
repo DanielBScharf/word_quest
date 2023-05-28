@@ -124,7 +124,7 @@
 
     if (collidedMonster) {
       const monsterId = collidedMonster.dataset.id;
-      window.location.href = `monsters/${monsterId}`;
+      window.location.href = `/maps/monsters/${monsterId}`;
       resetSpritePosition();
       assignRandomPositions();
     }
