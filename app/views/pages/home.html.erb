@@ -1,4 +1,13 @@
+<div class="home">
+  <div class="center">
+    <%= image_tag(asset_path('Logo.png')) %>
+  </div>
+  <div class="add-font">
 
-<body><%= render "shared/grid" %>
-</body>
-  
+     <% if user_signed_in? %>
+        <%= link_to 'Play', user_characters_path(current_user), class: "create-btn nes-btn is-warning mx-5", style: "text-decoration: none" %>
+      <% else %>
+        <%= link_to 'Log in / Sign in', new_user_session_path, class: "create-btn nes-btn is-warning mx-5", style: "text-decoration: none" %>
+      <% end %>
+  </div>
+</div>
