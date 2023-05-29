@@ -42,8 +42,8 @@ class QuestionsController < ApplicationController
   end
 
   def answers(choices)
-    choices.map.each do |answer|
-      Answer.create(text: answer.strip, correct: @answer.match?(answer.strip), question_id: @question.id)
+    choices.map.each do |choice|
+      Answer.create(text: choice, correct: @answer.match?(choice), question_id: @question.id)
     end
   end
 
