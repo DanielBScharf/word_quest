@@ -5,16 +5,16 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @monster = Monster.all.first
-    @question = Question.all.sample
-    @character_answer = CharacterAnswer.new
-    @current_character = Character.find(current_user.current_character_id)
-    @answers = Answer.where(question_id: @question.id)
-    @correct = @answers.find { |answer| answer.correct == true }
+    # @monster = Monster.all.first
+    # @question = Question.all.sample
+    # @character_answer = CharacterAnswer.new
+    # @current_character = Character.find(current_user.current_character_id)
+    # @answers = Answer.where(question_id: @question.id)
+    # @correct = @answers.find { |answer| answer.correct == true }
   end
 
   def new
-    @question = Question.new
+    # @question = Question.new
   end
 
   def create
