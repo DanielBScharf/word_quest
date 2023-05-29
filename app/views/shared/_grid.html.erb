@@ -124,7 +124,8 @@
 
     if (collidedMonster) {
       const monsterId = collidedMonster.dataset.id;
-      window.location.href = `/maps/monsters/${monsterId}`;
+      const character = '<%= @character.id %>'
+      window.location.href = `/characters/${character}/maps/monsters/${monsterId}`;
       resetSpritePosition();
 
     }
