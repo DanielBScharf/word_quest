@@ -73,4 +73,10 @@
     }
 </style>
 
-<%= link_to "To Battle",  show_battle_character_questions_path(@character, @monster) %>
+<script>
+  function handleKeyPress() {
+      window.location.href = '<%= show_battle_character_questions_path(@character) %>';
+    }
+    document.addEventListener("keydown", handleKeyPress);
+</script>
+<%= link_to "To Battle",  show_battle_character_questions_path(@character) %>
