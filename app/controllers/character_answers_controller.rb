@@ -2,32 +2,18 @@ class CharacterAnswersController < ApplicationController
   before_action :set_character, only: %i[create show new result]
   before_action :set_question, only: %i[create show new result]
   before_action :set_answer, only: %i[create show new result]
+
   def index
-    # @character_answers = CharacterAnswer.where(character_id == current_user.id)
   end
 
   def show
-    # @character
-    # @character_answer = CharacterAnswer.find(params[:id])
-    # @correct_answer = Answer.find(params[:answer_id])
-    # @question = Question.find(params[:question_id])
-    # @character_answer.create
-    # @win = false
-
-    # if @character_answer.text == @correct_answer.text
-    #   @win = true
-    # else
-    #   @character.current_health = @character.max_health - 20
-    # end
-
   end
 
   def new
-    @character_answer = CharacterAnswer.new
   end
 
   def create
-    p @character_answer = CharacterAnswer.new(character_answer_params)
+    # p @character_answer = CharacterAnswer.new(character_answer_params)
     # @correct_answer = Answer.find(params[:answer_id])
 
     # @question = Question.find(params[:question_id])
@@ -51,7 +37,6 @@ class CharacterAnswersController < ApplicationController
 
   def result
     character_answer = CharacterAnswer.new(text: @answer.text, answer_id: @answer.id, question_id: @question.id, character_id: @character.id)
-    p character_answer
     if character_answer.save
       p 'Success'
     else
