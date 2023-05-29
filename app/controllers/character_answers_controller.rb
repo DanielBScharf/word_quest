@@ -13,26 +13,6 @@ class CharacterAnswersController < ApplicationController
   end
 
   def create
-    # p @character_answer = CharacterAnswer.new(character_answer_params)
-    # @correct_answer = Answer.find(params[:answer_id])
-
-    # @question = Question.find(params[:question_id])
-    # @answer = Answer.find(params[:answer_id])
-    # @character_answer = CharacterAnswer.new(character_answer_params)
-    # @character_answer.character = @character
-    # @character_answer.question = @question
-    # @character_answer.answer = @answer
-    # if @character_answer.save
-    #   redirect_to character_question_answer_character_answer_path(@character, @question, @answer, @character_answer)
-    # else
-    #   render :show, status: :unprocessable_entity
-    # end
-    # @win = false
-    # if @character_answer.text == @correct_answer.text
-    #   @win = true
-    # else
-    #   @character.current_health = @character.max_health - 20
-    # end
   end
 
   def result
@@ -41,6 +21,17 @@ class CharacterAnswersController < ApplicationController
       p 'Success'
     else
       p 'Fails'
+    end
+
+    @health = @character.current_health
+    unless @answer.correct
+      @health -= 20
+      @character.update(current_health: @health)
+    end
+    @show_health = @health / 10
+
+    if @health <= 0
+      redirect_to show_village_character_maps_path(@character)
     end
   end
 

@@ -30,6 +30,9 @@ class CharactersController < ApplicationController
     redirect_to character_path, status: :see_other
   end
 
+  def update
+    @character = Character.find(current_user.current_character_id)
+  end
   private
 
   def character_params
