@@ -20,12 +20,6 @@
       <p class ="word" style="width:300px;"> Press any button to the battle! </p>
     </div>
 
-    <p> <%#= @question.text %>  </p>
-    <%#= @choices[0]  %>,
-    <%#= @choices[1] %>,
-    <%#= @choices[2] %>,
-    <%#= @choices[3].tr(']','') %>,
-    <%# <p>Correct Answer: <%= @answer %> </p>
 </div>
 </div>
 <style>
@@ -78,10 +72,5 @@
      background-repeat: no-repeat;
     }
 </style>
-<script>
-  function handleKeyPress() {
-      window.location.href = '<%= show_battle_character_questions_path(@character) %>';
-    }
-    document.addEventListener("keydown", handleKeyPress);
-</script>
-<%= link_to "To Battle",  show_battle_character_questions_path(@character) %>
+
+<%= link_to "To Battle",  show_battle_character_questions_path(@character, @monster) %>
