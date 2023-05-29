@@ -70,6 +70,15 @@
        background-repeat: no-repeat;
       }
   </style>
+
+  <%# <script> %>
+    <%# function handleKeyPress() { %>
+        <%# window.location.href = '<%= show_battle_character_monster_questions_path(params[:character_id], @monster = 1) %>'; %>
+      <%# } %>
+      <%# document.addEventListener("keydown", handleKeyPress); %>
+  <%# </script> %>
+  <%= link_to "To Battle",  show_battle_character_monster_questions_path(@character, @monster = 1) %>
+
   <script>
     function handleKeyPress() {
         window.location.href = '<%= show_battle_character_monster_questions_path(params[:character_id], @monster = 1) %>';
@@ -77,4 +86,4 @@
       document.addEventListener("keydown", handleKeyPress);
   </script>
   <%= link_to "To Battle",  show_battle_character_monster_questions_path(params[:character_id], @monster = 1) %>
-    
+
