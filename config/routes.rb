@@ -11,18 +11,18 @@ Rails.application.routes.draw do
     resources :maps, only: %i[index show new create] do
       get :show_village, on: :collection
     end
-
+    resources :character_answers
   end
 
   resources :maps do
     collection do
       resources :monsters, only: %i[show index]
     end
-
   end
 
   resources :monsters do
     resources :questions, only: %i[show new create]
+    # resources :character_answers, only: :show
 
   end
 
@@ -35,13 +35,16 @@ Rails.application.routes.draw do
   resources :characters do
     resources :questions do
       resources :answers do
-        resources :character_answers, only: %i[create show]
+        resources :character_answers, only: %i[new create] do
+          get :result, on: :collection
+        end
       end
     end
   end
 
-  resources :answers, only: %i[index show new create] do
-    resources :character_answers, only: %i[index]
-  end
 
+
+  # resources :answers, only: %i[index show new create] do
+  #   resources :character_answers, only: %i[index create]
+  # end
 end

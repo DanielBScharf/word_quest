@@ -1,9 +1,12 @@
+
+<h2>Results</h2>
 <div class="contain-all">
-  <h1><%= @question.text %></h1>
+  <h2><%= @question.text %></h2>
+  <h3>Your answer: <%= @answer.text %></h3>
   <h2>Battle Results</h2>
   <ul  class="font-change">
     <li>
-      <% if @win == true %>
+      <% if @answer.correct %>
         <%= "You have won the battle!" %>
       <% else %>
         <%= "You were forced to flee!" %>
@@ -18,4 +21,4 @@
   </ul>
   <%= link_to "Back to Adventure", maps_path, class: "create-btn nes-btn is-warning font-change", style: "text-decoration: none" %>
 </div>
-<%# Apply the same scss with questions>show %>
+
