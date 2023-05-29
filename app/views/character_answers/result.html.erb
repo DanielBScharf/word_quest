@@ -1,4 +1,24 @@
-<h2>Hello</h2>
-<%= @character.name %>
-<%= @question.text %>
-<%= @answer.text %>
+
+<h2>Results</h2>
+<div class="contain-all">
+  <h2><%= @question.text %></h2>
+  <h3>Your answer: <%= @answer.text %></h3>
+  <h2>Battle Results</h2>
+  <ul  class="font-change">
+    <li>
+      <% if @answer.correct %>
+        <%= "You have won the battle!" %>
+      <% else %>
+        <%= "You were forced to flee!" %>
+      <% end %>
+    </li>
+    <li><%= @character.current_health %></li>
+    <li class="no-margin-box">
+      <% 10.times do %>
+        <button class="health-bar" ></button>
+      <% end %>
+    </li>
+  </ul>
+  <%= link_to "Back to Adventure", maps_path, class: "create-btn nes-btn is-warning font-change", style: "text-decoration: none" %>
+</div>
+
