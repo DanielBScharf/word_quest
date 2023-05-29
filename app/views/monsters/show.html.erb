@@ -25,61 +25,62 @@
     <%#= @choices[2] %>,
     <%#= @choices[3].tr(']','') %>,
     <%# <p>Correct Answer: <%= @answer %> </p>
-  %>
-  <style>
-    #box {
-      position: relative;
-      width: 1500px;
-      height: 650px;
-      margin-top: 15px;
-      margin-left: 15px;
-      background-image: url(<%= asset_path('tabern.jpg') %>);
-      background-size: cover;
-      background-position: center;
-    }
-    .word {
-      font-family: 'Press Start 2P', cursive;
-      color: yellow;
-      filter: brightness(100%);
-    }
-    #box::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: rgba(0, 0, 0, 0.7);
-      pointer-events: none;
-    }
+</div>
+</div>
+<style>
+  #box {
+    position: relative;
+    width: 1500px;
+    height: 650px;
+    margin-top: 15px;
+    margin-left: 15px;
+    background-image: url(<%= asset_path('tabern.jpg') %>);
+    background-size: cover;
+    background-position: center;
+  }
+  .word {
+    font-family: 'Press Start 2P', cursive;
+    color: yellow;
+    filter: brightness(100%);
+  }
+  #box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    pointer-events: none;
+  }
 
-    #hero {
-       width: 300px;
-       height: 250px;
-       background-image: url(<%= asset_path('hero2.png') %>);
-       position: relative;
-       transition: 0.1s linear;
-      }
-    #wizard {
-       width: 300px;
-       height: 250px;
-       background-image: url(<%= asset_path('wizard.png') %>);
-       position: relative;
-       transition: 0.1s linear;
-      }
-      #book {
-       width: 700px;
-       height: 550px;
-       background-image: url(<%= asset_path('book.png') %>);
-       position: relative;
-       transition: 0.1s linear;
-       background-repeat: no-repeat;
-      }
-  </style>
-  <script>
-    function handleKeyPress() {
-        window.location.href = '<%= show_battle_character_questions_path(@character) %>';
-      }
-      document.addEventListener("keydown", handleKeyPress);
-  </script>
-  <%= link_to "To Battle",  show_battle_character_questions_path(@character) %>
+  #hero {
+     width: 300px;
+     height: 250px;
+     background-image: url(<%= asset_path('hero2.png') %>);
+     position: relative;
+     transition: 0.1s linear;
+    }
+  #wizard {
+     width: 300px;
+     height: 250px;
+     background-image: url(<%= asset_path('wizard.png') %>);
+     position: relative;
+     transition: 0.1s linear;
+    }
+    #book {
+     width: 700px;
+     height: 550px;
+     background-image: url(<%= asset_path('book.png') %>);
+     position: relative;
+     transition: 0.1s linear;
+     background-repeat: no-repeat;
+    }
+</style>
+<script>
+  function handleKeyPress() {
+      window.location.href = '<%= show_battle_character_questions_path(@character) %>';
+    }
+    document.addEventListener("keydown", handleKeyPress);
+</script>
+<%= link_to "To Battle",  show_battle_character_questions_path(@character) %>
