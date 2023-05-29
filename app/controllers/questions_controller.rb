@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
   before_action :set_character, only: %i[show_battle openapi]
-  before_action :set_monster, only: :openapi
+  before_action :set_monster, only: %i[openapi show_battle]
+
   def index
     # TODO:
   end
@@ -22,7 +23,7 @@ class QuestionsController < ApplicationController
   end
 
   def show_battle
-    @monster = Monster.all.first
+
     # creates a question so we can generate the question when the monster is called
     # @character = Character.find_by(user_id: current_user)
     @question = Question.new(monster: @monster, category: @monster.category)
