@@ -12,6 +12,9 @@ Rails.application.routes.draw do
       get :show_village, on: :collection
     end
     resources :character_answers
+    resources :questions do
+      get :show_battle, on: :collection
+    end
   end
 
   resources :maps do
@@ -41,8 +44,6 @@ Rails.application.routes.draw do
       end
     end
   end
-
-
 
   # resources :answers, only: %i[index show new create] do
   #   resources :character_answers, only: %i[index create]
