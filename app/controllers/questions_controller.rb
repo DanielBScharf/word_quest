@@ -5,16 +5,16 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @monster = Monster.all.first
-    @question = Question.all.sample
-    @character_answer = CharacterAnswer.new
-    @current_character = Character.find(current_user.current_character_id)
-    @answers = Answer.where(question_id: @question.id)
-    @correct = @answers.find { |answer| answer.correct == true }
+    # @monster = Monster.all.first
+    # @question = Question.all.sample
+    # @character_answer = CharacterAnswer.new
+    # @current_character = Character.find(current_user.current_character_id)
+    # @answers = Answer.where(question_id: @question.id)
+    # @correct = @answers.find { |answer| answer.correct == true }
   end
 
   def new
-    @question = Question.new
+    # @question = Question.new
   end
 
   def create
@@ -37,13 +37,13 @@ class QuestionsController < ApplicationController
   private
 
   def openapi
-    p prompt = 'Respond in JSON form and include no other commentary, JSON object should be as follows {"question": "", "answer": "", "choices": [] } . Give me a CEFR A' + @character.level.to_s + ' ' + @character.language + ' vocabulary question with four multiple choices. None of the choices can be synonyms of each other. Ensure only one of the multiple choices is the correct answer.'
+    prompt = 'Respond in JSON form and include no other commentary, JSON object should be as follows {"question": "", "answer": "", "choices": [] } . Give me a CEFR A' + @character.level.to_s + ' ' + @character.language + ' vocabulary question with four multiple choices. The choices cannot be synonyms of each other. Ensure only one of the multiple choices is the correct answer.'
     OpenaiService.new(prompt).call
   end
 
   def answers(choices)
-    choices.map.each do |answer|
-      Answer.create(text: answer.strip, correct: @answer.match?(answer.strip), question_id: @question.id)
+    choices.map.each do |choice|
+      Answer.create(text: choice, correct: @answer.match?(choice), question_id: @question.id)
     end
   end
 

@@ -9,7 +9,14 @@ Rails.application.routes.draw do
 
   resources :characters do
     resources :maps, only: %i[index show new create] do
-      get :show_village, on: :collection
+      collection do
+        get :show_village
+        resources :monsters, only: %i[show index] do
+          resources :questions do
+            get :show_battle, on: :collection
+          end
+        end
+      end
     end
     resources :character_answers
     resources :questions do
