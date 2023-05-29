@@ -1,23 +1,46 @@
-<h2>Results</h2>
-<div class="contain-all">
-  <h2><%= @question.text %></h2>
-  <h3>Your answer: <%= @answer.text %></h3>
-  <h2>Battle Results</h2>
-  <ul  class="font-change">
-    <li>
-      <% if @answer.correct %>
-        <%= "You have won the battle!" %>
-      <% else %>
-        <%= "You were forced to flee!" %>
-      <% end %>
-    </li>
 
-    <li><%= @show_health %></li>
-    <li class="no-margin-box">
-      <% (@show_health / 10).times do %>
-        <button class="health-bar" ></button>
-      <% end %>
-    </li>
-  </ul>
-  <%= link_to "Back to Adventure", character_maps_path(@character), class: "create-btn nes-btn is-warning font-change", style: "text-decoration: none" %>
+<div class="d-grid justify-content-center" style="margin-top:50px;">
+  <div class="d-flex justify-content-center">
+    <h2 class="border border-dark p-4 results" style="border-radius:40px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); ">Results</h2>
+  </div>
+  <div class="contain-all d-flex flex-column align-items-center" style="margin-top:50px;">
+    <div class="border border-dark question" style="border-radius:30px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);">
+      <h2 style="margin-top:0px; padding-top:36px;padding-bottom:32px; padding-left:24px;padding-right:24px; border-radius: 30px;"><%= @question.text %></h2>
+    </div>
+    <h3 style="margin-top:40px; margin-bottom:40px;">Your answer: <%= @answer.text %></h3>
+    <div class="border border-dark p-4 " style="border-radius:30px;box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);">
+      <h2 class="m-t-5 text-center">Battle Results</h2>
+      <ul  class="font-change">
+        <li style="margin-top:0px;">
+          <% if @answer.correct %>
+            <%= "You have won the battle!" %>
+          <% else %>
+            <%= "You were forced to flee!" %>
+          <% end %>
+        </li>
+        <li style="margin-top:15px;"><%= @character.current_health %></li>
+        <li class="no-margin-box" style="margin-top: 25px;">
+          <% 10.times do %>
+            <button class="health-bar" style="margin-top:30px;"></button>
+          <% end %>
+        </li>
+        <div class="" style="margin-top:30px;"><%= link_to "Back to Adventure", character_maps_path(@character), class: "create-btn nes-btn is-warning font-change", style: "text-decoration: none; marign-top:30px;" %> </div>
+      </ul>
+    </div>
+  </div>
+
 </div>
+<style>
+  .results {
+    background-color: rgba(219, 221, 0, 0.8);
+    color: white;
+    border-width: 5px !important;
+    border-color: white !important;
+  }
+  .question {
+    background-color: red;
+    color: white;
+    border-width: 5px !important;
+    border-color: white !important;
+  }
+</style>
