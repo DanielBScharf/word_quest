@@ -29,6 +29,10 @@ class CharacterAnswersController < ApplicationController
       @character.update(current_health: @health)
     end
     @show_health = @health
+
+    if @health <= 0
+      redirect_to show_village_character_maps_path(@character)
+    end
   end
 
   private
