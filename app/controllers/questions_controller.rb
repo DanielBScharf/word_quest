@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
   before_action :set_character, only: %i[show_battle openapi]
   before_action :set_monster, only: %i[openapi show_battle]
+
   def index
     # TODO:
   end
@@ -38,7 +39,7 @@ class QuestionsController < ApplicationController
   private
 
   def openapi
-    p prompt = 'Respond in JSON form and include no other commentary, JSON object should be as follows {"question": "", "answer": "", "choices": [] } . Give me a CEFR A' + @character.level.to_s + ' ' + @character.language + ' ' + @monster.category + ' question with four multiple choices. The choices cannot be synonyms of each other. Ensure only one of the multiple choices is the correct answer.'
+    prompt = 'Respond in JSON form and include no other commentary, JSON object should be as follows {"question": "", "answer": "", "choices": [] } . Give me a CEFR A' + @character.level.to_s + ' ' + @character.language + ' ' + @monster.category + ' question with four multiple choices. The choices cannot be synonyms of each other. Ensure only one of the multiple choices is the correct answer.'
     OpenaiService.new(prompt).call
   end
 
