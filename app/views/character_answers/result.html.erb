@@ -11,9 +11,10 @@
         <%= "You were forced to flee!" %>
       <% end %>
     </li>
-    <li><%= @character.current_health %></li>
+
+    <li><%= @show_health %></li>
     <li class="no-margin-box">
-      <% 10.times do %>
+      <% (@show_health / 10).times do %>
         <button class="health-bar" ></button>
       <% end %>
     </li>

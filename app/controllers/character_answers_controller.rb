@@ -22,6 +22,13 @@ class CharacterAnswersController < ApplicationController
     else
       p 'Fails'
     end
+
+    @health = @character.current_health
+    unless @answer.correct
+      @health -= 20
+      @character.update(current_health: @health)
+    end
+    @show_health = @health
   end
 
   private

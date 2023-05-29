@@ -127,7 +127,7 @@
       const character = '<%= @character.id %>'
       window.location.href = `/characters/${character}/maps/monsters/${monsterId}`;
       resetSpritePosition();
-      assignRandomPositions();
+
     }
 
     if (
@@ -139,7 +139,7 @@
       console.log('Sprite 1 reached the location of sprite2!');
       window.location.href = '<%= show_village_character_maps_path(@character) %>';
       resetSpritePosition();
-      assignRandomPositions();
+
     }
 
     switch (e.key) {
@@ -169,3 +169,4 @@
 
   window.addEventListener('keydown', handleMovement);
 </script>
+<%= @health %>
