@@ -1,12 +1,17 @@
-<div id="box" style="border: 2px solid black; width: 1260px; height: 720px; margin-top:15px; margin-left:110px;">
+<body>
+<div class="center" id="box" style="border: 2px solid black; width: 1260px; height: 720px;">
   <div id="sprite" style="left: 460px; bottom: 0px; top: 340px; position: absolute;"></div>
-  <div id="sprite2" style="left: 600px; bottom: 0px; top: 320px; position:absolute;"></div>
-  <div id="sprite3" style="left: 300px; bottom: 0px; top: 150px; position:absolute;"></div>
-  <div id="sprite4" style="left: 600px; bottom: 0px; top: 100px; position:absolute;"></div>
-  <div id="sprite5" style="left: 900px; bottom: 0px; top: 100px; position:absolute;"></div>
-  <div id="sprite6" style="left: 1200px; bottom: 0px; top: 150px; position:absolute;"></div>
+      <%= link_to character_maps_path(@character) do %>
+  <div id="sprite2" style="left: 510px; bottom: 0px; top: 500px; position:absolute;"></div>
+      <% end %>
 </div>
 <style>
+    .center {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
   #box {
      background-image: url(<%= asset_path('village.png') %>);
      background-repeat: no-repeat;
@@ -88,6 +93,8 @@
               break;
       }
   };
+  
 
   window.addEventListener('keydown', handleMovement);
 </script>
+</body>

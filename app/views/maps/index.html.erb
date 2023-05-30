@@ -1,22 +1,42 @@
 <body>
-  <%#= render "shared/grid" %>
-  <div id="box" style="border: 2px solid black; width: 1260px; height: 720px; margin-top:15px; margin-left:110px;">
-    <div id="sprite" style="left: 150px; bottom: 0px; top: 300px; position:absolute;"></div>
-    <div id="sprite2" style="left: 150px; bottom: 0px; top: 150px; position:absolute;"></div>
-    <%= link_to "", character_monster_path(@character, @monster = Monster.find_by_name('rat')), id:"rat", class:"btn" %>
-    <%= link_to "", character_monster_path(@character, @monster = Monster.find_by_name('wolf')), id:"wolf", class:'btn' %>
-    <%= link_to "", character_monster_path(@character, @monster = Monster.find_by_name('bat')), id:"bat", class:"btn" %>
+  <div id="box" class="center" style="border: 2px solid black; width: 1260px; height: 720px">
+    <div id="sprite" style="left: 450px; bottom: 0px; top: 300px; position:absolute;"></div>
+    <%= link_to character_monster_path(@character, @monster = Monster.find_by_name('rat')) do %>
+      <div id="rat" class="monster" data-id="10" style="left: 700px; bottom: 0px; top: 200px; position:absolute;"></div>
+    <% end %>
+    <%= link_to character_monster_path(@character, @monster = Monster.find_by_name('wolf')) do %>
+      <div id="wolf" class="monster" data-id="11" style="left: 800px; bottom: 0px; top: 275px;position:absolute;"></div>
+    <% end %>
+    <%= link_to character_monster_path(@character, @monster = Monster.find_by_name('bat')) do %>
+      <div id="bat" class="monster" data-id="12" style="left: 600px; bottom: 0px; top: 350px;position:absolute;"></div>
+    <% end %>
+    <%= link_to show_village_character_maps_path(@character) do %>
+      <div id="sprite2" style="left: 150px; bottom: 0px; top: 150px; position:absolute;"></div>
+    <% end %>
   </div>
   <style>
-    #rat{
+    .canvas {
+  border: 1px solid black;
+}
+    .center {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 30px;
+    }
+
+    #rat {
       width: 75px;
       height: 60px;
       background-image: url(<%= asset_path('monster1.png') %>);
+
       position: relative;
       transition: 0.1s linear;
     }
 
-    #wolf{
+
+    #wolf {
       width: 120px;
       height: 70px;
       background-image: url(<%= asset_path('monster2.png') %>);
@@ -24,7 +44,9 @@
       transition: 0.1s linear;
     }
 
+
     #bat{
+
       width: 80px;
       height: 55px;
       background-image: url(<%= asset_path('monster3.png') %>);
@@ -33,14 +55,15 @@
     }
 
     #box {
-      background-image: url(<%= asset_path('forest.jpg') %>);
+      background-image: url(<%= asset_path('forest.png') %>);
       width: 100%;
       height: 100%;
+
     }
 
     #sprite2 {
-      height: 80px;
       width: 80px;
+      height: 80px;
       background-image: url(<%= asset_path('back.png') %>);
       position: relative;
       transition: 0.1s linear;
@@ -54,5 +77,5 @@
       transition: 0.1s linear;
     }
   </style>
-  <%= link_to "Go back to village", show_village_character_maps_path(@character), class:'btn btn-danger' %>
+
 </body>
