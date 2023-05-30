@@ -4,13 +4,14 @@
     width: 1234px">
     <div class="d-grid justify-content-center" style="margin-top:0px;">
       <div class="d-flex justify-content-center">
-        <h2 class="border border-dark p-4 results" style="border-radius:40px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);margin-top:30px; ">Results</h2>
+        <h2 class="border border-dark p-4 results" style="border-radius:32px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);margin-top:28px; ">Results</h2>
       </div>
-      <div class="contain-all d-flex flex-column align-items-center" style="margin-top:30px; margin-bottom:30px;">
+      <div class="contain-all d-flex flex-column align-items-center" style="margin-top:20px; margin-bottom:26px;">
         <div class="border border-dark question" style="border-radius:30px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);">
-          <h2 style="margin-top:0px; padding-top:36px;padding-bottom:32px; padding-left:24px;padding-right:24px; border-radius: 30px;"><%= @question.text %></h2>
+          <h2 style="margin-top:0px; padding-top:32px;padding-bottom:25px; padding-left:24px;padding-right:24px; border-radius: 30px;"><%= @question.text %></h2>
         </div>
-        <h3 style="margin-top:30px; margin-bottom:30px; color:white;">Your answer: <%= @answer.text %></h3>
+        <h3 style="margin-top:26px; margin-bottom:5px; color:white;">Your answer: <%= @answer.text %></h3>
+        <h3 style="margin-top:5px; margin-bottom:30px; color:white;">The correct answer: <%= @question.ai_question %></h3>
         <div class="d-flex" style="width:1200px; margin-bottom:15px;">
           <div class="" style="width:400px;heigh:250px;">
             <div id="trasure1" style="position:absolute;"></div>
