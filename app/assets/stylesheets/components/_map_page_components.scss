@@ -1,0 +1,55 @@
+
+  .canvas {
+    border: 1px solid black;
+  }
+
+  .center {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 30px;
+  }
+
+    #rat {
+      width: 75px;
+      height: 60px;
+      background-image: url('monster1.png');
+
+      position: relative;
+      transition: 0.1s linear;
+    }
+
+
+    #wolf {
+      width: 120px;
+      height: 70px;
+      background-image: url('monster2.png');
+      position: relative;
+      transition: 0.1s linear;
+    }
+
+
+    #bat{
+
+      width: 80px;
+      height: 55px;
+      background-image: url('monster3.png');
+      position: relative;
+      transition: 0.1s linear;
+    }
+
+    #box {
+      background-image: url('forest.png');
+      width: 100%;
+      height: 100%;
+
+    }
+
+    #sprite2 {
+      width: 80px;
+      height: 80px;
+      background-image: url('back.png');
+      position: relative;
+      transition: 0.1s linear;
+    }
