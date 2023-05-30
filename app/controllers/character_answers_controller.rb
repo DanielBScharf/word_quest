@@ -28,7 +28,11 @@ class CharacterAnswersController < ApplicationController
       @health -= 20
       @character.update(current_health: @health)
     end
-    @show_health = @health
+    @show_health = @health / 10
+
+    if @health <= 0
+      redirect_to show_village_character_maps_path(@character)
+    end
   end
 
   private

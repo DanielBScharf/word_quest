@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
   before_action :set_character, only: %i[show_battle openapi]
-  before_action :set_monster, only: :openapi
+  before_action :set_monster, only: %i[openapi show_battle]
+
   def index
     # TODO:
   end
@@ -22,9 +23,10 @@ class QuestionsController < ApplicationController
   end
 
   def show_battle
-    @monster = Monster.all.first
+
     # creates a question so we can generate the question when the monster is called
     # @character = Character.find_by(user_id: current_user)
+    set_monster
     @question = Question.new(monster: @monster, category: @monster.category)
     response = openapi
     # the above can be called by the battle controller that will then break the response apart, etc
@@ -53,6 +55,10 @@ class QuestionsController < ApplicationController
   end
 
   def set_monster
+<<<<<<< HEAD
     @monster = Monster.find(params[:monster_id])
+=======
+    @monster = Monster.find(params[:format])
+>>>>>>> ae470c26a890519f054c58c577407359d3fa4e77
   end
 end
