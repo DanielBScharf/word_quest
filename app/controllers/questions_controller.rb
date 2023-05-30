@@ -55,10 +55,6 @@ class QuestionsController < ApplicationController
   end
 
   def set_monster
-<<<<<<< HEAD
-    @monster = Monster.find(params[:monster_id])
-=======
     @monster = Monster.find(params[:format])
->>>>>>> ae470c26a890519f054c58c577407359d3fa4e77
   end
 end
