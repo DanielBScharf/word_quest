@@ -45,8 +45,7 @@ class QuestionsController < ApplicationController
   private
 
   def openapi
-    # prompt = 'Respond in JSON form and include no other commentary, JSON object should be as follows {"question": "", "answer": "", "choices": [] } . Give me a CEFR A' + @character.level.to_s + ' ' + @character.language + ' ' + @monster.category + ' question with four multiple choices. The choices cannot be synonyms of each other and only one of the multiple choices is the correct answer.'
-    prompt = 'Respond in JSON form and include no other commentary, JSON object should be as follows {"question": "", "answer": "", "choices": [] } . Give me a CEFR A1 English vocabulary question with four multiple choices. Choices cannot be synonyms of each other. One of the choices must be the correct answer and only one of the multiple choices is the correct answer.'
+    prompt = 'Respond in JSON form and include no other commentary, JSON object should be as follows {"question": "", "answer": "", "choices": [] } . Give me a CEFR A' + @character.level.to_s + ' ' + @character.language + ' ' + @monster.category + ' question with four multiple choices. The choices cannot be synonyms of each other and only one of the multiple choices is the correct answer.'
     OpenaiService.new(prompt).call
   end
 
