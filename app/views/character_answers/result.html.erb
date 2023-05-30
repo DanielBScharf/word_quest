@@ -26,7 +26,7 @@
                   <%= "You were forced to flee!" %>
                 <% end %>
               </li>
-              <li style="margin-top:5px;"><%= @character.current_health %></li>
+              <li style="margin-top:5px;">You have <%= @character.current_health %> hitpoints</li>
               <li class="no-margin-box" style="margin-top: 10px;">
                 <% @show_health.times do %>
                   <button class="health-bar" style="margin-top:10px;"></button>
