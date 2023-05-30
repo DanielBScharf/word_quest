@@ -28,7 +28,7 @@
               </li>
               <li style="margin-top:5px;"><%= @character.current_health %></li>
               <li class="no-margin-box" style="margin-top: 10px;">
-                <% 10.times do %>
+                <% @show_health.times do %>
                   <button class="health-bar" style="margin-top:10px;"></button>
                 <% end %>
               </li>
