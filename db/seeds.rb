@@ -94,39 +94,39 @@ puts 'pondering questions'
 question = Question.new(
   category: "CEFR A1",
   monster: Monster.all.sample,
-  text: "What is the airspeed velocity of an unlaiden swallow"
+  text: "Choose the correct word to complete the sentence: I ________ to the park every Sunday."
 )
 question.save!
 
 puts 'creating answers'
 answer = Answer.new(
-  question: Question.all.sample,
+  question: 1,
   correct: true,
-  text: "What? An African or a European sqallow?"
+  text: "goed"
 )
 answer.save!
 
 puts 'creating answers'
 answer = Answer.new(
-  question: Question.all.sample,
+  question: 1,
   correct: false,
-  text: "34kph"
+  text: "went"
 )
 answer.save!
 
 puts 'creating answers'
 answer = Answer.new(
-  question: Question.all.sample,
+  question: 1,
   correct: false,
-  text: "I don't know that!"
+  text: "go"
 )
 answer.save!
 
 puts 'creating answers'
 answer = Answer.new(
-  question: Question.all.sample,
+  question: 1,
   correct: false,
-  text: "Green!"
+  text: "goes"
 )
 answer.save!
 
@@ -136,15 +136,38 @@ puts 'pondering questions'
 question = Question.new(
   category: "CEFR A1",
   monster: Monster.all.sample,
-  text: "How old are you?\n\nA I am fine\nB I have 27 years\nC I am 27 years old\nD I have 27 years old"
+  text: "________ name is Tom. He is from England."
 )
 question.save!
 
 puts 'creating answers'
 answer = Answer.new(
-  question: question,
-  correct: true,
-  text: "A I am fine"
+  question: 2,
+  correct: false,
+  text: "His"
+)
+answer.save!
+
+puts 'creating answers'
+answer = Answer.new(
+  question: 2,
+  correct: false,
+  text: "He"
+)
+answer.save!
+
+puts 'creating answers'
+answer = Answer.new(
+  question: 2,
+  correct: false,
+  text: "Them"
+)
+answer.save!
+puts 'creating answers'
+answer = Answer.new(
+  question: 2,
+  correct: false,
+  text: "She"
 )
 answer.save!
 
@@ -152,15 +175,36 @@ puts 'pondering questions'
 question = Question.new(
   category: "CEFR A1",
   monster: Monster.all.sample,
-  text: "He went to the Stadium _____\n\nA on taxi\nB by taxi\nC with taxi\nD in taxi"
+  text: "She _____ a cat."
 )
 question.save!
 
 puts 'creating answers'
 answer = Answer.new(
-  question: question,
+  question: 3,
   correct: true,
-  text: "B by taxi"
+  text: "have"
+)
+answer.save!
+
+answer = Answer.new(
+  question: 3,
+  correct: true,
+  text: "has"
+)
+answer.save!
+
+answer = Answer.new(
+  question: 3,
+  correct: true,
+  text: "having"
+)
+answer.save!
+
+answer = Answer.new(
+  question: 3,
+  correct: true,
+  text: "will"
 )
 answer.save!
 
