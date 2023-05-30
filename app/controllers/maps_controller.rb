@@ -18,9 +18,7 @@ class MapsController < ApplicationController
   end
 
   def show_village
-
     @monster = Monster.all.first
-
     @character.current_health = @character.max_health
     @character.update(current_health: @character.current_health)
   end

@@ -19,7 +19,7 @@
           <div class="border border-dark p-4 br" style="border-radius:30px;box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);color:white;">
             <h2 class="text-center" style="margin-top:10px;">Battle Results</h2>
             <ul  class="font-change">
-              <li style="margin-top:0px;">
+              <li stzyle="margin-top:0px;">
                 <% if @answer.correct %>
                   <%= "You have won the battle!" %>
                 <% else %>
@@ -28,7 +28,7 @@
               </li>
               <li style="margin-top:5px;"><%= @character.current_health %></li>
               <li class="no-margin-box" style="margin-top: 10px;">
-                <% 10.times do %>
+                <% @show_health.times do %>
                   <button class="health-bar" style="margin-top:10px;"></button>
                 <% end %>
               </li>
