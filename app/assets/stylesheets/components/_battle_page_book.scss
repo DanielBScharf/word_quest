@@ -1,0 +1,82 @@
+#tavern {
+  position: relative;
+  width: 1500px;
+  height: 650px;
+  margin-top: 15px;
+  margin-left: 15px;
+  background-image: url( 'tavern.jpg' );
+  background-size: cover;
+  background-position: center;
+  border: 2px solid black;
+  width: 1500px;
+  height: 650px;
+  margin-top:15px;
+  margin-left:15px;
+}
+
+#box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  pointer-events: none;
+}
+
+#hero {
+  width: 300px;
+  height: 250px;
+  background-image: url('hero2.png');
+  position: relative;
+  transition: 0.1s linear;
+  left: 50px;
+  bottom: 0px;
+  top: 400px;
+  position:absolute;
+}
+
+#wizard {
+  width: 300px;
+  height: 250px;
+  background-image: url('wizard.png');
+  position: relative;
+  transition: 0.1s linear;
+  left: 1100px;
+  bottom: 0px;
+  top: 400px;
+  position:absolute;
+}
+#book {
+  width: 700px;
+  height: 550px;
+  background-image: url('book.png');
+  position: relative;
+  transition: 0.1s linear;
+  background-repeat: no-repeat;
+  left: 410px;
+  bottom: 0px;
+  top: 100px;
+  position:absolute;
+}
+
+.hints {
+  margin-top:50px;
+  width:230px;
+  color: black;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+}
+
+.word {
+  font-family: 'Press Start 2P', cursive;
+  filter: brightness(100%);
+}
+
+.book-page {
+  margin-top:50px;
+  margin-left:500px;
+  width:480px;
+  height:200px;
+}
