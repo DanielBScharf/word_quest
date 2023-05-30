@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="./node_modules/nes.css/css/nes.min.css">
 <div id="box" style="border: 2px solid black; width: 1500px; height: 650px; margin-top:15px; margin-left:15px;">
   <div id="hero" style="left: 50px; bottom: 0px; top: 400px; position:absolute;"></div>
   <div id="wizard" style="left: 1100px; bottom: 0px; top: 400px; position:absolute;"></div>
@@ -19,8 +18,7 @@
     <div style="margin-left:100px; margin-top:210px">
       <p class ="word" style="width:300px;"> Press any button to the battle! </p>
     </div>
-
-</div>
+  </div>
 </div>
 <style>
   #box {
@@ -33,11 +31,13 @@
     background-size: cover;
     background-position: center;
   }
+
   .word {
     font-family: 'Press Start 2P', cursive;
     color: yellow;
     filter: brightness(100%);
   }
+
   #box::before {
     content: "";
     position: absolute;
@@ -50,35 +50,36 @@
   }
 
   #hero {
-     width: 300px;
-     height: 250px;
-     background-image: url(<%= asset_path('hero2.png') %>);
-     position: relative;
-     transition: 0.1s linear;
+    width: 300px;
+    height: 250px;
+    background-image: url(<%= asset_path('hero2.png') %>);
+    position: relative;
+    transition: 0.1s linear;
     }
   #wizard {
-     width: 300px;
-     height: 250px;
-     background-image: url(<%= asset_path('wizard.png') %>);
-     position: relative;
-     transition: 0.1s linear;
+    width: 300px;
+    height: 250px;
+    background-image: url(<%= asset_path('wizard.png') %>);
+    position: relative;
+    transition: 0.1s linear;
     }
+
     #book {
-     width: 700px;
-     height: 550px;
-     background-image: url(<%= asset_path('book.png') %>);
-     position: relative;
-     transition: 0.1s linear;
-     background-repeat: no-repeat;
+      width: 700px;
+      height: 550px;
+      background-image: url(<%= asset_path('book.png') %>);
+      position: relative;
+      transition: 0.1s linear;
+      background-repeat: no-repeat;
     }
 </style>
-
 <script>
   function handleKeyPress() {
       window.location.href = '<%= show_battle_character_questions_path(@character, @monster) %>';
     }
     document.addEventListener("keydown", handleKeyPress);
+  function handleClickPress() {
+    window.location.href = '<%= show_battle_character_questions_path(@character, @monster) %>';
+  }
+    document.addEventListener("click", handleClickPress);
 </script>
-
-<%= link_to "To Battle",  show_battle_character_questions_path(@character, @monster) %>
-
