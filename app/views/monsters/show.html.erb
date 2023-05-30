@@ -1,5 +1,8 @@
 <div id="tavern">
-<div id="hero"></div>
+<%= link_to show_battle_character_questions_path(@character, @monster) do %>
+  <div id="hero"></div>
+  <% end %>
+
 <div id="wizard"></div>
 <div id="book"></div>
 <div style="margin-left:650px; margin-top:30px">
@@ -18,7 +21,7 @@
       <div class="hints"> <%= render "#{hint}j" %> </div>
     </div>
     <div style="margin-left:100px; margin-top:210px">
-      <p class ="word" style="width:300px;"> Press any button to the battle! </p> %>
+      <p class ="word" style="width:300px;"> Press any button to the battle! </p>
     </div>
   </div>
 </div>
@@ -33,6 +36,3 @@
   }
     document.addEventListener("click", handleClickPress);
 </script>
-
-
-<%= link_to "To Battle",  show_battle_character_questions_path(@character, @monster) %>
