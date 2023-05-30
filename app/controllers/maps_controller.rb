@@ -1,5 +1,5 @@
 class MapsController < ApplicationController
-  before_action :set_character, only: %i[index show_village]
+  before_action :set_character, only: %i[index show_village show_castle]
   def index
     @map = Map.all.first
     @monster = Monster.all.first
@@ -22,6 +22,10 @@ class MapsController < ApplicationController
     @character.current_health = @character.max_health
     @character.update(current_health: @character.current_health)
   end
+
+  # def show_castle
+  # #   redirect_to show_castle_character_maps_path(@character)
+  # end
 
   private
 
