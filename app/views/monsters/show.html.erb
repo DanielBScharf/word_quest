@@ -9,6 +9,7 @@
   <p class ="word" style="color:yellow"> Monster Battle Hints </p>
 </div>
   <div class="word book-page d-flex" >
+
     <div>
       <% hint = rand(1..8) %>
       <div class="hints"> <%= render "#{hint}e" %> </div>
@@ -27,5 +28,11 @@
       window.location.href = '<%= show_battle_character_questions_path(@character, @monster) %>';
     }
     document.addEventListener("keydown", handleKeyPress);
+  function handleClickPress() {
+    window.location.href = '<%= show_battle_character_questions_path(@character, @monster) %>';
+  }
+    document.addEventListener("click", handleClickPress);
 </script>
+
 <%= link_to "to battle", show_battle_character_questions_path(@character, @monster), class:"btn btn-primary" %>
+
