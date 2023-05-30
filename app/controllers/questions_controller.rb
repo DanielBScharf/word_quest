@@ -35,6 +35,11 @@ class QuestionsController < ApplicationController
     @answer = response["answer"]
     @question.save
     @choices = answers(@choices)
+    @choices.each do |choice|
+      choice.correct == true ? @correct_answer = choice : false
+    end
+    @question.ai_question = @correct_answer.text
+    @question.save
   end
 
   private

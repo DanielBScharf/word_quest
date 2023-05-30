@@ -1,82 +1,44 @@
-<div class="d-flex justify-content-center" style="height: 750px">
-  <div id="boxbattle" class="nes-container" style="border-radius: 30px;">
-    <div class="container">
-      <div id="hero" style="left: 130px; bottom: 0px; top: 400px; position:absolute">
+<div class="show-battle">
+  <div class="d-flex justify-content-center" style="height: 720px">
+    <div id="boxbattle" class="nes-container" style="border-radius: 30px;">
+      <div class="container">
+        <div id="hero" style="left: 130px; bottom: 0px; top: 260px; position:absolute">
+        </div>
+        <div id="wolfbattle" style="left: 680px; bottom: 0px; top: 260px; position:absolute;"></div>
       </div>
-      <div id="wolfbattle" style="left: 1100px; bottom: 0px; top: 400px; position:absolute;"></div>
     </div>
   </div>
-</div>
 
-<style>
-  #hero {
-    width: 350px;
-    height: 300px;
-    background-image: url(<%= asset_path('Herobattle.png') %>);
-    position: relative;
-    transition: 0.1s linear;
-    background-repeat: no-repeat;
-  }
-    #wolfbattle {
-     width: 500px;
-     height: 350px;
-     background-image: url(<%= asset_path('wolfbattle.png') %>);
-     position: relative;
-     transition: 0.1s linear;
-     background-repeat: no-repeat;
-    }
+  <div class="container fixed-bottom" style="margin-left:0px;margin-right:0px;">
+    <div class="d-flex justify-content-center">
+      <div class="col-lg-6" style="margin-left:7px; ">
+        <div class="text-container" style="height: 150px; background-color:white;">
+          <div class=""><%= render 'shared/question', question: @question.text %></div>
+        </div>
 
-  #boxbattle {
-    position: relative;
-    margin-top: 15px;
-    margin-left: 15px;
-    background-image: url(<%= asset_path('forestbattle2.jpg') %>);
-    background-size: cover;
-    background-position: center;
-    border: 2px solid black;
-    width: 1825px;
-  }
-
-  #boxbattle::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0);
-    pointer-events: none;
-  }
-</style>
-
-<div class="container fixed-bottom" style="margin-bottom:15px;margin-">
-  <div class="d-flex justify-content-center">
-    <div class="col-lg-10 ">
-      <div class="text-container" style="height: 150px;">
-        <div class=""><%= render 'shared/question', question: @question.text %></div>
       </div>
-    </div>
-    <div class="col-lg-7 ">
-      <div class="options-container">
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="square-option">
-              <%= render 'shared/button', local: @choices[0] %>
+      <div class="col-lg-6 ">
+        <div class="options-container">
+          <div class="row">
+            <div class="col-sm-6" style="padding-left:0px;">
+              <div class="square-option">
+                <%= render 'shared/button', local: @choices[0] %>
+              </div>
             </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="square-option">
-              <%= render 'shared/button', local: @choices[1] %>
+            <div class="col-sm-6">
+              <div class="square-option" >
+                <%= render 'shared/button', local: @choices[1] %>
+              </div>
             </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="square-option">
-              <%= render 'shared/button', local: @choices[2] %>
+            <div class="col-sm-6" style="padding-left:0px;">
+              <div class="square-option">
+                <%= render 'shared/button', local: @choices[2] %>
+              </div>
             </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="square-option">
-              <%= render 'shared/button', local: @choices[3] %>
+            <div class="col-sm-6">
+              <div class="square-option">
+                <%= render 'shared/button', local: @choices[3] %>
+              </div>
             </div>
           </div>
         </div>
@@ -84,3 +46,54 @@
     </div>
   </div>
 </div>
+<style>
+  .show-battle {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+    }
+      #hero {
+   width: 350px;
+   height: 300px;
+   background-image: url(<%= asset_path('Herobattle.png') %>);
+   position: relative;
+   transition: 0.1s linear;
+   background-repeat: no-repeat;
+
+      }
+   #wolfbattle {
+    width: 500px;
+    height: 350px;
+    background-image: url(<%= asset_path('wolfbattle.png') %>);
+    position: relative;
+    transition: 0.1s linear;
+    background-repeat: no-repeat;
+   }
+
+      #boxbattle {
+   position: relative;
+   margin-top: 15px;
+   margin-left: 15px;
+   background-image: url(<%= asset_path('forestbattle2.jpg') %>);
+   background-size: cover;
+   background-position: center;
+   border: 2px solid black;
+   width: 1360px;
+    border-width: 6px !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+
+      }
+
+      #boxbattle::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background-color: rgba(0, 0, 0, 0);
+   pointer-events: none;
+      }
+</style>
