@@ -35,7 +35,7 @@ class QuestionsController < ApplicationController
     # @question.save
     # @choices = answers(@choices, response["answer"])
   end
-  
+
   private
 
   def openapi
