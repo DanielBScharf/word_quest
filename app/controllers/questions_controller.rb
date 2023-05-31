@@ -27,23 +27,22 @@ class QuestionsController < ApplicationController
     # creates a question so we can generate the question when the monster is called
     # @character = Character.find_by(user_id: current_user)
     set_monster
-
-    @question = Question.new(monster: @monster, category: @monster.category)
-    response = openapi
+    @question = Question.all.sample
+    # @question = Question.new(monster: @monster, category: @monster.category)
+    # response = openapi
     # the above can be called by the battle controller that will then break the response apart, etc
-    @question.text = response["question"]
-    @choices = response["choices"]
-    p @answer = response["answer"]
-    @question.save
-    @choices = answers(@choices)
-    @choices.each do |choice|
-      choice.correct == true ? @correct_answer = choice : false
-    end
-    @question.ai_question = @correct_answer.text
-    @question.save
-
+    # @question.text = response["question"]
+    # @choices = response["choices"]
+    # @answer = response["answer"]
+    # # @question.save
+    # @choices = answers(@choices)
+    # @choices.each do |choice|
+    #   choice.correct == true ? @correct_answer = choice : false
+    # end
+    # @question.ai_question = @correct_answer.text
+    # @question.save
+    @choices = Answer.where(question_id: @question)
   end
-
   private
 
   def openapi
