@@ -1,1 +1,6 @@
 <%= 'cave' %>
+ <% if Monster.find_by_name("bat").current_health > 0 %>
+  <%= link_to character_monster_path(params[:character_id], @monster = Monster.find_by_name('bat')) do %>
+    <div id="bat" class="monster" data-id="12" style="left: 600px; bottom: 0px; top: 350px;position:absolute;"></div>
+  <% end %>
+<% end %>
