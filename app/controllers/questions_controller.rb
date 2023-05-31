@@ -27,6 +27,7 @@ class QuestionsController < ApplicationController
     # creates a question so we can generate the question when the monster is called
     # @character = Character.find_by(user_id: current_user)
     set_monster
+
     @question = Question.new(monster: @monster, category: @monster.category)
     response = openapi
     # the above can be called by the battle controller that will then break the response apart, etc
@@ -40,6 +41,7 @@ class QuestionsController < ApplicationController
     end
     @question.ai_question = @correct_answer.text
     @question.save
+
   end
 
   private
