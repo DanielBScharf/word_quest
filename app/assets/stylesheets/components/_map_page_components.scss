@@ -11,11 +11,11 @@
     border-radius: 30px;
   }
 
-    #rat {
-      width: 75px;
-      height: 60px;
-      background-image: url('monster1.png');
-
+    #rat   {
+      width: 120px;
+      height: 100px;
+      background-image: url('signcave.png');
+      background-repeat: no-repeat;
       position: relative;
       transition: 0.1s linear;
     }
@@ -23,24 +23,26 @@
 
     #wolf {
       width: 120px;
-      height: 70px;
-      background-image: url('monster2.png');
+      height: 100px;
+      background-image: url('signtower.png');
       position: relative;
       transition: 0.1s linear;
+      background-repeat: no-repeat;
     }
 
 
     #bat{
 
-      width: 80px;
-      height: 55px;
-      background-image: url('monster3.png');
+      width: 120px;
+      height: 100px;
+      background-image: url('signforest.png');
       position: relative;
       transition: 0.1s linear;
+      background-repeat: no-repeat;
     }
 
     #box {
-      background-image: url('forest.png');
+      background-image: url('forest2.png');
       width: 100%;
       height: 100%;
 
