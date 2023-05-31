@@ -35,6 +35,7 @@ class CharactersController < ApplicationController
   def update
     @character = Character.find(current_user.current_character_id)
   end
+
   private
 
   def character_params
