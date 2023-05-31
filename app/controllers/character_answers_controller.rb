@@ -32,6 +32,9 @@ class CharacterAnswersController < ApplicationController
     else
       @health -= 20
       @character.update(current_health: @health)
+      @monster_health = @monster.current_health
+      @monster_health -= 1
+      @monster.update(current_health: @monster_health)
     end
     @show_health = @health / 10
 
