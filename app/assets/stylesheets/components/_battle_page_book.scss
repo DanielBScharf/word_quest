@@ -1,12 +1,12 @@
 #tavern {
   position: relative;
-  width: 1260px;
-  height: 720px;
+  width: 100%;
+  height: 100%;
   background-image: url( 'tavern.jpg' );
-  background-size: cover;
+  background-size: auto;
   background-position: center;
-  border: 2px solid black;
-  border-radius:30px;
+  // border: 2px solid black;
+  //border-radius:30px;
 }
 
  #tavern::before {
