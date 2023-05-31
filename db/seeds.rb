@@ -31,7 +31,7 @@ puts 'Creating 1 fake character...'
 character = Character.new(
   name: "Dumbkid1",
   max_health: 100,
-  current_health: Faker::Number.between(from: 0, to: 100),
+  current_health: 100,
   max_mana: 100,
   current_mana: Faker::Number.between(from: 0, to: 100),
   user_id: user.id,
@@ -45,7 +45,7 @@ character.save!
 character = Character.new(
   name: "Char2",
   max_health: 100,
-  current_health: Faker::Number.between(from: 0, to: 100),
+  current_health: 100,
   max_mana: 100,
   current_mana: Faker::Number.between(from: 0, to: 100),
   user_id: user.id,
@@ -72,21 +72,27 @@ puts 'Populating monsters'
 monster = Monster.new(
   name: "rat",
   category: "vocabulary",
-  map: Map.all.sample
+  map: Map.all.sample,
+  max_health: 3,
+  current_health: 3
 )
 monster.save!
 
 monster = Monster.new(
   name: "wolf",
   category: "reading",
-  map: Map.all.sample
+  map: Map.all.sample,
+  max_health: 4,
+  current_health: 4
 )
 monster.save!
 
 monster = Monster.new(
   name: "bat",
   category: "grammar",
-  map: Map.all.sample
+  map: Map.all.sample,
+  max_health: 3,
+  current_health: 3
 )
 monster.save!
 
@@ -100,15 +106,15 @@ question.save!
 
 puts 'creating answers'
 answer = Answer.new(
-  question: 1,
-  correct: true,
+  question: Question.all.last,
+  correct: false,
   text: "goed"
 )
 answer.save!
 
 puts 'creating answers'
 answer = Answer.new(
-  question: 1,
+  question: Question.all.last,
   correct: false,
   text: "went"
 )
@@ -116,15 +122,15 @@ answer.save!
 
 puts 'creating answers'
 answer = Answer.new(
-  question: 1,
-  correct: false,
+  question: Question.all.last,
+  correct: true,
   text: "go"
 )
 answer.save!
 
 puts 'creating answers'
 answer = Answer.new(
-  question: 1,
+  question: Question.all.last,
   correct: false,
   text: "goes"
 )
@@ -142,15 +148,15 @@ question.save!
 
 puts 'creating answers'
 answer = Answer.new(
-  question: 2,
-  correct: false,
+  question: Question.all.last,
+  correct: true,
   text: "His"
 )
 answer.save!
 
 puts 'creating answers'
 answer = Answer.new(
-  question: 2,
+  question: Question.all.last,
   correct: false,
   text: "He"
 )
@@ -158,14 +164,14 @@ answer.save!
 
 puts 'creating answers'
 answer = Answer.new(
-  question: 2,
+  question: Question.all.last,
   correct: false,
   text: "Them"
 )
 answer.save!
 puts 'creating answers'
 answer = Answer.new(
-  question: 2,
+  question: Question.all.last,
   correct: false,
   text: "She"
 )
@@ -181,77 +187,29 @@ question.save!
 
 puts 'creating answers'
 answer = Answer.new(
-  question: 3,
+  question: Question.all.last,
   correct: true,
   text: "have"
 )
 answer.save!
 
 answer = Answer.new(
-  question: 3,
-  correct: true,
+  question: Question.all.last,
+  correct: false,
   text: "has"
 )
 answer.save!
 
 answer = Answer.new(
-  question: 3,
-  correct: true,
+  question: Question.all.last,
+  correct: false,
   text: "having"
 )
 answer.save!
 
 answer = Answer.new(
-  question: 3,
-  correct: true,
+  question: Question.all.last,
+  correct: false,
   text: "will"
-)
-answer.save!
-
-puts 'pondering questions'
-question = Question.new(
-  category: "CEFR A1",
-  monster: Monster.all.sample,
-  text: "We haven't got _____ money.\n\nA no\nB a lot of\nC lots of\nD any"
-)
-question.save!
-
-puts 'creating answers'
-answer = Answer.new(
-  question: question,
-  correct: true,
-  text: "D any"
-)
-answer.save!
-
-puts 'pondering questions'
-question = Question.new(
-  category: "CEFR A1",
-  monster: Monster.all.sample,
-  text: "He plays soccer _____.\n\nA on Wednesdays\nB at Wednesdays\nC by Wednesdays\nD in Wednesdays"
-)
-question.save!
-
-puts 'creating answers'
-answer = Answer.new(
-  question: question,
-  correct: true,
-  text: "A on Wednesdays"
-)
-answer.save!
-
-puts 'pondering questions'
-question = Question.new(
-  category: "CEFR A1",
-  monster: Monster.all.sample,
-  text: "I _____ a teacher.\n\nA isn't\nB am'nt\nC aren't\nD am not"
-)
-question.save!
-
-puts 'creating answers'
-answer = Answer.new(
-  question: question,
-  correct: true,
-  text: "D am not"
 )
 answer.save!

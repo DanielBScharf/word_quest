@@ -22,11 +22,14 @@ class CharacterAnswersController < ApplicationController
     else
       p 'Fails'
     end
-
+    @monster = @question.monster
     @health = @character.current_health
     unless @answer.correct
       @health -= 20
       @character.update(current_health: @health)
+      @monster_health = @monster.current_health
+      @monster_health -= 1
+      @monster.update(current_health: @monster_health)
     end
     @show_health = @health / 10
 
