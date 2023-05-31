@@ -1,8 +1,20 @@
 
-  .canvas {
-    border: 1px solid black;
-  }
+  #box_castle {
+    background-image: url('mapcastle.png');
+    width: 100%;
+    height: 100%;
 
+  }
+   #box_ruin {
+    background-image: url('mapruin.png');
+    width: 100%;
+    height: 100%;
+    }
+   #box_cave {
+    background-image: url('mapcave.png');
+    width: 100%;
+    height: 100%;
+    }
   .center {
     position: fixed;
     top: 50%;
@@ -11,7 +23,7 @@
     border-radius: 30px;
   }
 
-    #rat   {
+    .cave {
       width: 120px;
       height: 100px;
       background-image: url('signcave.png');
@@ -21,7 +33,7 @@
     }
 
 
-    #wolf {
+    .tower {
       width: 120px;
       height: 100px;
       background-image: url('signtower.png');
@@ -31,11 +43,11 @@
     }
 
 
-    #bat{
+    .ruin{
 
       width: 120px;
       height: 100px;
-      background-image: url('signforest.png');
+      background-image: url('signruin.png');
       position: relative;
       transition: 0.1s linear;
       background-repeat: no-repeat;
@@ -54,4 +66,83 @@
       background-image: url('back.png');
       position: relative;
       transition: 0.1s linear;
+    }
+
+
+    #rat{
+      width: 120px;
+      height: 100px;
+      background-image: url('monster1.png');
+      background-repeat: no-repeat;
+      position: relative;
+      transition: 0.1s linear;
+    }
+
+    #bat{
+      width: 120px;
+      height: 100px;
+      background-image: url('monster3.png');
+      position: relative;
+      transition: 0.1s linear;
+      background-repeat: no-repeat;
+    }
+    #wolf {
+      width: 120px;
+      height: 100px;
+      background-image: url('monster2.png');
+      position: relative;
+      transition: 0.1s linear;
+      background-repeat: no-repeat;
+    }
+
+    #ratwarrior{
+      width: 300px;
+      height: 300px;
+      background-image: url('ratwarrior.png');
+      background-repeat: no-repeat;
+      position: relative;
+      transition: 0.1s linear;
+    }
+
+    #warrior{
+      width: 300px;
+      height: 300px;
+      background-image: url('warrior.png');
+      position: relative;
+      transition: 0.1s linear;
+      background-repeat: no-repeat;
+    }
+    #dragon {
+      width: 500px;
+      height: 500px;
+      background-image: url('dragon.png');
+      position: relative;
+      transition: 0.1s linear;
+      background-repeat: no-repeat;
+    }
+
+    #ratcave{
+      width: 400px;
+      height: 300px;
+      background-image: url('ratcave.png');
+      background-repeat: no-repeat;
+      position: relative;
+      transition: 0.1s linear;
+    }
+
+    #batpurple{
+      width: 400px;
+      height: 300px;
+      background-image: url('batpurple.png');
+      position: relative;
+      transition: 0.1s linear;
+      background-repeat: no-repeat;
+    }
+    #skeleton {
+      width: 400px;
+      height: 300px;
+      background-image: url('skeleton.png');
+      position: relative;
+      transition: 0.1s linear;
+      background-repeat: no-repeat;
     }

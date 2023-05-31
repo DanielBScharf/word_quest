@@ -31,7 +31,29 @@ class MapsController < ApplicationController
   # def show_castle
   # #   redirect_to show_castle_character_maps_path(@character)
   # end
+  def show_cave
+    @map = Map.all.first
+    @monster = Monster.all.first
+    @map = @monster.map
+    respond_to do |format|
+      format.html
+      format.json { render json: { id: @monster.id } }
+    end
+    @health = set_character.current_health
 
+  end
+
+  def show_ruin
+    @map = Map.all.first
+    @monster = Monster.all.first
+    @map = @monster.map
+    respond_to do |format|
+      format.html
+      format.json { render json: { id: @monster.id } }
+    end
+    @health = set_character.current_health
+
+  end
   private
 
   def set_character
