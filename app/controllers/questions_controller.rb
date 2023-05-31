@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :set_character, only: %i[show_battle openapi]
-  before_action :set_monster, only: %i[openapi show_battle]
+  before_action :set_monster, only: %i[openapi]
 
   def index
     # TODO:
@@ -24,8 +24,13 @@ class QuestionsController < ApplicationController
 
   def show_battle
     # creates a question so we can generate the question when the monster is called
-    @question = Question.all.sample
-    @choices = Answer.where(question_id: @question)
+    @monster = Monster.find_by(id: params[:monster_id]) || Monster.find_by(id: params[:id])
+    # todo change to unanswered ones
+    @question =  @monster.questions.sample
+    @question =  Question.where(monster: @monster).where.not(id: @character.questions).sample
+    # TODO: this route is not right
+    redirect_to show_village_character_maps_path(@character) unless @question
+    @choices = @question.answers
 
     # response = openapi
     # @question = Question.new(monster: @monster, category: @monster.category, text: response["question"], ai_question: response["answer"])
@@ -50,7 +55,7 @@ class QuestionsController < ApplicationController
   end
 
   def set_character
-    @character = Character.find(params[:character_id])
+    @character = current_user.current_character
   end
 
   def set_monster

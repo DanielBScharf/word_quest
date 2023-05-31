@@ -36,6 +36,6 @@ class MapsController < ApplicationController
   private
 
   def set_character
-    @character = Character.find(params[:character_id])
+    @character = current_user.current_character
   end
 end

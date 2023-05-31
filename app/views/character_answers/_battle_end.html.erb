@@ -32,7 +32,14 @@
                   <button class="health-bar" style="margin-top:10px;"></button>
                 <% end %>
               </li>
-              <div class="" style="margin-top:10px;"><%= link_to "Back to Adventure", character_maps_path(@character), class: "create-btn nes-btn is-warning font-change", style: "text-decoration: none; margin-top:15px;margin-bottom:0px;" %> </div>
+
+              <% if @character.current_health > 0 %>
+                <div class="" style="margin-top:10px;"><%= link_to "Back to Adventure", character_maps_path(@character), class: "create-btn nes-btn is-warning font-change", style: "text-decoration: none; margin-top:15px;margin-bottom:0px;" %> </div>
+              <% else %>
+                <h2>You are injured and must return to the village to rest</h2>
+                <%= link_to "Village", show_village_maps_path, class: 'text-primary' %>
+              <% end %>
+
             </ul>
           </div>
           <div class="" style="width:400px;heigh:373px;margin-top:0px;">

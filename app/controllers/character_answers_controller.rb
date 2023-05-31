@@ -29,10 +29,11 @@ class CharacterAnswersController < ApplicationController
 
     @show_health = @character.current_health / 10
 
-    redirect_to show_village_character_maps_path(@character) if @character.current_health <= 0
+    # redirect_to show_village_character_maps_path(@character) if @character.current_health <= 0
 
     answers = Answer.where(question_id: @question)
     @correct = answers.find_by(correct: true)
+    @next_question =  Question.where(monster: @monster).where.not(id: @character.questions).sample
   end
 
   private
