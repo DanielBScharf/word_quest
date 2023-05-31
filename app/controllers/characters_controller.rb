@@ -7,7 +7,7 @@ class CharactersController < ApplicationController
   def show
     @character = Character.find(params[:id])
     current_user.current_character_id = @character
-    current_user.update
+    current_user.update(current_character_id:@character)
   end
 
   def new

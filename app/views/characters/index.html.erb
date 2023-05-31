@@ -1,6 +1,6 @@
 <div class="container">
   <div class="contain_btns">
-    <%= link_to new_user_character_path, class: 'text-decoration-none text-dark back-to-form flex' do %>
+    <%= link_to new_user_character_path(current_user.id), class: 'text-decoration-none text-dark back-to-form flex' do %>
       <h2 class='create-btn nes-btn is-warning'>Create new character</h2>
     <% end %>
     <% if user_signed_in? %>
@@ -12,7 +12,7 @@
   <h2>Choose a character you want to play!</h2>
   <div class="cards">
     <% @characters.each do |character| %>
-      <%= link_to characters(character.id), class:'text-decoration-none text-dark' do %>
+      <%= link_to user_character_path(current_user, Character.find(character.id)), class:'text-decoration-none text-dark' do %>
         <div class="card ns-border">
           <%= image_tag asset_path( character.icon_name.downcase) %>
           <ul>
@@ -28,7 +28,7 @@
               <%= 'A1'%>
               <% when 2%>
               <%= 'A2'%>
-            <% end %>
+              <% end %>
           </li>
         </ul>
       </div>
