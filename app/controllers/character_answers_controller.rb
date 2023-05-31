@@ -17,29 +17,20 @@ class CharacterAnswersController < ApplicationController
 
   def result
     character_answer = CharacterAnswer.new(text: @answer.text, answer: @answer, question: @question, character: @character)
-    if character_answer.save
-      p 'Success'
-    else
-      p 'Fails'
-    end
-    @monster = @question.monster
-    @health = @character.current_health
-    if @answer.correct
-      @monster_health = @monster.current_health
-      @monster_health -= 1
-      @monster.update(current_health: @monster_health)
-    else
-      @health -= 20
-      @character.update(current_health: @health)
-      @monster_health = @monster.current_health
-      @monster_health -= 1
-      @monster.update(current_health: @monster_health)
-    end
-    @show_health = @health / 10
+    character_answer.save
 
-    if @health <= 0
-      redirect_to show_village_character_maps_path(@character)
+    @monster = @question.monster
+
+    if @answer.correct
+      @monster.update(current_health: (@monster.current_health -= 1))
+    else
+      @character.update(current_health: (@character.current_health -= 20))
     end
+
+    @show_health = @character.current_health / 10
+
+    redirect_to show_village_character_maps_path(@character) if @character.current_health <= 0
+
     answers = Answer.where(question_id: @question)
     @correct = answers.find_by(correct: true)
   end
