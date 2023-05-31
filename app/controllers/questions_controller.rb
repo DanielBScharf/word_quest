@@ -23,26 +23,19 @@ class QuestionsController < ApplicationController
   end
 
   def show_battle
-
     # creates a question so we can generate the question when the monster is called
-    # @character = Character.find_by(user_id: current_user)
-    set_monster
     @question = Question.all.sample
-    # @question = Question.new(monster: @monster, category: @monster.category)
-    # response = openapi
-    # the above can be called by the battle controller that will then break the response apart, etc
-    # @question.text = response["question"]
-    # @choices = response["choices"]
-    # @answer = response["answer"]
-    # # @question.save
-    # @choices = answers(@choices)
-    # @choices.each do |choice|
-    #   choice.correct == true ? @correct_answer = choice : false
-    # end
-    # @question.ai_question = @correct_answer.text
-    # @question.save
     @choices = Answer.where(question_id: @question)
+
+    # response = openapi
+    # @question = Question.new(monster: @monster, category: @monster.category, text: response["question"], ai_question: response["answer"])
+
+    # the above can be called by the battle controller that will then break the response apart, etc
+    # @choices = response["choices"]
+    # @question.save
+    # @choices = answers(@choices, response["answer"])
   end
+  
   private
 
   def openapi
@@ -50,9 +43,9 @@ class QuestionsController < ApplicationController
     OpenaiService.new(prompt).call
   end
 
-  def answers(choices)
+  def answers(choices, answer)
     choices.map.each do |choice|
-      Answer.create(text: choice, correct: @answer.match?(choice), question_id: @question.id)
+      Answer.create(text: choice, correct: answer.match?(choice), question_id: @question.id)
     end
   end
 
