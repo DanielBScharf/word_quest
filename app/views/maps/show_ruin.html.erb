@@ -1,1 +1,9 @@
 <%= 'ruin' %>
+ <% if Monster.find_by_name("wolf").current_health > 0 %>
+  <%= link_to character_monster_path(params[:character_id], @monster = Monster.find_by_name('wolf')) do %>
+      <div id="wolf" class="monster" data-id="11" style="left: 800px; bottom: 0px; top: 275px;position:absolute;"></div>
+  <% end %>
+<% end %>
+<%= link_to character_maps_path(params[:character_id]) do %>
+  <div id="sprite2" style="left: 510px; bottom: 0px; top: 500px; position:absolute;"></div>
+<% end %>

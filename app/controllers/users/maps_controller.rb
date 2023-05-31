@@ -2,7 +2,7 @@ class MapsController < ApplicationController
   before_action :set_character, only: %i[index show_village show_castle]
 
   def index
-    @map = Map.all.first
+    @map = Map.find_by_name("world")
     @monster = Monster.all.first
     @map = @monster.map
     respond_to do |format|
@@ -16,6 +16,8 @@ class MapsController < ApplicationController
   end
 
   def show
+    @map = Map.find(params[:id])
+    @monsters = Monster.where(map: @map)
   end
 
   def show_village
