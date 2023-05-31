@@ -1,97 +1,21 @@
-<div class="border border-dark m-3 p-3 reward center-reward">
-  <div class="border border-dark m-3 p-3 reward " style="
-    height: 754px;
-    width: 1234px">
-    <div class="d-grid justify-content-center" style="margin-top:0px;">
-      <div class="d-flex justify-content-center">
-        <h2 class="border border-dark p-4 results" style="border-radius:32px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);margin-top:28px; ">Results</h2>
-      </div>
-      <div class="contain-all d-flex flex-column align-items-center" style="margin-top:20px; margin-bottom:26px;">
-        <div class="border border-dark question" style="border-radius:30px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);">
-          <h2 style="margin-top:0px; padding-top:32px;padding-bottom:25px; padding-left:24px;padding-right:24px; border-radius: 30px;"><%= @question.text %></h2>
-        </div>
-        <h3 style="margin-top:26px; margin-bottom:5px; color:white;">Your answer: <%= @answer.text %></h3>
-        <h3 style="margin-top:5px; margin-bottom:30px; color:white;">The correct answer: <%= @question.ai_question %></h3>
-        <div class="d-flex" style="width:1200px; margin-bottom:15px;">
-          <div class="" style="width:400px;heigh:250px;">
-            <div id="trasure1" style="position:absolute;"></div>
-          </div>
-          <div class="border border-dark p-4 br" style="border-radius:30px;box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);color:white;">
-            <h2 class="text-center" style="margin-top:10px;">Battle Results</h2>
-            <ul  class="font-change">
-              <li stzyle="margin-top:0px;">
-                <% if @answer.correct %>
-                  <%= "You have won the battle!" %>
-                <% else %>
-                  <%= "You were forced to flee!" %>
-                <% end %>
-              </li>
-              <li style="margin-top:5px;"><%= @character.current_health %></li>
-              <li class="no-margin-box" style="margin-top: 10px;">
-                <% @show_health.times do %>
-                  <button class="health-bar" style="margin-top:10px;"></button>
-                <% end %>
-              </li>
-              <div class="" style="margin-top:10px;"><%= link_to "Back to Adventure", character_maps_path(@character), class: "create-btn nes-btn is-warning font-change", style: "text-decoration: none; margin-top:15px;margin-bottom:0px;" %> </div>
-            </ul>
-          </div>
-          <div class="" style="width:400px;heigh:373px;margin-top:0px;">
-            <div id="trasure2" style="position:absolute;"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<style>
-  .center-reward {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+<% monster_health = 4 %>
+  <h2>Your health</h2>
+  <% @show_health.times do %>
+    <button class="health-bar" style="margin-top:10px;"></button>
+  <% end %>
 
-  #trasure1 {
-    width: 500px;
-    height: 300px;
-    background-image: url(<%= asset_path('treasure1.png') %>);
-    position: relative;
-    transition: 0.1s linear;
-    background-repeat: no-repeat;
-  }
+  <h2>Monster health</h2>
+  <% @monster.current_health.times do %>
+    <button class="health-bar" style="margin-top:10px;"></button>
+  <% end %>
 
-  #trasure2 {
-    width: 500px;
-    height: 300px;
-    background-image: url(<%= asset_path('treasure2.png') %>);
-    position: relative;
-    transition: 0.1s linear;
-    background-repeat: no-repeat;
-  }
+  <% if @monster.current_health <= 0 %>
+    <%= render 'battle_end', monster:@monster, character:@character %>
+  <% end %>
 
-  .reward {
-    background-image: url(<%= asset_path('reward.jpg') %>);
-    border-radius: 30px;
-  }
+  <% if @answer.correct %>
+    <%= render "correct", monster:@monster, character:@character %>
+  <% else %>
+    <%= render "wrong", monster:@monster, character:@character %>
 
-  .results {
-    background-color: rgba(255, 255, 0, 0.5);
-    color: white;
-    color: white;
-    border-width: 5px !important;
-    border-color: white !important;
-  }
-
-  .question {
-    background-color: rgba(255, 0, 0, 0.5);
-    color: white;
-    border-width: 5px !important;
-    border-color: white !important;
-  }
-
-  .br{
-    background-color: rgba(9, 14, 158, 0.5);
-    border-width: 5px !important;
-    border-color: white !important;
-  }
-</style>
+  <% end %>

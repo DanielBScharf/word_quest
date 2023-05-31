@@ -27,6 +27,7 @@ class QuestionsController < ApplicationController
     # creates a question so we can generate the question when the monster is called
     # @character = Character.find_by(user_id: current_user)
     set_monster
+
     @question = Question.new(monster: @monster, category: @monster.category)
     response = openapi
     # the above can be called by the battle controller that will then break the response apart, etc
@@ -40,13 +41,13 @@ class QuestionsController < ApplicationController
     end
     @question.ai_question = @correct_answer.text
     @question.save
+
   end
 
   private
 
   def openapi
-    # prompt = 'Respond in JSON form and include no other commentary, JSON object should be as follows {"question": "", "answer": "", "choices": [] } . Give me a CEFR A' + @character.level.to_s + ' ' + @character.language + ' ' + @monster.category + ' question with four multiple choices. The choices cannot be synonyms of each other and only one of the multiple choices is the correct answer.'
-    prompt = 'Respond in JSON form and include no other commentary, JSON object should be as follows {"question": "", "answer": "", "choices": [] } . Give me a CEFR A1 English vocabulary question with four multiple choices. Choices cannot be synonyms of each other. One of the choices must be the correct answer and only one of the multiple choices is the correct answer.'
+    prompt = 'Respond in JSON form and include no other commentary, JSON object should be as follows {"question": "", "answer": "", "choices": [] } . Give me a CEFR A' + @character.level.to_s + ' ' + @character.language + ' ' + @monster.category + ' question with four multiple choices. The choices cannot be synonyms of each other and only one of the multiple choices is the correct answer.'
     OpenaiService.new(prompt).call
   end
 
@@ -61,6 +62,10 @@ class QuestionsController < ApplicationController
   end
 
   def set_monster
-    @monster = Monster.find(params[:format])
+    if params[:format]
+      @monster = Monster.find(params[:format])
+    else
+      @monster = Monster.find(params[:monster_id])
+    end
   end
 end

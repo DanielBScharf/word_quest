@@ -31,7 +31,7 @@ puts 'Creating 1 fake character...'
 character = Character.new(
   name: "Dumbkid1",
   max_health: 100,
-  current_health: Faker::Number.between(from: 0, to: 100),
+  current_health: 100,
   max_mana: 100,
   current_mana: Faker::Number.between(from: 0, to: 100),
   user_id: user.id,
@@ -45,7 +45,7 @@ character.save!
 character = Character.new(
   name: "Char2",
   max_health: 100,
-  current_health: Faker::Number.between(from: 0, to: 100),
+  current_health: 100,
   max_mana: 100,
   current_mana: Faker::Number.between(from: 0, to: 100),
   user_id: user.id,
@@ -72,21 +72,27 @@ puts 'Populating monsters'
 monster = Monster.new(
   name: "rat",
   category: "vocabulary",
-  map: Map.all.sample
+  map: Map.all.sample,
+  max_health: 3,
+  current_health: 3
 )
 monster.save!
 
 monster = Monster.new(
   name: "wolf",
   category: "reading",
-  map: Map.all.sample
+  map: Map.all.sample,
+  max_health: 4,
+  current_health: 4
 )
 monster.save!
 
 monster = Monster.new(
   name: "bat",
   category: "grammar",
-  map: Map.all.sample
+  map: Map.all.sample,
+  max_health: 3,
+  current_health: 3
 )
 monster.save!
 
@@ -94,39 +100,39 @@ puts 'pondering questions'
 question = Question.new(
   category: "CEFR A1",
   monster: Monster.all.sample,
-  text: "What is the airspeed velocity of an unlaiden swallow"
+  text: "Choose the correct word to complete the sentence: I ________ to the park every Sunday."
 )
 question.save!
 
 puts 'creating answers'
 answer = Answer.new(
-  question: Question.all.sample,
-  correct: true,
-  text: "What? An African or a European sqallow?"
-)
-answer.save!
-
-puts 'creating answers'
-answer = Answer.new(
-  question: Question.all.sample,
+  question: Question.all.last,
   correct: false,
-  text: "34kph"
+  text: "goed"
 )
 answer.save!
 
 puts 'creating answers'
 answer = Answer.new(
-  question: Question.all.sample,
+  question: Question.all.last,
   correct: false,
-  text: "I don't know that!"
+  text: "went"
 )
 answer.save!
 
 puts 'creating answers'
 answer = Answer.new(
-  question: Question.all.sample,
+  question: Question.all.last,
+  correct: true,
+  text: "go"
+)
+answer.save!
+
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.last,
   correct: false,
-  text: "Green!"
+  text: "goes"
 )
 answer.save!
 
@@ -136,15 +142,38 @@ puts 'pondering questions'
 question = Question.new(
   category: "CEFR A1",
   monster: Monster.all.sample,
-  text: "How old are you?\n\nA I am fine\nB I have 27 years\nC I am 27 years old\nD I have 27 years old"
+  text: "________ name is Tom. He is from England."
 )
 question.save!
 
 puts 'creating answers'
 answer = Answer.new(
-  question: question,
+  question: Question.all.last,
   correct: true,
-  text: "A I am fine"
+  text: "His"
+)
+answer.save!
+
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "He"
+)
+answer.save!
+
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "Them"
+)
+answer.save!
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "She"
 )
 answer.save!
 
@@ -152,62 +181,35 @@ puts 'pondering questions'
 question = Question.new(
   category: "CEFR A1",
   monster: Monster.all.sample,
-  text: "He went to the Stadium _____\n\nA on taxi\nB by taxi\nC with taxi\nD in taxi"
+  text: "She _____ a cat."
 )
 question.save!
 
 puts 'creating answers'
 answer = Answer.new(
-  question: question,
+  question: Question.all.last,
   correct: true,
-  text: "B by taxi"
+  text: "have"
 )
 answer.save!
 
-puts 'pondering questions'
-question = Question.new(
-  category: "CEFR A1",
-  monster: Monster.all.sample,
-  text: "We haven't got _____ money.\n\nA no\nB a lot of\nC lots of\nD any"
-)
-question.save!
-
-puts 'creating answers'
 answer = Answer.new(
-  question: question,
-  correct: true,
-  text: "D any"
+  question: Question.all.last,
+  correct: false,
+  text: "has"
 )
 answer.save!
 
-puts 'pondering questions'
-question = Question.new(
-  category: "CEFR A1",
-  monster: Monster.all.sample,
-  text: "He plays soccer _____.\n\nA on Wednesdays\nB at Wednesdays\nC by Wednesdays\nD in Wednesdays"
-)
-question.save!
-
-puts 'creating answers'
 answer = Answer.new(
-  question: question,
-  correct: true,
-  text: "A on Wednesdays"
+  question: Question.all.last,
+  correct: false,
+  text: "having"
 )
 answer.save!
 
-puts 'pondering questions'
-question = Question.new(
-  category: "CEFR A1",
-  monster: Monster.all.sample,
-  text: "I _____ a teacher.\n\nA isn't\nB am'nt\nC aren't\nD am not"
-)
-question.save!
-
-puts 'creating answers'
 answer = Answer.new(
-  question: question,
-  correct: true,
-  text: "D am not"
+  question: Question.all.last,
+  correct: false,
+  text: "will"
 )
 answer.save!
