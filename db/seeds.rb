@@ -104,6 +104,51 @@ monster = Monster.new(
 monster.save!
 
 monster = Monster.new(
+  name: "ratcave",
+  category: "vocabulary",
+  map: Map.find_by_name("cave"),
+  max_health: 3,
+  current_health: 3
+)
+monster.save!
+
+monster = Monster.new(
+  name: "batpurple",
+  category: "vocabulary",
+  map: Map.find_by_name("cave"),
+  max_health: 3,
+  current_health: 3
+)
+monster.save!
+
+monster = Monster.new(
+  name: "warrior",
+  category: "vocabulary",
+  map: Map.find_by_name("castle"),
+  max_health: 3,
+  current_health: 3
+)
+monster.save!
+
+monster = Monster.new(
+  name: "dragon",
+  category: "vocabulary",
+  map: Map.find_by_name("castle"),
+  max_health: 3,
+  current_health: 3
+)
+monster.save!
+
+monster = Monster.new(
+  name: "skeleton",
+  category: "vocabulary",
+  map: Map.find_by_name("cave"),
+  max_health: 3,
+  current_health: 3
+)
+monster.save!
+
+monster = Monster.new(
   name: "wolf",
   category: "reading",
   map: Map.find_by_name("ruin"),
