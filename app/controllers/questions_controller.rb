@@ -24,16 +24,18 @@ class QuestionsController < ApplicationController
 
   def show_battle
     # creates a question so we can generate the question when the monster is called
-    # @character = Character.find_by(user_id: current_user)
-    response = openapi
-    @question = Question.new(monster: @monster, category: @monster.category, text: response["question"], ai_question: response["answer"])
+    @question = Question.all.sample
+    @choices = Answer.where(question_id: @question)
+
+    # response = openapi
+    # @question = Question.new(monster: @monster, category: @monster.category, text: response["question"], ai_question: response["answer"])
 
     # the above can be called by the battle controller that will then break the response apart, etc
-    @choices = response["choices"]
-    @question.save
-    @choices = answers(@choices, response["answer"])
+    # @choices = response["choices"]
+    # @question.save
+    # @choices = answers(@choices, response["answer"])
   end
-
+  
   private
 
   def openapi

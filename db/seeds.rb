@@ -148,7 +148,7 @@ answer.save!
 puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
-  correct: true,
+  correct: false,
   text: "go"
 )
 answer.save!
@@ -156,7 +156,7 @@ answer.save!
 puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
-  correct: false,
+  correct: true,
   text: "goes"
 )
 answer.save!
@@ -174,7 +174,7 @@ question.save!
 puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
-  correct: true,
+  correct: false,
   text: "His"
 )
 answer.save!
@@ -182,7 +182,7 @@ answer.save!
 puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
-  correct: false,
+  correct: true,
   text: "He"
 )
 answer.save!
@@ -213,14 +213,14 @@ question.save!
 puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
-  correct: true,
+  correct: false,
   text: "have"
 )
 answer.save!
 
 answer = Answer.new(
   question: Question.all.last,
-  correct: false,
+  correct: true,
   text: "has"
 )
 answer.save!
@@ -236,5 +236,341 @@ answer = Answer.new(
   question: Question.all.last,
   correct: false,
   text: "will"
+)
+answer.save!
+
+
+puts 'pondering questions'
+question = Question.new(
+  category: "CEFR A1",
+  monster: Monster.all.sample,
+  text: "I _____ English for two years."
+)
+question.save!
+
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.last,
+  correct: true,
+  text: "have been studying"
+)
+answer.save!
+
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "study"
+)
+answer.save!
+
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "am studying"
+)
+answer.save!
+
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "will studied"
+)
+answer.save!
+
+
+puts 'pondering questions'
+question = Question.new(
+  category: "CEFR A1",
+  monster: Monster.all.sample,
+  text: "My sister _____ to the store to buy some groceries.
+  "
+)
+question.save!
+
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "go"
+)
+answer.save!
+
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "was go"
+)
+answer.save!
+
+answer = Answer.new(
+  question: Question.all.last,
+  correct: true,
+  text: "is going"
+)
+answer.save!
+
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "goes"
+)
+answer.save!
+
+puts 'pondering questions'
+question = Question.new(
+  category: "CEFR A1",
+  monster: Monster.all.sample,
+  text: "Which word means: a piece of paper with information that allows you to enter a building or travel on public transportation?"
+)
+question.save!
+
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "Document"
+)
+answer.save!
+
+answer = Answer.new(
+  question: Question.all.last,
+  correct: true,
+  text: "ticket"
+)
+answer.save!
+
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "passport"
+)
+answer.save!
+
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "reciept"
+)
+answer.save!
+
+puts 'pondering questions'
+question = Question.new(
+  category: "CEFR A1",
+  monster: Monster.all.sample,
+  text: "Which word best completes the following sentence: I need to __________ my keys before I leave the house."
+)
+question.save!
+
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "lose"
+)
+answer.save!
+
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "cook"
+)
+answer.save!
+
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "drive"
+)
+answer.save!
+
+answer = Answer.new(
+  question: Question.all.last,
+  correct: true,
+  text: "find"
+)
+answer.save!
+
+puts 'pondering questions'
+question = Question.new(
+  category: "CEFR A1",
+  monster: Monster.all.sample,
+  text: "Which word is the opposite of 'hot'?"
+)
+question.save!
+
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.last,
+  correct: true,
+  text: "cold"
+)
+answer.save!
+
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "fast"
+)
+answer.save!
+
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "tall"
+)
+answer.save!
+
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "slow"
+)
+answer.save!
+
+
+puts 'pondering questions'
+question = Question.new(
+  category: "CEFR A1",
+  monster: Monster.all.sample,
+  text: "Which word is the most appropriate to complete the following sentence: I need to buy some ________ for the party."
+)
+question.save!
+
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "medicine"
+)
+answer.save!
+
+answer = Answer.new(
+  question: Question.all.last,
+  correct: true,
+  text: "decorations"
+)
+answer.save!
+
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "bread"
+)
+answer.save!
+
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "future"
+)
+answer.save!
+
+puts 'pondering questions'
+question = Question.new(
+  category: "CEFR A1",
+  monster: Monster.all.sample,
+  text: "Which word best completes the sentence: I have a ____________ in the morning, so I need to wake up early."
+)
+question.save!
+
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.last,
+  correct: true,
+  text: "meeting"
+)
+answer.save!
+
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "party"
+)
+answer.save!
+
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "bread"
+)
+answer.save!
+
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "cat"
+)
+answer.save!
+
+
+question = Question.new(
+  category: "CEFR A1",
+  monster: Monster.all.sample,
+  text: "Which of the following words is the closest in meaning to the word 'exhausted'?"
+)
+question.save!
+
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "angry"
+)
+answer.save!
+
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "hungry"
+)
+answer.save!
+
+answer = Answer.new(
+  question: Question.all.last,
+  correct: true,
+  text: "tired"
+)
+answer.save!
+
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "excited"
+)
+answer.save!
+
+question = Question.new(
+  category: "CEFR A1",
+  monster: Monster.all.sample,
+  text: "Which word means 'a large group of stars held together by gravity'?"
+)
+question.save!
+
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "solar"
+)
+answer.save!
+
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "planet"
+)
+answer.save!
+
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "astroid"
+)
+answer.save!
+
+answer = Answer.new(
+  question: Question.all.last,
+  correct: true,
+  text: "galaxy"
 )
 answer.save!
