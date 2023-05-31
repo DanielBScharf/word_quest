@@ -24,6 +24,7 @@ class MapsController < ApplicationController
     @character.update(current_health: @character.current_health)
     Monster.all.each do |monster|
       monster.current_health = monster.max_health
+      monster.update(current_health: monster.max_health)
     end
   end
 
