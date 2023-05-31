@@ -16,7 +16,6 @@ class CharacterAnswersController < ApplicationController
   end
 
   def result
-
     character_answer = CharacterAnswer.new(text: @answer.text, answer: @answer, question: @question, character: @character)
     if character_answer.save
       p 'Success'
@@ -41,6 +40,8 @@ class CharacterAnswersController < ApplicationController
     if @health <= 0
       redirect_to show_village_character_maps_path(@character)
     end
+    answers = Answer.where(question_id: @question)
+    @correct = answers.find_by(correct: true)
   end
 
   private
