@@ -12,7 +12,7 @@
   <h2>Choose a character you want to play!</h2>
   <div class="cards">
     <% @characters.each do |character| %>
-      <%= link_to show_village_character_maps_path(character), class:'text-decoration-none text-dark' do %>
+      <%= link_to characters(character.id), class:'text-decoration-none text-dark' do %>
         <div class="card ns-border">
           <%= image_tag asset_path( character.icon_name.downcase) %>
           <ul>
