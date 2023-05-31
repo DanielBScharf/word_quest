@@ -57,9 +57,34 @@ character.save!
 
 puts 'Finished!'
 
-puts 'Creating fake map...'
+puts 'Creating map...'
 map = Map.new(
   completed: false,
+  name: 'castle',
+  character_id: Character.all.sample.id
+)
+map.save!
+
+puts 'Creating map...'
+map = Map.new(
+  completed: false,
+  name: 'ruin',
+  character_id: Character.all.sample.id
+)
+map.save!
+
+puts 'Creating map...'
+map = Map.new(
+  completed: false,
+  name: 'cave',
+  character_id: Character.all.sample.id
+)
+map.save!
+
+puts 'Creating map...'
+map = Map.new(
+  completed: false,
+  name: 'world',
   character_id: Character.all.sample.id
 )
 map.save!
@@ -72,7 +97,7 @@ puts 'Populating monsters'
 monster = Monster.new(
   name: "rat",
   category: "vocabulary",
-  map: Map.all.sample,
+  map: Map.find_by_name("castle"),
   max_health: 3,
   current_health: 3
 )
@@ -81,7 +106,7 @@ monster.save!
 monster = Monster.new(
   name: "wolf",
   category: "reading",
-  map: Map.all.sample,
+  map: Map.find_by_name("ruin"),
   max_health: 4,
   current_health: 4
 )
@@ -90,7 +115,7 @@ monster.save!
 monster = Monster.new(
   name: "bat",
   category: "grammar",
-  map: Map.all.sample,
+  map: Map.find_by_name("cave"),
   max_health: 3,
   current_health: 3
 )
