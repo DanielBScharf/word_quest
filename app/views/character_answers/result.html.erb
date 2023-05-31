@@ -5,17 +5,17 @@
   <% end %>
 
   <h2>Monster health</h2>
-  <% monster_health.times do %>
+  <% @monster.current_health.times do %>
     <button class="health-bar" style="margin-top:10px;"></button>
   <% end %>
 
-  <% if @answer.correct %>
-    <% monster_health -= 1 %>
-    <%= render "correct" %>
-      <% if monster_health = 0 %>
-        <%= render 'battle_end' %>
-      <% end %>
-  <% else %>
-    <%= render "wrong" %>
+  <% if @monster.current_health <= 0 %>
+    <%= render 'battle_end', monster:@monster, character:@character %>
   <% end %>
-<% end %>
+
+  <% if @answer.correct %>
+    <%= render "correct", monster:@monster, character:@character %>
+  <% else %>
+    <%= render "wrong", monster:@monster, character:@character %>
+
+  <% end %>

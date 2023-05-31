@@ -62,6 +62,10 @@ class QuestionsController < ApplicationController
   end
 
   def set_monster
-    @monster = Monster.find(params[:format])
+    if params[:format]
+      @monster = Monster.find(params[:format])
+    else
+      @monster = Monster.find(params[:monster_id])
+    end
   end
 end

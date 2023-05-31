@@ -12,4 +12,8 @@ class MonstersController < ApplicationController
     format.html
     format.json { render json: { id: @monster.id } }
   end
+
+  def update
+    @monster = Monster.find(params[:id])
+  end
 end

@@ -9,6 +9,7 @@ class MapsController < ApplicationController
       format.json { render json: { id: @monster.id } }
     end
     @health = set_character.current_health
+
   end
 
   def new
@@ -21,6 +22,10 @@ class MapsController < ApplicationController
     @monster = Monster.all.first
     @character.current_health = @character.max_health
     @character.update(current_health: @character.current_health)
+    Monster.all.each do |monster|
+      monster.update(current_health: monster.max_health)
+
+    end
   end
 
   private
