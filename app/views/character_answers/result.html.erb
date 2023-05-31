@@ -9,12 +9,13 @@
     <button class="health-bar" style="margin-top:10px;"></button>
   <% end %>
 
-  <% if @monster.current_health = 0 %>
-    <%= render 'battle_end' %>
+  <% if @monster.current_health <= 0 %>
+    <%= render 'battle_end', monster:@monster, character:@character %>
   <% end %>
 
   <% if @answer.correct %>
-    <%= render "correct" %>
+    <%= render "correct", monster:@monster, character:@character %>
   <% else %>
-    <%= render "wrong" %>
+    <%= render "wrong", monster:@monster, character:@character %>
+
   <% end %>
