@@ -1,5 +1,6 @@
 class MapsController < ApplicationController
   before_action :set_character, only: %i[index show_village show_castle]
+
   def index
     @map = Map.all.first
     @monster = Monster.all.first
@@ -9,7 +10,6 @@ class MapsController < ApplicationController
       format.json { render json: { id: @monster.id } }
     end
     @health = set_character.current_health
-
   end
 
   def new
@@ -24,7 +24,6 @@ class MapsController < ApplicationController
     @character.update(current_health: @character.current_health)
     Monster.all.each do |monster|
       monster.update(current_health: monster.max_health)
-
     end
   end
 
