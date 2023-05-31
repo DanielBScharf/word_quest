@@ -16,7 +16,8 @@ class CharacterAnswersController < ApplicationController
   end
 
   def result
-    character_answer = CharacterAnswer.new(text: @answer.text, answer_id: @answer.id, question_id: @question.id, character_id: @character.id)
+
+    character_answer = CharacterAnswer.new(text: @answer.text, answer: @answer, question: @question, character: @character)
     if character_answer.save
       p 'Success'
     else
@@ -24,7 +25,11 @@ class CharacterAnswersController < ApplicationController
     end
     @monster = @question.monster
     @health = @character.current_health
-    unless @answer.correct
+    if @answer.correct
+      @monster_health = @monster.current_health
+      @monster_health -= 1
+      @monster.update(current_health: @monster_health)
+    else
       @health -= 20
       @character.update(current_health: @health)
       @monster_health = @monster.current_health
