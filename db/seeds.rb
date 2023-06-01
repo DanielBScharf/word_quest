@@ -744,7 +744,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "will buy"
+  text: "buying"
 )
 answer.save!
 
