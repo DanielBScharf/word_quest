@@ -98,7 +98,7 @@ puts 'Finished!'
 puts 'Populating monsters'
 
 monster = Monster.new(
-  name: "rat",
+  name: "ratwarrior",
   category: "vocabulary",
   map: Map.find_by_name("castle"),
   max_health: 3,
@@ -110,6 +110,15 @@ monster = Monster.new(
   name: "ratcave",
   category: "vocabulary",
   map: Map.find_by_name("cave"),
+  max_health: 3,
+  current_health: 3
+)
+monster.save!
+
+monster = Monster.new(
+  name: "rat",
+  category: "vocabulary",
+  map: Map.find_by_name("ruin"),
   max_health: 3,
   current_health: 3
 )
