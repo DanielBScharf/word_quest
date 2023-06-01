@@ -126,7 +126,7 @@ monster = Monster.new(
   category: "vocabulary",
   map: Map.find_by_name("castle"),
   max_health: 3,
-  current_health: 3
+  current_health: 4
 )
 monster.save!
 
@@ -135,7 +135,7 @@ monster = Monster.new(
   category: "vocabulary",
   map: Map.find_by_name("castle"),
   max_health: 3,
-  current_health: 3
+  current_health: 5
 )
 monster.save!
 
