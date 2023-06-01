@@ -24,14 +24,14 @@
 </body>
   <style>
 
-    #sprite {
-    width: 45px;
-    height: 60px;
-    background-image: url(<%= asset_path(@character.icon_name.downcase) %>);
-    position: relative;
-    transition: 0.1s linear;
-
-    }
+      #sprite {
+  width: 15vw;
+  height: 15vw;
+  background-image: url(<%= asset_path(@character.icon_name.downcase) %>);
+  position: absolute;
+  transition: 0.1s linear;
+  background-size: contain;
+  }
 
 
   </style>
