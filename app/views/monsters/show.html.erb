@@ -1,6 +1,6 @@
 <div class="center1" style="border: 2px solid black; width: 1260px; height: 720px;">
   <div id="tavern">
-    <%= link_to show_battle_character_questions_path(@character, @monster) do %>
+    <%= link_to show_battle_monster_path(@monster) do %>
       <div id="hero"></div>
     <% end %>
     <div id="wizard"></div>
@@ -19,7 +19,7 @@
       <div style="margin-left: 70px;">
         <div class="hints"> <%= render "#{hint}j" %> </div>
       </div>
-      <%= link_to show_battle_character_questions_path(@character, @monster) do %>
+      <%= link_to show_battle_monster_path(@monster) do %>
         <div style="margin-left:60px; margin-top:250px; font-size:18px;">
           <p class ="word" style="width:300px; color:yellow;"> To the Battle! </p>
         <% end %>
@@ -29,11 +29,11 @@
 </div>
 <script>
   //function handleKeyPress() {
-    //  window.location.href = '<%= show_battle_character_questions_path(@character, @monster) %>';
+    //  window.location.href = '<%= show_battle_monster_path(@monster) %>';
     //}
     //document.addEventListener("keydown", handleKeyPress);
   function handleClickPress() {
-    window.location.href = '<%= show_battle_character_questions_path(@character, @monster) %>';
+    window.location.href = '<%= show_battle_monster_path(@monster) %>';
   }
     document.addEventListener("click", handleClickPress);
 </script>

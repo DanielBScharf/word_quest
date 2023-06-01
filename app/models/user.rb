@@ -8,4 +8,5 @@ class User < ApplicationRecord
   # validates :last_name, presence: true, on: :create
   # validates :username, presence: true, uniqueness: true, on: :create
   has_many :characters
+  belongs_to :current_character, optional: true, class_name: 'Character'
 end

@@ -19,21 +19,24 @@ Rails.application.routes.draw do
       end
     end
     resources :character_answers
-    resources :questions do
-      get :show_battle, on: :collection
-    end
+    # resources :questions do
+    #   get :show_battle, on: :collection
+    # end
   end
 
   resources :maps do
     collection do
       resources :monsters, only: %i[show index]
+      get :show_village
     end
   end
 
   resources :monsters do
     resources :questions, only: %i[show new create]
     # resources :character_answers, only: :show
-
+    member do
+      get :show_battle, to: 'questions#show_battle'
+    end
   end
 
   resources :questions do

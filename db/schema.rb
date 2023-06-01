@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_31_065618) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_31_111050) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -92,7 +92,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_31_065618) do
     t.string "first_name"
     t.string "last_name"
     t.string "username"
-    t.integer "current_character_id"
+    t.bigint "current_character_id"
+    t.index ["current_character_id"], name: "index_users_on_current_character_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -104,4 +105,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_31_065618) do
   add_foreign_key "maps", "characters"
   add_foreign_key "monsters", "maps"
   add_foreign_key "questions", "monsters"
+  add_foreign_key "users", "characters", column: "current_character_id"
 end

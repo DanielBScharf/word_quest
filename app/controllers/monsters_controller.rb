@@ -4,13 +4,13 @@ class MonstersController < ApplicationController
     @monster = Monster.find(params[:id])
 
     # creates a question so we can generate the question when the monster is called
-    @character = Character.find_by(user_id: current_user.id)
+    @character = Character.find(params[:character_id])
   end
 
-  respond_to do |format|
-    format.html
-    format.json { render json: { id: @monster.id } }
-  end
+  # respond_to do |format|
+  #   format.html
+  #   format.json { render json: { id: @monster.id } }
+  # end
 
   def update
     @monster = Monster.find(params[:id])
