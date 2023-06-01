@@ -26,8 +26,11 @@ class QuestionsController < ApplicationController
     # creates a question so we can generate the question when the monster is called
     @monster = Monster.find_by(id: params[:monster_id]) || Monster.find_by(id: params[:id])
     # todo change to unanswered ones
-    @question =  Question.all.sample
-    # @question =  Question.where(monster: @monster).where.not(id: @character.questions).sample
+    @question = Question.all.sample
+    @question =  Question.where(monster: @monster).where.not(id: @character.questions).sample
+    if @question == nil
+      current_user.current_character.questions.clear
+    end
     # TODO: this route is not right
     redirect_to show_village_character_maps_path(@character) unless @question
     @choices = @question.answers
