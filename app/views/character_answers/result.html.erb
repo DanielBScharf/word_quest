@@ -1,37 +1,31 @@
 <body>
-<% monster_health = 4 %>
-<div class="health-bar-row">
-  <h2>Hero Health</h2>
-  <% @show_health.times do %>
-    <button class="health-bar"></button>
-  <% end %>
-</div>
-
-<div class="health-bar-row">
-  <h2>Monster Health</h2>
-  <% @monster.current_health.times do %>
-    <button class="health-bar"></button>
-  <% end %>
-</div>
-
+  <% monster_health = 4 %>
+  <div class="health-bar-row">
+    <h2>Hero Health</h2>
+    <% @show_health.times do %>
+      <button class="health-bar"></button>
+    <% end %>
+  </div>
+  <div class="health-bar-row">
+    <h2>Monster Health</h2>
+    <% @monster.current_health.times do %>
+      <button class="health-bar"></button>
+    <% end %>
+  </div>
   <% if @monster.current_health <= 0 && @character.current_health <= 0 %>
     <%= render 'battle_end', monster:@monster, character:@character %>
+  <% elsif @answer.correct %>
+    <%= render "correct", monster:@monster, character: @character %>
+  <% else %>
+    <%= render "wrong", monster:@monster, character:@character %>
   <% end %>
-
-<% if @answer.correct %>
-  <%= render "correct", monster:@monster, character: @character %>
-<% else %>
-  <%= render "wrong", monster:@monster, character:@character %>
-<% end %>
-
-<%# Add a condition on the monster health %>
-<% if @monster.current_health > 0 && @character.current_health > 0 %>
-  <%= link_to "Next question", show_battle_monster_path(@monster), class: 'text-primary' %>
-<% else %>
-  <%= render "battle_end" %>
-  <%#= link_to "Village", show_village_maps_path, class: 'text-primary' %>
-<% end %>
-
+  <%# Add a condition on the monster health %>
+  <% if @monster.current_health > 0 && @character.current_health > 0 %>
+    <%= link_to "Next question", show_battle_monster_path(@monster), class: 'text-primary' %>
+  <% else %>
+    <%= render "battle_end" %>
+    <%#= link_to "Village", show_village_maps_path, class: 'text-primary' %>
+  <% end %>
 </body>
 <style>
   /* ...existing styles... */
