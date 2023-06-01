@@ -1,23 +1,28 @@
+<body>
 <% monster_health = 4 %>
-  <h2>Your health</h2>
+<div class="health-bar-row">
+  <h2>Hero Health</h2>
   <% @show_health.times do %>
-    <button class="health-bar" style="margin-top:10px;"></button>
+    <button class="health-bar"></button>
   <% end %>
+</div>
 
-  <h2>Monster health</h2>
+<div class="health-bar-row">
+  <h2>Monster Health</h2>
   <% @monster.current_health.times do %>
-    <button class="health-bar" style="margin-top:10px;"></button>
+    <button class="health-bar"></button>
   <% end %>
+</div>
 
   <% if @monster.current_health <= 0 && @character.current_health <= 0 %>
     <%= render 'battle_end', monster:@monster, character:@character %>
   <% end %>
 
-  <% if @answer.correct %>
-    <%= render "correct", monster:@monster, character: @character %>
-  <% else %>
-    <%= render "wrong", monster:@monster, character:@character %>
-  <% end %>
+<% if @answer.correct %>
+  <%= render "correct", monster:@monster, character: @character %>
+<% else %>
+  <%= render "wrong", monster:@monster, character:@character %>
+<% end %>
 
 <%# Add a condition on the monster health %>
 <% if @monster.current_health >= 0 && @character.current_health > 0 %>
@@ -26,3 +31,22 @@
   <%= render "battle_end" %>
   <%#= link_to "Village", show_village_maps_path, class: 'text-primary' %>
 <% end %>
+
+</body>
+<style>
+  /* ...existing styles... */
+
+  .health-bar-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .health-bar {
+    width: 20px; /* Adjust the width of the health bar */
+    height: 40px; /* Adjust the height of the health bar */
+    background-color: red; /* Set the color of the health bar */
+    margin-right: 5px; /* Add some spacing between health bars */
+  }
+</style>
