@@ -23,11 +23,17 @@ class QuestionsController < ApplicationController
   end
 
   def show_battle
+    @character = current_user.current_character
+
+    @show_health = @character.current_health / 10
+
+
     # creates a question so we can generate the question when the monster is called
     @monster = Monster.find_by(id: params[:monster_id]) || Monster.find_by(id: params[:id])
     # todo change to unanswered ones
-    @question =  Question.all.sample
-    # @question =  Question.where(monster: @monster).where.not(id: @character.questions).sample
+    # @question = Question.all.sample
+    @question = Question.where(monster: @monster).where.not(id: @character.questions).sample
+
     # TODO: this route is not right
     redirect_to show_village_character_maps_path(@character) unless @question
     @choices = @question.answers
@@ -40,6 +46,8 @@ class QuestionsController < ApplicationController
     # @question.save
     # @choices = answers(@choices, response["answer"])
   end
+
+  # still adding more stuff so we can push to heroku.
 
   private
 

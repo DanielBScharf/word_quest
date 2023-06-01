@@ -33,7 +33,7 @@ class CharacterAnswersController < ApplicationController
 
     answers = Answer.where(question_id: @question)
     @correct = answers.find_by(correct: true)
-    @next_question =  Question.where(monster: @monster).where.not(id: @character.questions).sample
+    @next_question = Question.where(monster: @monster).where.not(id: @character.questions).sample
   end
 
   private

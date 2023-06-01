@@ -1,32 +1,41 @@
 <body>
-  <div id="box" class="center" style="border: 2px solid black; width: 1260px; height: 720px">
+  <div id="box" class="center" style="border-radius: 0; width: 100vw; background-size:cover;">
     <div id="sprite" style="left: 450px; bottom: 0px; top: 300px; position:absolute;"></div>
-    <% if Monster.find_by_name("rat").current_health > 0 %>
-      <%= link_to character_monster_path(@character, @monster = Monster.find_by_name('rat')) do %>
-        <div id="rat" class="monster" data-id="10" style="left: 850px; bottom: 0px; top: 50px; position:absolute;"></div>
+    <%= link_to show_cave_character_maps_path(@character) do %>
+      <div id="signcave"></div>
+    <% end %>
+    <%# if Monster.find_by_name("rat").current_health > 0 %>
+    <%#= link_to character_monster_path(@character, @monster = Monster.find_by_name('rat')) do %>
+      <%# <div id="rat" class="monster" data-id="10" style="left: 700px; bottom: 0px; top: 200px; position:absolute;"></div> %>
+      <%# end %>
+      <%# end %>
+      <%= link_to show_castle_character_maps_path(@character) do %>
+        <div id="signcastle"></div>
       <% end %>
-    <% end %>
-    <% if Monster.find_by_name("wolf").current_health > 0 %>
-      <%= link_to character_monster_path(@character, @monster = Monster.find_by_name('wolf')) do %>
-        <div id="wolf" class="monster" data-id="11" style="left: 1020px; bottom: 0px; top: 300px;position:absolute;"></div>
+      <%= link_to show_ruin_character_maps_path(@character) do %>
+        <div id="signruin"></div>
       <% end %>
-    <% end %>
-    <% if Monster.find_by_name("bat").current_health > 0 %>
-      <%= link_to character_monster_path(@character, @monster = Monster.find_by_name('bat')) do %>
-        <div id="bat" class="monster" data-id="12" style="left: 1060px; bottom: 0px; top: 550px;position:absolute;"></div>
-      <% end %>
-    <% end %>
-    <%= link_to show_village_character_maps_path(@character) do %>
-      <div id="sprite2" style="left: 150px; bottom: 0px; top: 150px; position:absolute;"></div>
-    <% end %>
-  </div>
-  <style>
-    #sprite {
-      width: 45px;
-      height: 60px;
-      background-image: url(<%= asset_path(@character.icon_name.downcase) %>);
-      position: relative;
-      transition: 0.1s linear;
-    }
-  </style>
-</body>
+      <%# if Monster.find_by_name("wolf").current_health > 0 %>
+      <%#= link_to character_monster_path(@character, @monster = Monster.find_by_name('wolf')) do %>
+        <%# <div id="wolf" class="monster" data-id="11" style="left: 800px; bottom: 0px; top: 275px;position:absolute;"></div>  %>
+        <%# end %>
+        <%# end %>
+        <%# if Monster.find_by_name("bat").current_health > 0 %>
+        <%#= link_to character_monster_path(@character, @monster = Monster.find_by_name('bat')) do %>
+          <%# <div id="bat" class="monster" data-id="12" style="left: 600px; bottom: 0px; top: 350px;position:absolute;"></div> %>
+          <%# end %>
+          <%# <% end %>
+          <%= link_to show_village_character_maps_path(@character) do %>
+            <div id="sprite2" style="left: 150px; bottom: 0px; top: 150px; position:absolute;"></div>
+          <% end %>
+        </div>
+        <style>
+          #sprite {
+            width: 45px;
+            height: 60px;
+            background-image: url(<%= asset_path(@character.icon_name.downcase) %>);
+            position: relative;
+            transition: 0.1s linear;
+          }
+        </style>
+      </body>

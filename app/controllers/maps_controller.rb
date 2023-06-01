@@ -14,7 +14,7 @@ class MapsController < ApplicationController
 
   def new
   end
-
+  #  new comment here too Maybe this will let me push to heroku
   def show
     @map = Map.find(params[:id])
     @monsters = Monster.where(map: @map)
@@ -27,8 +27,32 @@ class MapsController < ApplicationController
     Monster.all.each do |monster|
       monster.update(current_health: monster.max_health)
     end
+    CharacterAnswer.destroy_all
   end
 
+  def show_cave
+    @character = current_user.current_character
+    @monster = Monster.all.first
+    @character.current_health = @character.max_health
+    @character.update(current_health: @character.current_health)
+
+  end
+
+  def show_castle
+    @character = current_user.current_character
+    @monster = Monster.all.first
+    @character.current_health = @character.max_health
+    @character.update(current_health: @character.current_health)
+
+  end
+
+  def show_ruin
+    @character = current_user.current_character
+    @monster = Monster.all.first
+    @character.current_health = @character.max_health
+    @character.update(current_health: @character.current_health)
+
+  end
   # def show_castle
   # #   redirect_to show_castle_character_maps_path(@character)
   # end
@@ -55,6 +79,7 @@ class MapsController < ApplicationController
     @health = set_character.current_health
 
   end
+
   private
 
   def set_character
