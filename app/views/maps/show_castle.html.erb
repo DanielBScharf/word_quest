@@ -1,19 +1,19 @@
 <body>
-  <div id="box_castle" class="center" style="border: 2px solid black; width: 90vw; background-size: cover;">
+  <div id="box_castle" class="center" style="border-radius: 0; width: 100vw; background-size: cover;">
     <div id="sprite" style="left: 200px; bottom: 0px; top: 400px; position:absolute;"></div>
-    <% if Monster.find_by_name("rat").current_health > 0 %>
-      <%= link_to character_monster_path(@character, @monster = Monster.find_by_name('rat')) do %>
-        <div id="ratwarrior" class="monster" style="left: 850px; bottom: 0px; top: 180px; position:absolute;"></div>
+    <% if Monster.find_by_name("ratwarrior").current_health > 0 %>
+      <%= link_to  show_battle_character_monster_questions_path(@character, @monster = Monster.find_by_name('ratwarrior')) do %>
+        <div id="ratwarrior" class="monster" style="left: 70%; top: 20%;"></div>
       <% end %>
     <% end %>
-    <% if Monster.find_by_name("wolf").current_health > 0 %>
-      <%= link_to character_monster_path(@character, @monster = Monster.find_by_name('wolf')) do %>
-        <div id="dragon" class="monster" style="left: 1360px; bottom: 0px; top: 250px;position:absolute;"></div>
+    <% if Monster.find_by_name("dragon").current_health > 0 %>
+      <%= link_to  show_battle_character_monster_questions_path(@character, @monster = Monster.find_by_name('dragon')) do %>
+        <div id="dragon" class="monster" style="left: 80%; bottom: 5%;"></div>
       <% end %>
     <% end %>
-    <% if Monster.find_by_name("bat").current_health > 0 %>
-      <%= link_to character_monster_path(@character, @monster = Monster.find_by_name('bat')) do %>
-        <div id="warrior" class="monster" style="left: 610px; bottom: 0px; top: 430px;position:absolute;"></div>
+    <% if Monster.find_by_name("warrior").current_health > 0 %>
+      <%= link_to  show_battle_character_monster_questions_path(@character, @monster = Monster.find_by_name('warrior')) do %>
+        <div id="warrior" class="monster" style="left:40%; top: 40%;"></div>
       <% end %>
     <% end %>
   <%= link_to character_maps_path(@character) do %>
