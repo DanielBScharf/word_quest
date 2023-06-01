@@ -642,7 +642,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "reads"
+  text: "wll reads"
 )
 answer.save!
 
@@ -658,7 +658,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: true,
-  text: "has been reading"
+  text: "reads"
 )
 answer.save!
 
@@ -691,7 +691,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "went"
+  text: "go"
 )
 answer.save!
 
@@ -724,7 +724,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "have bought"
+  text: "buys"
 )
 answer.save!
 
@@ -732,7 +732,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "bought"
+  text: "buying"
 )
 answer.save!
 
@@ -798,7 +798,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "plays"
+  text: "play"
 )
 answer.save!
 
@@ -847,7 +847,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "did"
+  text: "does"
 )
 answer.save!
 
@@ -855,7 +855,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "have done"
+  text: "done"
 )
 answer.save!
 
@@ -888,7 +888,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "went"
+  text: "goes"
 )
 answer.save!
 
@@ -921,7 +921,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "visits"
+  text: "visit"
 )
 answer.save!
 
@@ -962,7 +962,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "takes"
+  text: "take"
 )
 answer.save!
 
@@ -1011,7 +1011,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "saw"
+  text: "sees"
 )
 answer.save!
 
@@ -1052,7 +1052,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "played"
+  text: "plays"
 )
 answer.save!
 
@@ -1093,7 +1093,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "watches"
+  text: "watch"
 )
 answer.save!
 
@@ -1118,7 +1118,7 @@ puts 'pondering questions'
 question = Question.new(
   category: "CEFR A1",
   monster: Monster.all.sample,
-  text: "I _____ breakfast at 7 o'clock."
+  text: "I _____ breakfast at 7 o'clock yesterday."
 )
 question.save!
 
@@ -1126,7 +1126,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "eat"
+  text: "eats"
 )
 answer.save!
 
@@ -1134,7 +1134,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "ate"
+  text: "eaten"
 )
 answer.save!
 
@@ -1150,7 +1150,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: true,
-  text: "eat"
+  text: "ate"
 )
 answer.save!
 
@@ -1175,7 +1175,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "went"
+  text: "gone"
 )
 answer.save!
 
@@ -1208,7 +1208,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "drink"
+  text: "drinked"
 )
 answer.save!
 
@@ -1216,7 +1216,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "drinks"
+  text: "drink"
 )
 answer.save!
 
@@ -1257,7 +1257,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "watched"
+  text: "watches"
 )
 answer.save!
 
@@ -1290,7 +1290,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "goes"
+  text: "gone"
 )
 answer.save!
 
@@ -1323,7 +1323,7 @@ puts 'pondering questions'
 question = Question.new(
   category: "CEFR A1",
   monster: Monster.all.sample,
-  text: "We _____ lunch at the restaurant."
+  text: "We _____ lunch at the restaurant yesterday."
 )
 question.save!
 
@@ -1331,7 +1331,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "eat"
+  text: "eats"
 )
 answer.save!
 
@@ -1339,7 +1339,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "ate"
+  text: "eat"
 )
 answer.save!
 
@@ -1355,7 +1355,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: true,
-  text: "eat"
+  text: "ate"
 )
 answer.save!
 
@@ -1372,7 +1372,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "walks"
+  text: "walk"
 )
 answer.save!
 
@@ -1421,7 +1421,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "played"
+  text: "plays"
 )
 answer.save!
 
@@ -1446,7 +1446,7 @@ puts 'pondering questions'
 question = Question.new(
   category: "CEFR A1",
   monster: Monster.all.sample,
-  text: "He _____ basketball with his friends."
+  text: "He _____ basketball with his friends every Sunday."
 )
 question.save!
 
@@ -1454,7 +1454,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "plays"
+  text: "play"
 )
 answer.save!
 
@@ -1503,7 +1503,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "saw"
+  text: "sees"
 )
 answer.save!
 
@@ -1544,7 +1544,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "went"
+  text: "gone"
 )
 answer.save!
 
@@ -1577,7 +1577,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "plays"
+  text: "play"
 )
 answer.save!
 
@@ -1618,7 +1618,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "play"
+  text: "plays"
 )
 answer.save!
 
@@ -1651,7 +1651,7 @@ puts 'pondering questions'
 question = Question.new(
   category: "CEFR A1",
   monster: Monster.all.sample,
-  text: "She _____ to the store to buy some milk."
+  text: "She _____ to the store to buy some milk tomorrow."
 )
 question.save!
 
@@ -1659,7 +1659,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "goes"
+  text: "gone"
 )
 answer.save!
 
@@ -1675,7 +1675,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "will go"
+  text: "goes"
 )
 answer.save!
 
@@ -1683,7 +1683,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: true,
-  text: "goes"
+  text: "will go"
 )
 answer.save!
 
@@ -1708,7 +1708,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "saw"
+  text: "sees"
 )
 answer.save!
 
@@ -1741,7 +1741,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "eat"
+  text: "eats"
 )
 answer.save!
 
@@ -1790,7 +1790,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "watches"
+  text: "will watch"
 )
 answer.save!
 
@@ -1847,7 +1847,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: true,
-  text: "wakes"
+  text: "wake"
 )
 answer.save!
 
@@ -1872,7 +1872,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "went"
+  text: "goes"
 )
 answer.save!
 
@@ -1905,7 +1905,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "takes"
+  text: "taken"
 )
 answer.save!
 
@@ -1954,7 +1954,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "ate"
+  text: "eats"
 )
 answer.save!
 
@@ -1979,7 +1979,7 @@ puts 'pondering questions'
 question = Question.new(
   category: "CEFR A1",
   monster: Monster.all.sample,
-  text: "He _____ in a big city."
+  text: "He _____ in a big city now."
 )
 question.save!
 
@@ -1995,7 +1995,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "lived"
+  text: "will live"
 )
 answer.save!
 
@@ -2011,7 +2011,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: true,
-  text: "live"
+  text: "lives"
 )
 answer.save!
 
@@ -2085,7 +2085,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "watched"
+  text: "will watch"
 )
 answer.save!
 
@@ -2118,7 +2118,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "played"
+  text: "will play"
 )
 answer.save!
 
@@ -2143,7 +2143,7 @@ puts 'pondering questions'
 question = Question.new(
   category: "CEFR A1",
   monster: Monster.all.sample,
-  text: "She _____ coffee in the morning."
+  text: "She _____ coffee in the every morning."
 )
 question.save!
 
@@ -2200,7 +2200,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "went"
+  text: "goes"
 )
 answer.save!
 
@@ -2266,7 +2266,7 @@ puts 'pondering questions'
 question = Question.new(
   category: "CEFR A1",
   monster: Monster.all.sample,
-  text: "They _____ basketball at the park."
+  text: "They _____ basketball at the park tomorrow."
 )
 question.save!
 
@@ -2298,7 +2298,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: true,
-  text: "play"
+  text: "will play"
 )
 answer.save!
 
@@ -2348,7 +2348,7 @@ puts 'pondering questions'
 question = Question.new(
   category: "CEFR A1",
   monster: Monster.all.sample,
-  text: "We _____ in the same class."
+  text: "We _____ in the library yesterday."
 )
 question.save!
 
@@ -2356,7 +2356,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "study"
+  text: "studies"
 )
 answer.save!
 
@@ -2364,7 +2364,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "studied"
+  text: "study"
 )
 answer.save!
 
@@ -2380,7 +2380,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: true,
-  text: "study"
+  text: "studied"
 )
 answer.save!
 
