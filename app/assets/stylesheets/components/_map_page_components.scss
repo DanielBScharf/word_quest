@@ -16,87 +16,108 @@
   }
 
   #rat{
-    width: 300px;
-    height: 300px;
+    width: 20vw;
+    height: 20vw;
     background-image: url('rat.png');
     background-repeat: no-repeat;
-    position: relative;
+    position: absolute;
     transition: 0.1s linear;
-    left: 50%;
-    top: 20%;
+    background-size: contain;
+    left: 400px;
+    bottom: 300px;
   }
 
   #bat{
-    width: 120px;
-    height: 100px;
+    width: 8vw;
+    height: 8vw;
     background-image: url('monster3.png');
     position: relative;
     transition: 0.1s linear;
     background-repeat: no-repeat;
+    background-size: contain;
+    left: 220px;
+    top: 110px;
   }
   #wolf {
-    width: 120px;
-    height: 100px;
+    width: 10vw;
+    height: 10vw;
     background-image: url('monster2.png');
-    position: relative;
+    position: absolute;
     transition: 0.1s linear;
     background-repeat: no-repeat;
+    background-size: contain;
+    left: 80vw;
+    bottom: 20vh;
   }
 
   #ratwarrior{
-    width: 300px;
-    height: 300px;
+    width: 10vw;
+    height: 10vw;
     background-image: url('ratwarrior.png');
-    background-repeat: no-repeat;
-    position: relative;
+    position: absolute;
     transition: 0.1s linear;
+    background-repeat: no-repeat;
+    background-size: contain;
+    left: 180vw;
+    bottom: 20vh;
   }
-
   #warrior{
-    width: 300px;
-    height: 300px;
+    width: 10vw;
+    height: 10vw;
     background-image: url('warrior.png');
-    position: relative;
+    position: absolute;
     transition: 0.1s linear;
     background-repeat: no-repeat;
+    background-size: contain;
+    left: 80vw;
+    bottom: 20vh;
   }
   #dragon {
-    width: 500px;
-    height: 500px;
+    width: 20vw;
+    height: 20vw;
     background-image: url('dragon.png');
-    position: relative;
+    position: absolute;
     transition: 0.1s linear;
+    background-size: contain;
     background-repeat: no-repeat;
+    right: 90px;
+    bottom: 400px;
   }
 
   #ratcave{
-    width: 400px;
-    height: 300px;
+    width: 15vw;
+    height: 15vw;
     background-image: url('ratcave.png');
     background-repeat: no-repeat;
-    position: relative;
+    position: absolute;
     transition: 0.1s linear;
+    left: 150px;
+    top: 300px;
+    background-size: contain;
   }
 
   #batpurple{
-    width: 400px;
-    height: 300px;
+    width: 15vw;
+    height: 15vw;
     background-image: url('batpurple.png');
-    position: relative;
+    position: absolute;
     transition: 0.1s linear;
     background-repeat: no-repeat;
-    left: 20%;
-    bottom: 40%;
+    left: 100px;
+    bottom: 150px;
+    background-size: contain;
   }
+
   #skeleton {
-    width: 400px;
-    height: 300px;
+    width: 10vw;
+    min-height: 10vw;
     background-image: url('skeleton.png');
-    position: relative;
+    position: absolute;
     transition: 0.1s linear;
     background-repeat: no-repeat;
-    left: 60%;
-    bottom: 20%;
+    right: 60px;
+    bottom: 50px;
+    background-size: contain;
   }
    #box_ruin {
     background-image: url('mapruin.png');

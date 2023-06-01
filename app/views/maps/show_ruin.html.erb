@@ -21,12 +21,18 @@
     <% end %>
   </div>
 </body>
-<style>
-  #sprite {
-  width: 45px;
-  height: 60px;
+
+  <style>
+
+    #sprite {
+  width: 10vw;
+  height: 10vw;
   background-image: url(<%= asset_path(@character.icon_name.downcase) %>);
-  position: relative;
+  position: absolute;
   transition: 0.1s linear;
+  background-size: contain;
   }
-</style>
+
+
+  </style>
+
