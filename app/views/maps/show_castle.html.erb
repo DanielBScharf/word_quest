@@ -1,9 +1,33 @@
-<%= 'castle' %>
-<% if Monster.find_by_name("rat").current_health > 0 %>
-  <%= link_to character_monster_path(params[:character_id], @monster = Monster.find_by_name('rat')) do %>
-    <div id="rat" class="monster" data-id="10" style="left: 700px; bottom: 0px; top: 200px; position:absolute;"></div>
-  <% end %>
-<% end %>
-<%= link_to character_maps_path(params[:character_id]) do %>
-  <div id="sprite2" style="left: 510px; bottom: 0px; top: 500px; position:absolute;"></div>
-<% end %>
+<body>
+  <div id="box_castle" class="center" style="border: 2px solid black; width: 1260px; height: 720px">
+    <div id="sprite" style="left: 200px; bottom: 0px; top: 400px; position:absolute;"></div>
+    <% if Monster.find_by_name("rat").current_health > 0 %>
+      <%= link_to character_monster_path(@character, @monster = Monster.find_by_name('rat')) do %>
+        <div id="ratwarrior" class="monster" style="left: 650px; bottom: 0px; top: 130px; position:absolute;"></div>
+      <% end %>
+    <% end %>
+    <% if Monster.find_by_name("wolf").current_health > 0 %>
+      <%= link_to character_monster_path(@character, @monster = Monster.find_by_name('wolf')) do %>
+        <div id="dragon" class="monster" style="left: 950px; bottom: 0px; top: 200px;position:absolute;"></div>
+      <% end %>
+    <% end %>
+    <% if Monster.find_by_name("bat").current_health > 0 %>
+      <%= link_to character_monster_path(@character, @monster = Monster.find_by_name('bat')) do %>
+        <div id="warrior" class="monster" style="left: 730px; bottom: 0px; top: 580px;position:absolute;"></div>
+      <% end %>
+    <% end %>
+    <%= link_to show_village_character_maps_path(@character) do %>
+      <div id="sprite2" style="left: 200px; bottom: 0px; top: 150px; position:absolute;"></div>
+    <% end %>
+  </div>
+  <style>
+    #sprite {
+    width: 45px;
+    height: 60px;
+    background-image: url(<%= asset_path(@character.icon_name.downcase) %>);
+    position: relative;
+    transition: 0.1s linear;
+
+    }
+  </style>
+</body>
