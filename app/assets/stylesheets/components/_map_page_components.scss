@@ -97,8 +97,8 @@
   }
 
   #batpurple{
-    width: 10vw;
-    height: 10vw;
+    width: 15vw;
+    height: 15vw;
     background-image: url('batpurple.png');
     position: absolute;
     transition: 0.1s linear;
@@ -107,6 +107,7 @@
     bottom: 150px;
     background-size: contain;
   }
+
   #skeleton {
     width: 10vw;
     min-height: 10vw;
