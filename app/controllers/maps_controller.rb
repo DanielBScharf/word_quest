@@ -27,6 +27,7 @@ class MapsController < ApplicationController
     Monster.all.each do |monster|
       monster.update(current_health: monster.max_health)
     end
+    CharacterAnswer.destroy_all
   end
 
   # def show_castle

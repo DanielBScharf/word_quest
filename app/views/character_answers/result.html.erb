@@ -9,7 +9,7 @@
     <button class="health-bar" style="margin-top:10px;"></button>
   <% end %>
 
-  <% if @monster.current_health <= 0 %>
+  <% if @monster.current_health <= 0 && @character.current_health <= 0 %>
     <%= render 'battle_end', monster:@monster, character:@character %>
   <% end %>
 
@@ -20,7 +20,7 @@
   <% end %>
 
 <%# Add a condition on the monster health %>
-<% if @monster.current_health >= 0 && @character.current_health >= 0 %>
+<% if @monster.current_health >= 0 && @character.current_health > 0 %>
   <%= link_to "Next question", show_battle_monster_path(@monster), class: 'text-primary' %>
 <% else %>
   <%= render "battle_end" %>
