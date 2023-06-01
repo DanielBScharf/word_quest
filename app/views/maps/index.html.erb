@@ -1,8 +1,8 @@
 <body>
-  <div id="box" class="center" style="border: 2px solid black; width: 90vw; background-size:cover;">
+  <div id="box" class="center" style="border-radius: 0; width: 100vw; background-size:cover;">
     <div id="sprite" style="left: 450px; bottom: 0px; top: 300px; position:absolute;"></div>
     <%= link_to show_cave_character_maps_path(@character) do %>
-      <div id="signcave" style="left: 1200px; bottom: 0px; top: 80px; position:absolute;"></div>
+      <div id="signcave"></div>
     <% end %>
     <%# if Monster.find_by_name("rat").current_health > 0 %>
     <%#= link_to character_monster_path(@character, @monster = Monster.find_by_name('rat')) do %>
@@ -10,10 +10,10 @@
       <%# end %>
       <%# end %>
       <%= link_to show_castle_character_maps_path(@character) do %>
-        <div id="signcastle"  style="left: 1390px; bottom: 0px; top: 420px;position:absolute;"></div>
+        <div id="signcastle"></div>
       <% end %>
       <%= link_to show_ruin_character_maps_path(@character) do %>
-        <div id="signruin" style="left: 1460px; bottom: 0px; top: 750px;position:absolute;"></div>
+        <div id="signruin"></div>
       <% end %>
       <%# if Monster.find_by_name("wolf").current_health > 0 %>
       <%#= link_to character_monster_path(@character, @monster = Monster.find_by_name('wolf')) do %>

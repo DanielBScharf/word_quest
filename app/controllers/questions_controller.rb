@@ -23,6 +23,9 @@ class QuestionsController < ApplicationController
   end
 
   def show_battle
+    @character = current_user.current_character
+    @health = @character.current_health / 10
+
     # creates a question so we can generate the question when the monster is called
     @monster = Monster.find_by(id: params[:monster_id]) || Monster.find_by(id: params[:id])
     # todo change to unanswered ones
