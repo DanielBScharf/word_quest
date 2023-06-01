@@ -20,7 +20,7 @@ class CharacterAnswersController < ApplicationController
     character_answer.save
 
     @monster = @question.monster
-
+    raise
     if @answer.correct
       @monster.update(current_health: (@monster.current_health -= 1))
     else

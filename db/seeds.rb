@@ -6,10 +6,13 @@ Answer.destroy_all
 Question.destroy_all
 Monster.destroy_all
 Map.destroy_all
-Character.destroy_all
 User.destroy_all
+puts "destroying all users"
+Character.destroy_all
+puts "destroying everything until I can push this to heroku"
 
 puts 'Creating 1 fake user...'
+puts 'we need to add more seeds'
 
 user = User.new(
   email: 'mail@mail.com',
@@ -732,7 +735,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "bought"
+  text: "will buy"
 )
 answer.save!
 
@@ -798,7 +801,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "plays"
+  text: "is play"
 )
 answer.save!
 
@@ -2422,5 +2425,85 @@ answer = Answer.new(
   question: Question.all.last,
   correct: true,
   text: "listens"
+)
+answer.save!
+
+puts 'pondering questions'
+question = Question.new(
+  category: "CEFR A1",
+  monster: Monster.all.sample,
+  text: "He _____ to music every day."
+)
+question.save!
+
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "listen"
+)
+answer.save!
+
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "listened"
+)
+answer.save!
+
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "have listened"
+)
+answer.save!
+
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.last,
+  correct: true,
+  text: "listens"
+)
+answer.save!
+
+puts 'pondering questions'
+question = Question.new(
+  category: "CEFR A1",
+  monster: Monster.all.sample,
+  text: "We _____ in the same class."
+)
+question.save!
+
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "study"
+)
+answer.save!
+
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "studied"
+)
+answer.save!
+
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "have studied"
+)
+answer.save!
+
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.last,
+  correct: true,
+  text: "study"
 )
 answer.save!

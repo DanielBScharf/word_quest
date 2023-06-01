@@ -14,7 +14,7 @@ class MapsController < ApplicationController
 
   def new
   end
-
+  #  new comment here too Maybe this will let me push to heroku
   def show
     @map = Map.find(params[:id])
     @monsters = Monster.where(map: @map)
@@ -33,6 +33,9 @@ class MapsController < ApplicationController
   # #   redirect_to show_castle_character_maps_path(@character)
   # end
 
+   # def show_castle
+  # #   redirect_to show_castle_character_maps_path(@character)
+  # end
   private
 
   def set_character
