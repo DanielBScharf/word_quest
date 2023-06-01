@@ -21,7 +21,15 @@ class QuestionsController < ApplicationController
 
   def create
   end
+  def check_answer
+    if answer.correct
+      message = "Correct answer!"
+    else
+      message = "Wrong answer!"
+    end
 
+    render json: { message: message }
+  end
   def show_battle
     @character = current_user.current_character
     @show_health = @character.current_health / 10
@@ -34,7 +42,7 @@ class QuestionsController < ApplicationController
     # TODO: this route is not right
     redirect_to show_village_character_maps_path(@character) unless @question
     @choices = @question.answers
-
+    
     # response = openapi
     # @question = Question.new(monster: @monster, category: @monster.category, text: response["question"], ai_question: response["answer"])
 
