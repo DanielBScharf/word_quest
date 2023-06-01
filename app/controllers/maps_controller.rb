@@ -20,7 +20,8 @@ class MapsController < ApplicationController
     @monsters = Monster.where(map: @map)
   end
 
-  def show_village
+  def show_cave
+    @character = current_user.current_character
     @monster = Monster.all.first
     @character.current_health = @character.max_health
     @character.update(current_health: @character.current_health)
@@ -29,6 +30,25 @@ class MapsController < ApplicationController
     end
   end
 
+  def show_castle
+    @character = current_user.current_character
+    @monster = Monster.all.first
+    @character.current_health = @character.max_health
+    @character.update(current_health: @character.current_health)
+    Monster.all.each do |monster|
+      monster.update(current_health: monster.max_health)
+    end
+  end
+
+  def show_ruin
+    @character = current_user.current_character
+    @monster = Monster.all.first
+    @character.current_health = @character.max_health
+    @character.update(current_health: @character.current_health)
+    Monster.all.each do |monster|
+      monster.update(current_health: monster.max_health)
+    end
+  end
   # def show_castle
   # #   redirect_to show_castle_character_maps_path(@character)
   # end
