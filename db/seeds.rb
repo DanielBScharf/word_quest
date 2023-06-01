@@ -101,8 +101,8 @@ monster = Monster.new(
   name: "ratwarrior",
   category: "vocabulary",
   map: Map.find_by_name("castle"),
-  max_health: 3,
-  current_health: 3
+  max_health: 4,
+  current_health: 4
 )
 monster.save!
 
@@ -110,8 +110,8 @@ monster = Monster.new(
   name: "ratcave",
   category: "vocabulary",
   map: Map.find_by_name("cave"),
-  max_health: 3,
-  current_health: 3
+  max_health: 4,
+  current_health: 4
 )
 monster.save!
 
@@ -128,8 +128,8 @@ monster = Monster.new(
   name: "batpurple",
   category: "vocabulary",
   map: Map.find_by_name("cave"),
-  max_health: 3,
-  current_health: 3
+  max_health: 2,
+  current_health: 2
 )
 monster.save!
 
@@ -137,7 +137,7 @@ monster = Monster.new(
   name: "warrior",
   category: "vocabulary",
   map: Map.find_by_name("castle"),
-  max_health: 3,
+  max_health: 4,
   current_health: 4
 )
 monster.save!
@@ -146,7 +146,7 @@ monster = Monster.new(
   name: "dragon",
   category: "vocabulary",
   map: Map.find_by_name("castle"),
-  max_health: 3,
+  max_health: 5,
   current_health: 5
 )
 monster.save!
