@@ -1966,7 +1966,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "ate"
+  text: "eating"
 )
 answer.save!
 
