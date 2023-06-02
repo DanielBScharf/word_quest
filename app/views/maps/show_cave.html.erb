@@ -3,7 +3,7 @@
     <div id="sprite" style="left: 450px; bottom: 0px; top: 400px; position:absolute;"></div>
     <% if Monster.find_by_name("rat1").current_health > 0 %>
       <%= link_to  show_battle_character_monster_questions_path(@character, @monster = Monster.find_by_name('rat1')) do %>
-        <div id="rat1" class="monster"></div>
+        <div id="rat1" class="monster animation"></div>
       <% end %>
     <% end %>
     <% if Monster.find_by_name("skeleton").current_health > 0 %>
