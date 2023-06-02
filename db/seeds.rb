@@ -23,6 +23,19 @@ user = User.new(
 )
 user.save!
 
+character = Character.new(
+  name: "Dumbkid1",
+  max_health: 100,
+  current_health: 100,
+  max_mana: 100,
+  current_mana: Faker::Number.between(from: 0, to: 100),
+  user_id: user.id,
+  level: 2,
+  language: 'English',
+  icon_name: 'hero.png'
+)
+character.save!
+
 puts 'Finished!'
 
 puts 'Creating map...'
