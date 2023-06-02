@@ -1,6 +1,6 @@
 <body>
   <div id="box" class="center" style="border-radius: 0; width: 100vw; background-size:cover;">
-    <div id="sprite" style="left: 450px; bottom: 0px; top: 300px; position:absolute;"></div>
+    <div id="sprite" style="left: 450px; bottom: 0px; top: 300px; position:absolute; "></div>
     <%= link_to show_cave_character_maps_path(@character) do %>
       <div id="signcave">↑
         <p class="to-adventure-text" >cave</p>
@@ -21,3 +21,13 @@
       <div id="sprite2" style="left: 5vw; top: 39vh; position:absolute;"></div>
     <% end %>
   </div>
+
+  <style>
+   #sprite {
+    width: 45px;
+    height: 60px;
+    background-image: url(<%= asset_path( @character.icon_name.downcase) %>);
+    position: relative;
+    transition: 0.1s linear;
+    }
+  </style>
