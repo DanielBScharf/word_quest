@@ -107,7 +107,7 @@ monster = Monster.new(
 monster.save!
 
 monster = Monster.new(
-  name: "ratcave",
+  name: "rat1",
   category: "vocabulary",
   map: Map.find_by_name("cave"),
   max_health: 4,
