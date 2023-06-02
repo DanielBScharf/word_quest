@@ -101,8 +101,8 @@ monster = Monster.new(
   name: "ratwarrior",
   category: "vocabulary",
   map: Map.find_by_name("castle"),
-  max_health: 4,
-  current_health: 4
+  max_health: 3,
+  current_health: 3
 )
 monster.save!
 
@@ -173,8 +173,8 @@ monster = Monster.new(
   name: "bat",
   category: "grammar",
   map: Map.find_by_name("cave"),
-  max_health: 3,
-  current_health: 3
+  max_health: 2,
+  current_health: 2
 )
 monster.save!
 
@@ -182,7 +182,7 @@ puts 'pondering questions'
 question = Question.new(
   category: "CEFR A1",
   monster: Monster.all.sample,
-  text: "Choose the correct word to complete the sentence: I ________ to the park every Sunday."
+  text: "I ________ to the park every Sunday."
 )
 question.save!
 
@@ -414,7 +414,7 @@ puts 'pondering questions'
 question = Question.new(
   category: "CEFR A1",
   monster: Monster.all.sample,
-  text: "Which word best completes the following sentence: I need to __________ my keys before I leave the house."
+  text: "I need to __________ my keys before I leave the house."
 )
 question.save!
 
@@ -526,7 +526,7 @@ puts 'pondering questions'
 question = Question.new(
   category: "CEFR A1",
   monster: Monster.all.sample,
-  text: "Which word best completes the sentence: I have a ____________ in the morning, so I need to wake up early."
+  text: "I have a ____________ in the morning, so I need to wake up early."
 )
 question.save!
 
@@ -1687,7 +1687,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "will go"
+  text: "was go"
 )
 answer.save!
 
@@ -2360,15 +2360,15 @@ puts 'pondering questions'
 question = Question.new(
   category: "CEFR A1",
   monster: Monster.all.sample,
-  text: "We _____ in the same class."
+  text: "We _____ in the same class right now."
 )
 question.save!
 
 puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
-  correct: false,
-  text: "studying"
+  correct: true,
+  text: "are studying"
 )
 answer.save!
 
@@ -2391,8 +2391,8 @@ answer.save!
 puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
-  correct: true,
-  text: "study"
+  correct: false,
+  text: "studying"
 )
 answer.save!
 
@@ -2514,5 +2514,188 @@ answer = Answer.new(
   question: Question.all.last,
   correct: true,
   text: "study"
+)
+answer.save!
+
+puts 'pondering questions'
+question = Question.new(
+  category: "CEFR B1",
+  monster: Monster.all.sample,
+  text: "I haven't seen him _______."
+)
+question.save!
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.last,
+  correct: true,
+  text: "for a long time"
+)
+answer.save!
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "yesterday"
+)
+answer.save!
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "in a few hours"
+)
+answer.save!
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "tomorrow"
+)
+answer.save!
+
+
+puts 'pondering questions'
+question = Question.new(
+  category: "CEFR B1",
+  monster: Monster.all.sample,
+  text: "She is _______ in the new project."
+)
+question.save!
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.last,
+  correct: true,
+  text: "interested"
+)
+answer.save!
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "interests"
+)
+answer.save!
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "interesting"
+)
+answer.save!
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "interestedly"
+)
+answer.save!
+
+
+puts 'pondering questions'
+question = Question.new(
+  category: "CEFR B1",
+  monster: Monster.all.sample,
+  text: "I'm looking forward _______ to the party."
+)
+question.save!
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.last,
+  correct: true,
+  text: "to going"
+)
+answer.save!
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "to go"
+)
+answer.save!
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "going"
+)
+answer.save!
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "go"
+)
+answer.save!
+
+
+puts 'pondering questions'
+question = Question.new(
+  category: "CEFR B1",
+  monster: Monster.all.sample,
+  text: "They are _______ to Paris next week."
+)
+question.save!
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.last,
+  correct: true,
+  text: "going"
+)
+answer.save!
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "go"
+)
+answer.save!
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "goes"
+)
+answer.save!
+puts 'creating answers'
+answer = Answer.new(
+  question: Question.all.last,
+  correct: false,
+  text: "went"
+)
+answer.save!
+
+puts 'pondering questions'
+question = Question.new(
+category: "CEFR B1",
+monster: Monster.all.sample,
+text: "You can borrow the book _______ you promise to return it."
+)
+question.save!
+puts 'creating answers'
+answer = Answer.new(
+question: Question.all.last,
+correct: false,
+text: "do"
+)
+answer.save!
+puts 'creating answers'
+answer = Answer.new(
+question: Question.all.last,
+correct: true,
+text: "as long as"
+)
+answer.save!
+puts 'creating answers'
+answer = Answer.new(
+question: Question.all.last,
+correct: false,
+text: "when"
+)
+answer.save!
+puts 'creating answers'
+answer = Answer.new(
+question: Question.all.last,
+correct: false,
+text: "while"
 )
 answer.save!
