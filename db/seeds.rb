@@ -489,7 +489,7 @@ puts 'pondering questions'
 question = Question.new(
   category: "CEFR A1",
   monster: Monster.all.sample,
-  text: "Which word is the most appropriate to complete the following sentence: I need to buy some ________ for the party."
+  text: "I need to buy some ________ for the party."
 )
 question.save!
 
@@ -949,7 +949,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "will visit"
+  text: "will be visit"
 )
 answer.save!
 
@@ -1359,7 +1359,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "have eaten"
+  text: "have eating"
 )
 answer.save!
 
@@ -1384,7 +1384,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: true,
-  text: "walks"
+  text: "takes"
 )
 answer.save!
 
@@ -1392,7 +1392,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "walked"
+  text: "taked"
 )
 answer.save!
 
@@ -1408,7 +1408,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "walking"
+  text: "was took"
 )
 answer.save!
 
@@ -1474,7 +1474,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "played"
+  text: "play"
 )
 answer.save!
 
@@ -1482,7 +1482,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "will play"
+  text: "was play"
 )
 answer.save!
 
@@ -1523,7 +1523,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "have seen"
+  text: "will reading"
 )
 answer.save!
 
@@ -1531,7 +1531,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "seed"
+  text: "reading"
 )
 answer.save!
 
@@ -1712,7 +1712,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "see"
+  text: "buy"
 )
 answer.save!
 
@@ -1720,7 +1720,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "saw"
+  text: "buying"
 )
 answer.save!
 
@@ -1761,7 +1761,7 @@ puts 'creating answers'
 answer = Answer.new(
   question: Question.all.last,
   correct: false,
-  text: "ate"
+  text: "were ate"
 )
 answer.save!
 
