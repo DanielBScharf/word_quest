@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The page you were looking for doesn't exist (404)</title>
+  <title>You find the secret character</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
   .rails-default-error-page {
-    background-color: #EFEFEF;
+    background-color: #108DE0;
     color: #2E2F30;
     text-align: center;
     font-family: arial, sans-serif;
@@ -23,12 +23,16 @@
     border-right-color: #999;
     border-left-color: #999;
     border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
+    border-right: #3200b0 solid 4px;
+    border-left: #3200b0 solid 4px;
+    border-bottom: #3200b0 solid 4px;
+    border-top: #3200b0 solid 4px;
     border-top-left-radius: 9px;
     border-top-right-radius: 9px;
     background-color: white;
     padding: 7px 12% 0;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+    border-width:10px;
   }
 
   .rails-default-error-page h1 {
@@ -50,18 +54,38 @@
     border-top-color: #DADADA;
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+
+
+  }
+  #center3 {
+    position: fixed;
+    top: 30%;
+    left: 36%;
+    transform: translate(-50%, -50%);
+    border-radius: 30px;
+    }
+    #dougbattle {
+    width: 500px;
+    min-height: 400px;
+    background-image: url('dougbattle.png');
+    position: absolute;
+    transition: 0.1s linear;
+    background-repeat: no-repeat;
+    background-size: contain;
   }
   </style>
 </head>
 
 <body class="rails-default-error-page">
-  <!-- This file lives in public/404.html -->
   <div class="dialog">
     <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
+      <h1 style="font-size:23px;">You found the secret page!</h1>
+      <p style="font-size:23px;">This page is protected by Doug</p>
+      <p style="font-size:23px;">Remember to do your flash cards!</p>
+
+  <div class="" id="center3">
+    <div class="card ns-border" style="font-size: 14px;" id="dougbattle">
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
   </div>
 </body>
 </html>
