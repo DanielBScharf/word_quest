@@ -1,5 +1,6 @@
 <body>
-  <div id="box_battle" class="center" style="border-radius: 0px; width: 100vw; background-size:cover;">
+  <div id="message-container" class="center" style="z-index: 9999;font-size:24px;color:white;font-family: 'Press Start 2P', cursive;"></div>
+  <div id="box_battle" class="center" style="border: 2px solid black; width: 90vw; background-size:cover;">
     <div class="health-bar-container d-flex">
       <div class ="" style="width:50%">
         <div class="health-bar-row hero-health">
@@ -68,52 +69,49 @@
   </body>
   <style>
     #hero {
-      width: 350px;
-      height: 300px;
-      background-image: url(<%= asset_path('Herobattle.png') %>);
-      position: relative;
-      transition: 0.1s linear;
-      background-repeat: no-repeat;
+    width: 350px;
+    height: 300px;
+    background-image: url(<%= asset_path('Herobattle.png') %>);
+    position: relative;
+    transition: 0.1s linear;
+    background-repeat: no-repeat;
     }
-
     #box_battle {
-      background-image: url(<%= asset_path('forestbattle.jpg') %>);
-      background-repeat: no-repeat;
-      width: 100%;
-      height: 100%;
-      border-width: 6px !important;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-image: url(<%= asset_path('forestbattle.jpg') %>);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    border-width: 6px !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
-
     #box_battle::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: rgba(0, 0, 0, 0.2);
-      pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    pointer-events: none;
     }
     #wolfbattle {
-      width: 500px;
-      height: 350px;
-      background-image: url(<%= asset_path('wolfbattle.png') %>);
-      position: relative;
-      transition: 0.1s linear;
-      background-repeat: no-repeat;
-      background-size: contain;
-     }
-        #batbattle {
-      width: 500px;
-      height: 350px;
-      background-image: url(<%= asset_path('batbattle.png') %>);
-      position: relative;
-      transition: 0.1s linear;
-      background-repeat: no-repeat;
-      background-size: contain;
-     }
-        #ratbattle {
+    width: 500px;
+    height: 350px;
+    background-image: url(<%= asset_path('wolfbattle.png') %>);
+    position: relative;
+    transition: 0.1s linear;
+    background-repeat: no-repeat;
+    }
+    #batbattle {
+    width: 500px;
+    height: 350px;
+    background-image: url(<%= asset_path('batbattle.png') %>);
+    position: relative;
+    transition: 0.1s linear;
+    background-repeat: no-repeat;
+    }
+    
+      #ratbattle {
       width: 500px;
       height: 450px;
       background-image: url(<%= asset_path('rat.png') %>);
@@ -179,20 +177,18 @@
       background-size: contain;
      }
     .health-bar-container {
-      position: relative;
-      z-index: 1; /* Ensure the health bars are above the background shadow */
+    position: relative;
+    z-index: 1; /* Ensure the health bars are above the background shadow */
     }
-
     .health-bar-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 10px;
-      position: relative;
-      z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    position: relative;
+    z-index: 1;
     }
-
-    .hero-health {
+       .hero-health {
       justify-content: center;
     }
 

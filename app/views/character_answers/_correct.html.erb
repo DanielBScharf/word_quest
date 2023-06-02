@@ -1,1 +1,9 @@
-<h1>correct</h1>
+  
+<div id="message-container" class="center" style="z-index: 9999;font-size:24px;color:white;font-family: 'Press Start 2P', cursive;">Your answer was correct!</div>
+<% if @monster.current_health >= 0 && @character.current_health >= 0 %>
+  <%= link_to show_battle_monster_path(@monster),id:"center2" , style:'text-decoration:none;z-index: 999;font-family:"Press Start 2P", cursive;', class: 'button' do %>
+    <span>Click here for the Next question!</span>
+  <% end %>
+<% else %>
+  <%= render "battle_end" %>
+<% end %>
