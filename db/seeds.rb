@@ -25,14 +25,14 @@ user.save!
 
 puts 'Finished!'
 
-user = User.new(
+user2 = User.new(
   email: 'mail1@mail.com',
   first_name: 'Tsubasa',
   last_name: "T",
   username: "T",
   password: 'secret'
 )
-user.save!
+user2.save!
 
 puts "Cleaning database..."
 
