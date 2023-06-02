@@ -1,7 +1,6 @@
 <body>
   <div id="box_cave" class="center" style="border-radius: 0; width: 100vw; background-size: cover;">
     <div id="sprite" style="left: 450px; bottom: 0px; top: 400px; position:absolute;"></div>
-
     <% if Monster.find_by_name("rat1").current_health > 0 %>
       <%= link_to  show_battle_character_monster_questions_path(@character, @monster = Monster.find_by_name('rat1')) do %>
         <div id="rat1" class="monster"></div>
@@ -18,7 +17,7 @@
       <% end %>
     <% end %>
     <%= link_to character_maps_path(@character) do %>
-      <div id="sprite2" style="left: 300px; bottom: 0px; top: 150px; position:absolute;"></div>
+      <div class="nes-text exit-arrow" style="left: 17.5vw; bottom: 0px; top: 150px; position:absolute;">↑</div>
     <% end %>
   </div>
 </body>
