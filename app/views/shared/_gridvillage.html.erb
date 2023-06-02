@@ -1,14 +1,16 @@
-<div class="center" id="box" style="border: 2px solid black; width: 90vw; background-size: cover;">
+<div class="center" id="box" style="border-radius: 0; width: 100vw; background-size: cover;">
   <div id="sprite" style="left: 460px; bottom: 0px; top: 340px; position: absolute;"></div>
   <%= link_to character_maps_path(@character) do %>
-    <div id="sprite2" style="left: 600px; bottom: 0px; top: 600px; position:absolute;"></div>
+    <div class="nes-text" id="sprite2" style="left: 670px; bottom: 0px; top: 600px; position:absolute; background-image:none;">
+      <p class="to-adventure-text" >To adventure...</p>
+      ↓ </div>
   <% end %>
-  <div id="sprite3" style="left: 350px; bottom: 0px; top: 185px; position:absolute;"></div>
-  <div id="sprite4" style="left: 190px; bottom: 0px; top: 280px; position:absolute;"></div>
+  <div id="sprite3" style="left: 29vw; top: 30vh; position:absolute;"></div>
+  <div id="sprite4" style="left: 4vw; top: 62vh; position:absolute;"></div>
   <%= link_to destroy_user_session_path, method: :delete, data: { turbo_method: :delete }  do %>
-    <div id="sprite5" style="left: 695px; bottom: 0px; top: 210px; position:absolute;"></div>
+    <div id="sprite5" style="left: 56vw; top: 33vh;  position:absolute;"></div>
   <% end %>
-  <div id="sprite6" style="left: 945px; bottom: 0px; top: 310px; position:absolute;"></div>
+  <div id="sprite6" style="left: 76vw; top: 51vh; position:absolute;"></div>
 </div>
 <style>
   .center {
@@ -58,11 +60,11 @@
     }
 
     #sprite2 {
-    width: 80px;
-    height: 80px;
-    background-image: url(<%= asset_path('go.png') %>);
-    position: relative;
-    transition: 0.1s linear;
+      position: relative;
+      transition: 0.1s linear;
+      font-size: 16px;
+      font-family: 'Press Start 2P', cursive;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5)
     }
 
     #sprite {
