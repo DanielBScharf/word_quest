@@ -25,49 +25,6 @@ user.save!
 
 puts 'Finished!'
 
-user2 = User.new(
-  email: 'mail1@mail.com',
-  first_name: 'Tsubasa',
-  last_name: "T",
-  username: "T",
-  password: 'secret'
-)
-user2.save!
-
-puts "Cleaning database..."
-
-
-puts 'Creating 1 fake character...'
-
-character = Character.new(
-  name: "Dumbkid1",
-  max_health: 100,
-  current_health: 100,
-  max_mana: 100,
-  current_mana: Faker::Number.between(from: 0, to: 100),
-  user_id: User.first,
-  level: 2,
-  language: 'English',
-  icon_name: 'hero.png'
-)
-character.save!
-
-
-character = Character.new(
-  name: "Char2",
-  max_health: 100,
-  current_health: 100,
-  max_mana: 100,
-  current_mana: Faker::Number.between(from: 0, to: 100),
-  user_id: User.first,
-  level: 1,
-  language: 'English',
-  icon_name: 'Doug.png'
-)
-character.save!
-
-puts 'Finished!'
-
 puts 'Creating map...'
 map = Map.new(
   completed: false,
