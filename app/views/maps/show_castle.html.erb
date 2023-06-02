@@ -3,35 +3,32 @@
     <div id="sprite" style="left: 200px; bottom: 0px; top: 400px; position:absolute;"></div>
     <% if Monster.find_by_name("ratwarrior").current_health > 0 %>
       <%= link_to  show_battle_character_monster_questions_path(@character, @monster = Monster.find_by_name('ratwarrior')) do %>
-        <div id="ratwarrior" class="monster" style="left: 70%; top: 20%;"></div>
+        <div id="ratwarrior" class="monster animation" style="left: 70%; top: 20%;"></div>
       <% end %>
     <% end %>
     <% if Monster.find_by_name("dragon").current_health > 0 %>
       <%= link_to  show_battle_character_monster_questions_path(@character, @monster = Monster.find_by_name('dragon')) do %>
-        <div id="dragon" class="monster" style="left: 80%; bottom: 5%;"></div>
+        <div id="dragon" class="monster animation" style="left: 80%; bottom: 5%;"></div>
       <% end %>
     <% end %>
     <% if Monster.find_by_name("warrior").current_health > 0 %>
       <%= link_to  show_battle_character_monster_questions_path(@character, @monster = Monster.find_by_name('warrior')) do %>
-        <div id="warrior" class="monster" style="left:40%; top: 40%;"></div>
+        <div id="warrior" class="monster animation" style="left:40%; top: 40%;"></div>
       <% end %>
     <% end %>
-  <%= link_to character_maps_path(@character) do %>
+    <%= link_to character_maps_path(@character) do %>
       <div id="sprite2" style="left: 50px; bottom: 0px; top: 30px; position:absolute;"></div>
     <% end %>
   </div>
 </body>
 </body>
-  <style>
-
-      #sprite {
-  width: 15vw;
-  height: 15vw;
-  background-image: url(<%= asset_path(@character.icon_name.downcase) %>);
-  position: absolute;
-  transition: 0.1s linear;
-  background-size: contain;
-  }
-
-
-  </style>
+<style>
+  #sprite {
+    width: 15vw;
+    height: 15vw;
+    background-image: url(<%= asset_path(@character.icon_name.downcase) %>);
+    position: absolute;
+    transition: 0.1s linear;
+    background-size: contain;
+    }
+</style>

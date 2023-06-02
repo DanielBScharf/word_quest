@@ -1,0 +1,17 @@
+// add movement to monsters
+.animation{
+  animation-name:UpDown;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+
+@keyframes UpDown{
+  0%{
+  transform: translateY(0);
+  }
+  100%{
+  transform: translateY(50px);
+  }
+}

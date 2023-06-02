@@ -1,6 +1,7 @@
 <body>
   <div id="message-container" class="center" style="z-index: 9999;font-size:24px;color:white;font-family: 'Press Start 2P', cursive;"></div>
-  <div id="box_battle" class="center" style="border: 2px solid black; width: 100vw; background-size:cover;">
+
+  <div id="box_battle" class="center" style="border-radius:0px; width: 100vw; background-size:cover;">
     <div class="health-bar-container d-flex">
       <div class ="" style="width:50%">
         <div class="health-bar-row hero-health">
@@ -76,30 +77,113 @@
     background-color: rgba(0, 0, 0, 0.2);
     pointer-events: none;
   }
+
+
+  #ratbattle{
+    width: 20vw;
+    height: 20vw;
+    background-image: url('rat.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    transition: 0.1s linear;
+    background-size: contain;
+    left: 400px;
+    bottom: 300px;
+  }
+
+  #batbattle{
+    width: 8vw;
+    height: 8vw;
+    background-image: url('monster3.png');
+    position: relative;
+    transition: 0.1s linear;
+    background-repeat: no-repeat;
+    background-size: contain;
+    left: 220px;
+    top: 110px;
+  }
   #wolfbattle {
-    width: 500px;
-    height: 350px;
-    background-image: url(<%= asset_path('wolfbattle.png') %>);
-    position: relative;
+    width: 10vw;
+    height: 10vw;
+    background-image: url('monster2.png');
+    position: absolute;
     transition: 0.1s linear;
     background-repeat: no-repeat;
-   }
-      #batbattle {
-    width: 500px;
-    height: 350px;
-    background-image: url(<%= asset_path('batbattle.png') %>);
-    position: relative;
+    background-size: contain;
+    left: 80vw;
+    bottom: 20vh;
+  }
+
+  #ratwarriorbattle{
+    width: 10vw;
+    height: 10vw;
+    background-image: url('ratwarrior.png');
+    position: absolute;
     transition: 0.1s linear;
     background-repeat: no-repeat;
-   }
-      #ratbattle {
-    width: 500px;
-    height: 350px;
-    background-image: url(<%= asset_path('ratbattle.png') %>);
-    position: relative;
+    background-size: contain;
+    left: 180vw;
+    bottom: 20vh;
+  }
+  #warriorbattle{
+    width: 10vw;
+    height: 10vw;
+    background-image: url('warrior.png');
+    position: absolute;
     transition: 0.1s linear;
     background-repeat: no-repeat;
-   }
+    background-size: contain;
+    left: 80vw;
+    bottom: 20vh;
+  }
+  #dragonbattle {
+    width: 20vw;
+    height: 20vw;
+    background-image: url('dragon.png');
+    position: absolute;
+    transition: 0.1s linear;
+    background-size: contain;
+    background-repeat: no-repeat;
+    right: 90px;
+    bottom: 400px;
+  }
+
+  #rat1battle {
+    width: 15vw;
+    height: 15vw;
+    background-image: url('rat.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    transition: 0.1s linear;
+    left: 20px;
+    top: 300px;
+    background-size: contain;
+  }
+
+  #batpurplebattle {
+    width: 15vw;
+    height: 15vw;
+    background-image: url('batpurple.png');
+    position: absolute;
+    transition: 0.1s linear;
+    background-repeat: no-repeat;
+    left: 100px;
+    bottom: 150px;
+    background-size: contain;
+  }
+
+  #skeletonbattle {
+    width: 10vw;
+    min-height: 10vw;
+    background-image: url('skeleton.png');
+    position: absolute;
+    transition: 0.1s linear;
+    background-repeat: no-repeat;
+    right: 60px;
+    bottom: 50px;
+    background-size: contain;
+  }
+
 
   .health-bar-container {
     position: relative;
