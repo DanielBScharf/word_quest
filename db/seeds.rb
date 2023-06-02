@@ -25,6 +25,14 @@ user.save!
 
 puts 'Finished!'
 
+user = User.new(
+  email: 'mail1@mail.com',
+  first_name: 'Tsubasa',
+  last_name: "T",
+  username: "T",
+  password: 'secret'
+)
+user.save!
 
 puts "Cleaning database..."
 
@@ -37,7 +45,7 @@ character = Character.new(
   current_health: 100,
   max_mana: 100,
   current_mana: Faker::Number.between(from: 0, to: 100),
-  user_id: user.id,
+  user_id: User.first,
   level: 2,
   language: 'English',
   icon_name: 'hero.png'
@@ -51,7 +59,7 @@ character = Character.new(
   current_health: 100,
   max_mana: 100,
   current_mana: Faker::Number.between(from: 0, to: 100),
-  user_id: user.id,
+  user_id: User.first,
   level: 1,
   language: 'English',
   icon_name: 'Doug.png'
